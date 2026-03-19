@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import "tailwindcss";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --color-1: #171827;
+    --color-2: #3AA1B8;
+    --color-3: #D1D5DB;
+    --color-4: #161B2E;
+    --color-5: #111429;
+    --color-6: #1b1f2e;
+}
+
+
+
+.nav-bar{
+    background-color: var(--color-1);
+    .logo{
+        .icon{
+            background-color: var(--color-2);
+        }
+        .lema{
+            color: var(--color-3);
+        }
+    }
+}
+
+.hero-section{
+    background-color: var(--color-4);
+    .title,.description{
+        color: var(--color-3);
+        strong{
+            color: var(--color-2);
+        }
+    }
+    .cont-btn{
+        color: var(--color-3);
+        .btn-form{
+            background-color: var(--color-2);
+        }
+    }
+    .icon-hero{
+        background-color: var(--color-1);
+    }
+}
+
+.services-section{
+    background-color: var(--color-5);
+    .title,.description{
+        color: var(--color-3);
+    }
+    .cards-section{
+        .card{
+            background-color: var(--color-4);
+            .icon-wrapper{
+                background-color: #1f364e;
+            }
+            .title,.description{
+                color: var(--color-3);
+            }
+        }
+    }
+}
+
+.cta-section{
+    background-color: var(--color-4);
+    .cta{
+        background-color: var(--color-6);
+        color: var(--color-3);
+
+    }
+    .btn-cta{
+        background-color: var(--color-2);
+    }
+}
+
+.form-section{
+    background-color: var(--color-4);
+    .aside{
+        color: var(--color-3);
+    }
+    .form{
+        background-color: var(--color-6);
+        label{
+            color: var(--color-3);
+        }
+        input,textarea{
+            background-color: #232532;
+            border: 2px solid #4b5563;
+            color: var(--color-3);
+        }
+        .btn-submit{
+            background-color: var(--color-2);
+        }
+    }
+}
+
+.footer{
+    background-color: var(--color-1);
+    color: var(--color-3);
+    
+        .summary{
+            .logo{
+                background-color: var(--color-2);
+            }
+        }
+    
+}
