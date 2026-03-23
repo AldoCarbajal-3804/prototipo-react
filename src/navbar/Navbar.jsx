@@ -47,7 +47,7 @@ function Navbar(){
 
                 <button
                     onClick={toggleMenu}
-                    className="sm:hidden ml-auto flex flex-col gap-1.5 p-2 focus:outline-none focus:ring-2 focus:ring-[#3AA1B8] rounded"
+                    className="sm:hidden ml-auto v-stack gap-1.5 p-2 focus:outline-none focus:ring-2 focus:ring-[#3AA1B8] rounded"
                     aria-label="Abrir menú de navegación"
                     aria-expanded={isOpen}
                     aria-controls="mobile-menu"
@@ -84,7 +84,7 @@ function Navbar(){
                 aria-label="Menú móvil"
                 aria-hidden={!isOpen}
             >
-                <ul className="flex flex-col list-none gap-4 px-4 py-4 border-t border-gray-700">
+                <ul className="v-stack list-none gap-4 px-4 py-4 border-t border-gray-700">
                     <li role="none">
                         <a 
                             href="#" 

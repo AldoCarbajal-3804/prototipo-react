@@ -22,7 +22,7 @@ function Form(){
     return(
         <section 
             id="form-section" 
-            className="form-section flex flex-col lg:flex-row justify-between gap-8 sm:gap-10 md:gap-12 p-4 sm:p-8 md:p-12 lg:p-20 text-white"
+            className="form-section v-stack lg:h-stack justify-between gap-8 sm:gap-10 md:gap-12 p-4 sm:p-8 md:p-12 lg:p-20 text-white"
             aria-label="Sección de contacto"
         >
             <aside 
@@ -42,7 +42,7 @@ function Form(){
                     Whether you're looking for a custom AI agent or a complete business automation overhaul, our team is ready to help you scale.
                 </p>
                 <ul 
-                    className="flex flex-col gap-4 sm:gap-5 md:gap-6"
+                    className="v-stack gap-4 sm:gap-5 md:gap-6"
                     aria-label="Información de contacto"
                 >
                     <Info icon="📧" title="Email Us" value="hello@japartners.ai" />
@@ -64,7 +64,7 @@ function Form(){
                     Formulario de contacto
                 </h2>
 
-                <fieldset className="flex flex-col gap-2">
+                <fieldset className="v-stack gap-2">
                     <label htmlFor="fullName" className="text-sm font-medium">
                         Full Name
                         <span aria-label="requerido" className="text-red-500">*</span>
@@ -82,7 +82,7 @@ function Form(){
                     <span id="fullName-error" className="sr-only"></span>
                 </fieldset>
 
-                <fieldset className="flex flex-col gap-2">
+                <fieldset className="v-stack gap-2">
                     <label htmlFor="email" className="text-sm font-medium">
                         Work Email
                         <span aria-label="requerido" className="text-red-500">*</span>
@@ -100,7 +100,7 @@ function Form(){
                     <span id="email-error" className="sr-only"></span>
                 </fieldset>
 
-                <fieldset className="flex flex-col gap-2 sm:col-span-2">
+                <fieldset className="v-stack gap-2 sm:col-span-2">
                     <label htmlFor="company" className="text-sm font-medium">
                         Company
                         <span aria-label="requerido" className="text-red-500">*</span>
@@ -118,7 +118,7 @@ function Form(){
                     <span id="company-error" className="sr-only"></span>
                 </fieldset>
 
-                <fieldset className="flex flex-col gap-2 sm:col-span-2">
+                <fieldset className="v-stack gap-2 sm:col-span-2">
                     <label htmlFor="message" className="text-sm font-medium">
                         Message
                         <span aria-label="requerido" className="text-red-500">*</span>
