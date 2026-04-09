@@ -28,19 +28,32 @@
 .breathing-lg {
   animation: breathingGlow 4s ease-in-out infinite;
   transform-origin: center;
+  will-change: transform, opacity;
 }
 
 .breathing-md {
   animation: breathing 3.5s ease-in-out infinite;
   transform-origin: center;
+  will-change: transform;
 }
 
 .breathing-sm {
   animation: breathing 3s ease-in-out infinite;
   transform-origin: center;
+  will-change: transform;
 }
 
 .breathing-svg {
   animation: breathing 2.5s ease-in-out infinite;
   transform-origin: center;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .breathing-lg,
+  .breathing-md,
+  .breathing-sm,
+  .breathing-svg {
+    animation: none;
+  }
 }
