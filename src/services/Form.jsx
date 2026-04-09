@@ -19,6 +19,9 @@ async function handleFormSubmit(formData){
 }
 
 function Form(){
+
+    const today = new Date().toISOString().split("T")[0];
+
     return(
         <section 
             id="form-section" 
@@ -100,7 +103,7 @@ function Form(){
                     <span id="email-error" className="sr-only"></span>
                 </fieldset>
 
-                <fieldset className="flex flex-col gap-2 sm:col-span-2">
+                <fieldset className="flex flex-col gap-2">
                     <label htmlFor="company" className="text-sm font-medium">
                         Company
                         <span aria-label="requerido" className="text-red-500">*</span>
@@ -116,6 +119,25 @@ function Form(){
                         aria-describedby="company-error"
                     />
                     <span id="company-error" className="sr-only"></span>
+                </fieldset>
+
+                <fieldset className="flex flex-col gap-2">
+                    <label htmlFor="date" className="text-sm font-medium">
+                        Meeting Date
+                        <span aria-label="requerido" className="text-red-500">*</span>
+                    </label>
+                    <input 
+                        id="date"
+                        name="date" 
+                        type="date" 
+                        placeholder="dd/mm/yyyy" 
+                        className="p-3 sm:p-4 rounded-lg placeholder-gray-400 text-sm text-black focus:outline-none focus:ring-2 focus:ring-[#3AA1B8]"
+                        required
+                        min={today}
+                        aria-required="true"
+                        aria-describedby="date-error"
+                    />
+                    <span id="date-error" className="sr-only"></span>
                 </fieldset>
 
                 <fieldset className="flex flex-col gap-2 sm:col-span-2">
