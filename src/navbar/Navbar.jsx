@@ -41,6 +41,8 @@ function Navbar(){
                     aria-label="Menú de navegación"
                 >
                     <Link name="Home" link="#" />
+                    <Link name="Why" link="#why-section" />
+                    <Link name="Who" link="#who-section" />
                     <Link name="Services" link="#services-section" />
                     <Link name="Contact" link="#form-section" />
                 </ul>
@@ -97,6 +99,36 @@ function Navbar(){
                     </li>
                     <li role="none">
                         <a 
+                            href="#why-section" 
+                            className="block py-2 text-gray-300 hover:text-white transition"
+                            role="menuitem"
+                            onClick={closeMenu}
+                        >
+                            Why
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a 
+                            href="#who-section" 
+                            className="block py-2 text-gray-300 hover:text-white transition"
+                            role="menuitem"
+                            onClick={closeMenu}
+                        >
+                            Who
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a 
+                            href="#form-section" 
+                            className="block py-2 text-gray-300 hover:text-white transition"
+                            role="menuitem"
+                            onClick={closeMenu}
+                        >
+                            Contact
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a 
                             href="#services-section" 
                             className="block py-2 text-gray-300 hover:text-white transition"
                             role="menuitem"
@@ -115,6 +147,7 @@ function Navbar(){
                             Contact
                         </a>
                     </li>
+                    
                 </ul>
             </div>
         </nav>

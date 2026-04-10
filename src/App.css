@@ -51,6 +51,21 @@ body {
     }
 }
 
+.why-section{
+    background-color: var(--color-4);
+    .title{
+        color: var(--color-3);
+        strong{
+            color: var(--color-2);
+        }
+    }
+    
+}
+
+.who-section{
+    background-color: var(--color-4);
+}
+
 .services-section{
     background-color: var(--color-5);
     .title,.description{
