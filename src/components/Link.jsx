@@ -1,9 +1,13 @@
-export const Link = ({name,link}) => {
-    return(
+export const Link = ({name, link}) => {
+    return (
         <li>
-            <a href={link} className="nav-link text-gray-300 no-underline hover:text-white transition" aria-label={name} aria-current={link === window.location.pathname ? "page" : undefined}>
+            <a 
+                href={link} 
+                className="text-black hover:underline hover:decoration-[#3AA1B8] hover:underline-offset-4 font-semibold transition-all duration-500" 
+                aria-label={name}
+            >
                 {name}
             </a>
         </li>
-    )
-}
+    );
+};

@@ -9,8 +9,8 @@ import { CardWork } from "../components/CardWork"
 function WhoSection(){
 
     return(
-        <div id="who-section" className="who-section">
-            <h3 className="text-white mb-14 text-center text-2xl sm:text-3xl lg:text-4xl font-bold">
+        <div id="who-section" className="bg-blue-200 py-10 border-b-2 border-gray-600">
+            <h3 className="text-gray-700 mb-14 text-center text-2xl sm:text-3xl lg:text-4xl font-bold">
                 Who we work with
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-20">

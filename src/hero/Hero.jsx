@@ -2,13 +2,13 @@ import IconHero from "./IconHero"
 
 function Hero() {
     return(
-        <section className="hero-section v-stack lg:h-stack lg:justify-between justify-center px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-16 border-b border-gray-500" aria-label="Page principal">
+        <section className="hero-section v-stack lg:h-stack lg:justify-between justify-center px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-13 border-b border-gray-500 bg-blue-200" aria-label="Page principal">
  
-            <div className="eslogan v-stack justify-center items-center lg:items-start lg:flex-1 text-center lg:text-left" role="region" aria-labelledby="hero-title">
-                <h1 className="title text-3xl sm:text-4xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight" aria-label="title">
+            <div className="eslogan v-stack justify-center items-center lg:items-start lg:flex-1 text-center lg:text-left text-gray-700" role="region" aria-labelledby="hero-title">
+                <h1 className="text-3xl sm:text-4xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight" aria-label="title">
                     AI Solutions for 
                     <br />
-                    <strong>
+                    <strong className="text-blue-900">
                         Research and 
                         <br />
                         Business
@@ -17,25 +17,25 @@ function Hero() {
                     </strong>
                 </h1>
                 
-                <p className="description text-sm sm:text-base lg:text-xl mb-8 sm:mb-12 lg:mb-14 leading-relaxed max-w-2xl" aria-label="description">
+                <p className="description text-sm sm:text-base lg:text-xl mb-8 sm:mb-12 lg:mb-14 leading-relaxed max-w-2xl text-gray-700" aria-label="description">
                     Empower your enterprise with intelligent agent workflows and custom software engineered for the next generation of operational excellence.
                 </p>
                 
                 <div className="cont-btn v-stack sm:h-stack justify-center lg:justify-start gap-3 sm:gap-4 lg:gap-6 w-full sm:w-auto" role="group" aria-label="Botones de acción principal">
-                    <button className="btn-form px-4 sm:px-5 lg:px-6 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl text-sm sm:text-base lg:text-lg font-bold cursor-pointer hover:opacity-90 transition whitespace-nowrap">
+                    <button className="btn-form px-4 sm:px-5 lg:px-6 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl text-sm sm:text-base lg:text-lg font-bold cursor-pointer hover:opacity-90 transition whitespace-nowrap bg-sky-950  text-gray-100">
                         <a href="#form-section">
                             Get Started
                         </a>
                     </button>
-                    <button className="bg-transparent text-sm sm:text-base lg:text-lg cursor-pointer hover:text-white transition border border-gray-300 px-4 sm:px-5 lg:px-6 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl">
-                        <a href="#services-section" className="no-underline hover:text-white">
+                    <button className="bg-transparent text-sm sm:text-base lg:text-lg cursor-pointer border border-gray-300 px-4 sm:px-5 lg:px-6 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl">
+                        <a href="#services-section" className="no-underline">
                             Explore Services ↓
                         </a>
                     </button>
                 </div>
             </div>
             
-            <figure className="icon-hero w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-2xl sm:rounded-3xl relative center mx-auto lg:mx-0 mt-8 sm:mt-12 lg:mt-0 lg:ml-8 shrink-0" role="img" aria-label="Icono decorativo de animación de respiración">
+            <figure className="bg-sky-950 w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-2xl sm:rounded-3xl relative center mx-auto lg:mx-0 mt-8 sm:mt-12 lg:mt-0 lg:ml-8 shrink-0" role="img" aria-label="Icono decorativo de animación de respiración">
                 <IconHero />
             </figure>
             

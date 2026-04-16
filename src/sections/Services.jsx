@@ -11,18 +11,18 @@ function Services() {
     return(
         <section 
             id="services-section" 
-            className="services-section border-b-2 border-gray-600"
+            className="bg-blue-100"
             aria-label="Nuestros servicios y expertise"
         >
             <div className="px-4 sm:px-6 md:px-8">
                 <h1 
-                    className="title text-center pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-4 sm:pb-6 text-3xl sm:text-4xl md:text-5xl font-bold"
+                    className="text-center pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-4 sm:pb-6 text-3xl sm:text-4xl md:text-5xl font-bold text-gray-700"
                     id="services-title"
                 >
                     Our Expertise
                 </h1>
                 <p 
-                    className="description text-center pb-8 sm:pb-10 md:pb-12 text-sm sm:text-base md:text-lg"
+                    className="text-gray-700 text-center pb-8 sm:pb-10 md:pb-12 text-sm sm:text-base md:text-lg"
                     aria-describedby="services-title"
                 >
                     Tailored AI-driven solutions designed to navigate and simplify modern business complexity.

@@ -3,15 +3,15 @@ import {CardTrafic} from '../components/CardTrafic'
 function WhySection() {
     
     return(
-        <section id="why-section" className="why-section flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-16 py-12 sm:py-16 lg:py-20">
+        <section id="why-section" className="flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-16 py-12 sm:py-16 lg:py-20 bg-blue-100 border-b-2 border-gray-600">
 
-            <h1 className="title text-3xl sm:text-4xl lg:text-7xl mb-6 font-bold sm:mb-8 leading-tight">A system designed to <br />
-                <strong>turn attention into growth</strong>
+            <h1 className="text-3xl sm:text-4xl lg:text-7xl mb-6 font-bold sm:mb-8 leading-tight text-gray-700">A system designed to <br />
+                turn attention into growth
             </h1>
             <br />
             <br />
 
-            <div className="cont-cards grid sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
                 <CardTrafic
                     title="Attract the right opportunities"
                     desc="We identify and reach high-value prospects through targeted digital channels, ensuring your business connects with the right audience at the right time."
