@@ -1,11 +1,11 @@
-
 import { useState, useEffect } from "react"
 
 export const CardWork = ({ title, desc, img }) => {
 
     const [visible, setVisible] = useState(false)
     useEffect(() => {
-        setVisible(true)
+        const timer = setTimeout(() => setVisible(true), 50)
+        return () => clearTimeout(timer)
     }, [])
 
     return(
