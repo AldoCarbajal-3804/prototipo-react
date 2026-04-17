@@ -20,7 +20,7 @@ function Stats() {
                 Impacto real y ROI medible de nuestras soluciones de IA
             </p>
         </div>
-        <div className="relative max-w-6xl mx-auto mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 px-6">
+        <div className="relative max-w-6xl mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 px-4 sm:px-6">
             {[
                 { value: "+27%", text: "Aumento en productividad", extra: "La automatización redujo significativamente la carga de trabajo manual." },
                 { value: "6x", text: "Procesos más rápidos", extra: "Los flujos de trabajo de IA optimizaron el tiempo operativo." },
@@ -29,16 +29,15 @@ function Stats() {
             ].map((item, index) => (
                 <div
                     key={index}
-                    className="bg-white border border-gray-200 rounded-xl p-6 text-center
-                    transition duration-300 hover:shadow-md hover:-translate-y-1"
+                    className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 text-center transition duration-300 hover:shadow-md hover:-translate-y-1"
                 >
-                    <h2 className="text-3xl md:text-4xl font-semibold text-blue-600">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-blue-600">
                         {item.value}
                     </h2>
                     <p className="text-gray-700 mt-2 text-sm font-medium">
                         {item.text}
                     </p>
-                    <p className="text-xs text-gray-500 mt-2">
+                    <p className="text-xs text-gray-500 mt-2 line-clamp-2">
                         {item.extra}
                     </p>
                 </div>

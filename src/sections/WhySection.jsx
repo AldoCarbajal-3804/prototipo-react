@@ -38,8 +38,14 @@ function WhySection() {
   ];
 
   return (
-    <section id="why-section" className="bg-blue-100 py-20 lg:py-32 px-6 sm:px-12 lg:px-24 border-b border-gray-200">
-      <section className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24">
+    <section id="why-section" className="bg-blue-100 py-20 lg:py-32 px-6 sm:px-12 lg:px-24 border-b border-gray-200 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-200 via-cyan-100 to-blue-300 animate-gradient-slow" />
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
+        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
+        <div className="absolute -bottom-8 left-1/3 w-64 h-64 bg-sky-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000" />
+      </div>
+      <section className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 relative z-10">
 
         <div className="lg:w-1/3 text-left">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1] text-gray-900">

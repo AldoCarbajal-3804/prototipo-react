@@ -1,6 +1,14 @@
-export const Card = ({ icon, name, description }) => {
+export const Card = ({ icon, name, description, index }) => {
     return(
-        <blockquote className="card rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg bg-blue-200" role="region" aria-labelledby={`card - ${name}`}>
+        <blockquote 
+            className="card rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg bg-gradient-to-br from-blue-300 via-blue-200 to-cyan-200"
+            style={{ 
+                backgroundSize: '200% 200%',
+                animation: `cardShimmer 2s ease-in-out infinite`
+            }}
+            role="region" 
+            aria-labelledby={`card - ${name}`}
+        >
             <div className="bg-sky-800 w-10 sm:w-12 h-10 sm:h-12 rounded-lg center mb-3 cursor-pointer" role="img" aria-label={`Icono de ${name}`}>
                 <img src={icon} alt="icon" aria-hidden="true"/>
             </div>

@@ -39,31 +39,37 @@ function Services() {
                     icon={searchIcon}
                     name="IA para Investigaciones"
                     description="Desarrollo de software basado en inteligencia artificial especializado para proyectos de investigación académica y científica."
+                    index={0}
                 />
                 <Card 
                     icon={business}
                     name="Software Empresarial"
                     description="Soluciones de software personalizadas diseñadas para optimizar procesos y operaciones de empresas de todos los tamaños."
+                    index={1}
                 />
                 <Card 
                     icon={web}
                     name="Páginas Web"
                     description="Diseño y desarrollo de sitios web modernos, responsivos y optimizados para generar resultados."
+                    index={2}
                 />
                 <Card 
                     icon={chat}
                     name="Chat Bots"
                     description="Asistentes virtuales inteligentes que automatizan la atención al cliente y mejoran la experiencia de usuario."
+                    index={3}
                 />
                 <Card 
                     icon={erp}
                     name="Enterprise Resource Planning (ERP)"
                     description="Sistemas de planificación de recursos empresariales para gestionar inventarios, finanzas y operaciones de manera integrada."
+                    index={4}
                 />
                 <Card 
                     icon={crmIcon}
                     name="Customer Relationship Management (CRM)"
                     description="Gestión de relaciones con clientes para mejorar ventas, seguimiento y satisfacción del cliente."
+                    index={5}
                 />
             </div>
         </section>
