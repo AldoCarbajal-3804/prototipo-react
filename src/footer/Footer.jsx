@@ -10,18 +10,18 @@ function Footer(){
                     <div className="logo px-2 py-1 rounded text-xs" aria-label="Logo"></div>
                     © 2026 - J&A Partners
                 </div>
-                <p className="leading-relaxed text-xs sm:text-sm" aria-label="Information">Leading the charge in AI-driven business intelligence and research automation. Engineering the tools for tomorrow's industry leaders.</p>
+                <p className="leading-relaxed text-xs sm:text-sm" aria-label="Information">Liderando el camino en inteligencia empresarial impulsada por IA e investigación automatizada. Ingenierizando las herramientas para los líderes de la industria del mañana.</p>
             </aside>
             <nav className="nav">
-                <h3 className="text-gray-300 mb-4 sm:mb-5 text-xs sm:text-sm font-bold tracking-widest">QUICK LINKS</h3>
+                <h3 className="text-gray-300 mb-4 sm:mb-5 text-xs sm:text-sm font-bold tracking-widest">ENLACES RÁPIDOS</h3>
                 <ul className="text-gray-300 list-none v-stack gap-2">
-                    <li><a className="text-gray-300" href="#home">Home</a></li>
-                    <li><a className="text-gray-300" href="#services-section">Services</a></li>
-                    <li><a className="text-gray-300" href="#form-section">Contact</a></li>
+                    <li><a className="text-gray-300" href="#home">Inicio</a></li>
+                    <li><a className="text-gray-300" href="#services-section">Servicios</a></li>
+                    <li><a className="text-gray-300" href="#form-section">Contacto</a></li>
                 </ul>
             </nav>
             <ul className="more-info" aria-labelledby="contact-heading">
-                <h3 className="text-white mb-4 sm:mb-5 text-xs sm:text-sm font-bold tracking-widest" aria-label="Información de contacto">CONNECT</h3>
+                <h3 className="text-white mb-4 sm:mb-5 text-xs sm:text-sm font-bold tracking-widest" aria-label="Información de contacto">CONECTAR</h3>
                 <Info icon="📧" value="hello@japartners.ai" />
                 <Info icon="📍" value="San Francisco, CA" />
                 <Info icon="📞" value="+1 (555) 123-4567" />

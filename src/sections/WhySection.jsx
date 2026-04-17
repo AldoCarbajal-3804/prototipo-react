@@ -6,34 +6,34 @@ function WhySection() {
 
   const items = [
     {
-      title: "Attract the right opportunities",
-      desc: "We identify and reach high-value prospects through targeted digital channels, ensuring your business connects with the right audience at the right time.",
-      category: "Lead Generation"
+      title: "Atrae las oportunidades correctas",
+      desc: "Identificamos y llegamos a prospectos de alto valor a través de canales digitales dirigidos, asegurando que tu negocio se conecte con la audiencia correcta en el momento correcto.",
+      category: "Generación de Leads"
     },
     {
-      title: "Build trust instantly",
-      desc: "We craft a clear and compelling value proposition that communicates credibility, expertise and differentiation from the very first interaction.",
-      category: "Brand Authority"
+      title: "Construye confianza instantáneamente",
+      desc: "Creamos una propuesta de valor clara y convincente que comunica credibilidad, experiencia y diferenciación desde la primera interacción.",
+      category: "Autoridad de Marca"
     },
     {
-      title: "Capture real demand",
-      desc: "Through optimized user journeys and intelligent forms, we transform interest into actionable leads while minimizing friction.",
-      category: "Innovation"
+      title: "Captura demanda real",
+      desc: "A través de journeys de usuario optimizados y formularios inteligentes, transformamos el interés en leads accionables minimizando la fricción.",
+      category: "Innovación"
     },
     {
-      title: "Filter what matters",
-      desc: "We evaluate each lead based on key criteria such as business needs, urgency, budget and technological readiness to prioritize high-impact opportunities.",
-      category: "Lead Scoring"
+      title: "Filtra lo que importa",
+      desc: "Evaluamos cada lead basado en criterios clave como necesidades del negocio, urgencia, presupuesto y preparación tecnológica para priorizar oportunidades de alto impacto.",
+      category: "Puntuación de Leads"
     },
     {
-      title: "Convert into meetings",
-      desc: "Qualified prospects are seamlessly guided into scheduling meetings, ensuring every interaction has context and business relevance.",
-      category: "Sales Automation"
+      title: "Convierte en reuniones",
+      desc: "Los prospectos calificados se guían sin problemas para agendar reuniones, asegurando que cada interacción tenga contexto y relevancia comercial.",
+      category: "Automatización de Ventas"
     },
     {
-      title: "Scale long-term growth",
-      desc: "We implement continuous follow-ups, automation and performance tracking to generate sustainable growth and long-term partnerships.",
-      category: "Strategic Growth"
+      title: "Escala el crecimiento a largo plazo",
+      desc: "Implementamos seguimientos continuos, automatización y seguimiento de rendimiento para generar crecimiento sostenible y alianzas a largo plazo.",
+      category: "Crecimiento Estratégico"
     }
   ];
 
@@ -43,7 +43,7 @@ function WhySection() {
 
         <div className="lg:w-1/3 text-left">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-[1.1] text-gray-900">
-            At J&A Partners, we build systems designed to turn attention into growth.
+            En J&A Partners, construimos sistemas diseñados para convertir la atención en crecimiento.
           </h2>
         </div>
         

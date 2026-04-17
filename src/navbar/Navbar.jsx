@@ -3,11 +3,11 @@ import { Link } from "../components/Link"
 import logo from '../assets/images/logo.png';
 
 const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Why', href: '#why-section' },
-    { name: 'Who', href: '#who-section' },
-    { name: 'Services', href: '#services-section' },
-    { name: 'Contact', href: '#form-section' },
+    { name: 'Inicio', href: '#' },
+    { name: 'Por qué', href: '#why-section' },
+    { name: 'Quiénes', href: '#who-section' },
+    { name: 'Servicios', href: '#services-section' },
+    { name: 'Contacto', href: '#form-section' },
 ];
 
 function Navbar(){
@@ -42,7 +42,7 @@ function Navbar(){
                     aria-label="Logo de J&A Partners"
                 >
                     
-                    <img src={logo} alt="Company Logo" className='w-20'/>
+                    <img src={logo} alt="Logo de la empresa" className='w-20'/>
                     
                     <strong className="lema text-sm sm:text-base md:text-lg lg:text-xl">
                         J&A Partners

@@ -11,37 +11,37 @@ function WhoSection(){
     return(
         <div id="who-section" className="bg-blue-200 py-10 border-b-2 border-gray-600">
             <h3 className="text-gray-700 mb-14 text-center text-2xl sm:text-3xl lg:text-4xl font-bold">
-                Who we work with
+                Con quién trabajamos
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-20">
                 <CardWork 
-                    title="Growing companies"
-                    desc="Businesses facing operational inefficiencies and looking to scale through structured digital solutions."
+                    title="Empresas en crecimiento"
+                    desc="Negocios con ineficiencias operativas que buscan escalar mediante soluciones digitales estructuradas."
                     img={ai}
                 />
                 <CardWork 
-                    title="Company Partners"
-                    desc="We collaborate with leading companies to create impactful projects."
+                    title="Socios Estratégicos"
+                    desc="Colaboramos con empresas líderes para crear proyectos de alto impacto."
                     img={company}
                 />
                 <CardWork 
-                    title="Innovation Labs"
-                    desc="Our innovation labs foster creativity and technological advancement."
+                    title="Laboratorios de Innovación"
+                    desc="Nuestros laboratorios de innovación fomentan la creatividad y el avance tecnológico."
                     img={innovation}
                 />
                 <CardWork 
-                    title="LATAM Markets"
-                    desc="We tailor our solutions to meet the unique needs of LATAM markets."
+                    title="Mercados LATAM"
+                    desc="Adaptamos nuestras soluciones para cumplir con las necesidades únicas de los mercados LATAM."
                     img={latam}
                 />
                 <CardWork 
-                    title="Leadership Team"
-                    desc="Our leadership team guides us toward our vision and goals."
+                    title="Equipo Directivo"
+                    desc="Nuestro equipo directivo nos guía hacia nuestra visión y objetivos."
                     img={leader}
                 />
                 <CardWork 
-                    title="Diverse Team"
-                    desc="We bring together a diverse team of experts to tackle complex challenges."
+                    title="Equipo Diversificado"
+                    desc="Reunimos un equipo diverso de expertos para abordar desafíos complejos."
                     img={team}
                 />
             </div>
