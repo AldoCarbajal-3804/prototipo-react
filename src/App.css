@@ -9,50 +9,6 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-:root {
-    --color-1: #171827;
-    --color-2: #3AA1B8;
-    --color-3: #D1D5DB;
-    --color-4: #161B2E;
-    --color-5: #111429;
-    --color-6: #1b1f2e;
-}
-
-
-
-
-.form-section{
-    background-color: var(--color-4);
-    .aside{
-        color: var(--color-3);
-    }
-    .form{
-        background-color: var(--color-6);
-        label{
-            color: var(--color-3);
-        }
-        input,textarea{
-            background-color: #232532;
-            border: 2px solid #4b5563;
-            color: var(--color-3);
-        }
-        .btn-submit{
-            background-color: var(--color-2);
-        }
-    }
-}
-
-.footer{
-    background-color: var(--color-1);
-    color: var(--color-3);
-    
-        .summary{
-            .logo{
-                background-color: var(--color-2);
-            }
-        }
-    
-}
 
 /*UILIDADES DE TAILWIND RECOMENDADAS POR EL AGENTE IA*/
 
