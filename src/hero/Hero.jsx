@@ -1,35 +1,40 @@
 import IconHero from "./IconHero"
+import { useLanguage } from '../hooks/LanguageContext.jsx'
 
 function Hero() {
+    const { t } = useLanguage()
+
     return(
         <section className="hero-section v-stack lg:h-stack lg:justify-between justify-center px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-13 border-b border-gray-500 bg-blue-200" aria-label="Page principal">
  
             <div className="eslogan v-stack justify-center items-center lg:items-start lg:flex-1 text-center lg:text-left text-gray-700" role="region" aria-labelledby="hero-title">
                 <h1 className="text-3xl sm:text-4xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight" aria-label="title">
-                    Soluciones de IA para 
+                    {t.hero.title}
                     <br />
                     <strong className="text-blue-900">
-                        Investigación y 
+                        {t.hero.subtitleStrong}
                         <br />
-                        Automatización 
+                        {t.hero.subtitleStrong2}
                         <br />
-                        Empresarial
+                        {t.hero.subtitleStrong3}
+                        <br />
+                        {t.hero.subtitleStrong4}
                     </strong>
                 </h1>
                 
                 <p className="description text-sm sm:text-base lg:text-xl mb-8 sm:mb-12 lg:mb-14 leading-relaxed max-w-2xl text-gray-700" aria-label="description">
-                    Potencia tu empresa con flujos de trabajo de agentes inteligentes y software personalizado diseñado para la próxima generación de excelencia operativa.
+                    {t.hero.description}
                 </p>
                 
                 <div className="cont-btn v-stack sm:h-stack justify-center lg:justify-start gap-3 sm:gap-4 lg:gap-6 w-full sm:w-auto" role="group" aria-label="Botones de acción principal">
                     <button className="btn-form px-4 sm:px-5 lg:px-6 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl text-sm sm:text-base lg:text-lg font-bold cursor-pointer hover:opacity-90 transition whitespace-nowrap bg-sky-950  text-gray-100">
                         <a href="#form-section">
-                            Comenzar Ahora
+                            {t.hero.buttonPrimary}
                         </a>
                     </button>
                     <button className="bg-transparent text-sm sm:text-base lg:text-lg cursor-pointer border border-gray-300 px-4 sm:px-5 lg:px-6 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl">
                         <a href="#services-section" className="no-underline">
-                            Explorar Servicios ↓
+                            {t.hero.buttonSecondary}
                         </a>
                     </button>
                 </div>

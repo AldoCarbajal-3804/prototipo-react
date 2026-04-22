@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from "../components/Link"
+import { useLanguage } from '../hooks/LanguageContext.jsx'
 import logo from '../assets/images/logo.png';
 import translateIcon from '../assets/svg/translate.svg'
 import menuIcon from '../assets/svg/menu.svg'
@@ -9,6 +10,7 @@ import closeIcon from '../assets/svg/close.svg'
 function Navbar(){
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef(null);
+    const { t, toggleLanguage } = useLanguage();
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -24,12 +26,7 @@ function Navbar(){
         };
     }, [isMenuOpen]);
 
-    const navLinks = [
-        { name: "Inicio", link: "#inicio" },
-        { name: "Quiénes somos", link: "#quienes-somos" },
-        { name: "Servicios", link: "#servicios" },
-        { name: "Contacto", link: "#contacto" },
-    ];
+    const navLinks = t.nav.links;
 
     return( 
         <nav 
@@ -50,7 +47,7 @@ function Navbar(){
                         <Link key={item.link} name={item.name} link={item.link} />
                     ))}
                     <li>
-                        <button aria-label="Cambiar idioma" className="cursor-pointer hover:bg-gray-300 rounded-full p-3 transition-colors duration-300">
+                        <button onClick={toggleLanguage} aria-label="Cambiar idioma" className="cursor-pointer hover:bg-gray-300 rounded-full p-3 transition-colors duration-300">
                             <img src={translateIcon} alt="Cambiar idioma" />
                         </button>
                     </li>
@@ -78,8 +75,9 @@ function Navbar(){
                             </li>
                         ))}
                         <li>
-                            <button aria-label="Cambiar idioma" className="flex items-center gap-2 text-xs sm:text-sm md:text-base">
+                            <button onClick={toggleLanguage} aria-label="Cambiar idioma" className="flex items-center gap-2 text-xs sm:text-sm md:text-base">
                                 <img src={translateIcon} alt="Cambiar idioma" />
+                                <span className="md:hidden">{t.nav.language}</span>
                             </button>
                         </li>
                     </ul>

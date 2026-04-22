@@ -1,4 +1,5 @@
 import { Card } from "../components/Card"
+import { useLanguage } from '../hooks/LanguageContext.jsx'
 import searchIcon from '../assets/svg/search.svg'
 import business from '../assets/svg/auto.svg'
 import web from '../assets/svg/code.svg'
@@ -7,6 +8,8 @@ import erp from '../assets/svg/stats.svg'
 import crmIcon from '../assets/svg/search.svg'
 
 function Services() {
+    const { t } = useLanguage()
+    const icons = [searchIcon, business, web, chat, erp, crmIcon]
 
     return(
         <section 
@@ -19,13 +22,13 @@ function Services() {
                     className="text-center pt-12 sm:pt-16 md:pt-20 lg:pt-24 pb-4 sm:pb-6 text-3xl sm:text-4xl md:text-5xl font-bold text-gray-700"
                     id="services-title"
                 >
-                    Nuestros Servicios
+                    {t.services.title}
                 </h1>
                 <p 
                     className="text-gray-700 text-center pb-8 sm:pb-10 md:pb-12 text-sm sm:text-base md:text-lg"
                     aria-describedby="services-title"
                 >
-                    Soluciones tecnológicas personalizadas para impulsar tu negocio
+                    {t.services.subtitle}
                 </p>
             </div>
 
@@ -35,42 +38,14 @@ function Services() {
                 aria-labelledby="services-title"
                 aria-live="polite"
             >
-                <Card 
-                    icon={searchIcon}
-                    name="IA para Investigaciones"
-                    description="Desarrollo de software basado en inteligencia artificial especializado para proyectos de investigación académica y científica."
-                    index={0}
-                />
-                <Card 
-                    icon={business}
-                    name="Software Empresarial"
-                    description="Soluciones de software personalizadas diseñadas para optimizar procesos y operaciones de empresas de todos los tamaños."
-                    index={1}
-                />
-                <Card 
-                    icon={web}
-                    name="Páginas Web"
-                    description="Diseño y desarrollo de sitios web modernos, responsivos y optimizados para generar resultados."
-                    index={2}
-                />
-                <Card 
-                    icon={chat}
-                    name="Chat Bots"
-                    description="Asistentes virtuales inteligentes que automatizan la atención al cliente y mejoran la experiencia de usuario."
-                    index={3}
-                />
-                <Card 
-                    icon={erp}
-                    name="Enterprise Resource Planning (ERP)"
-                    description="Sistemas de planificación de recursos empresariales para gestionar inventarios, finanzas y operaciones de manera integrada."
-                    index={4}
-                />
-                <Card 
-                    icon={crmIcon}
-                    name="Customer Relationship Management (CRM)"
-                    description="Gestión de relaciones con clientes para mejorar ventas, seguimiento y satisfacción del cliente."
-                    index={5}
-                />
+                {t.services.cards.map((card, index) => (
+                    <Card 
+                        key={index}
+                        icon={icons[index]}
+                        name={card.name}
+                        description={card.description}
+                    />
+                ))}
             </div>
         </section>
     )

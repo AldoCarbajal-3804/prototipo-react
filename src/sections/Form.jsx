@@ -1,13 +1,15 @@
 import { Info } from "../components/Info"
 import { useFormStatus } from "react-dom"
+import { useLanguage } from '../hooks/LanguageContext.jsx'
 
 
 function Submit(){
     const {pending} = useFormStatus()
+    const { t } = useLanguage()
     
     return(
         <button disabled={pending} type="submit" className="bg-cyan-500 sm:col-span-2 p-3 sm:p-4 rounded-lg font-bold cursor-pointer mt-2 hover:opacity-90 transition text-sm sm:text-base">
-            {pending ? "Enviando Mensaje" : "Enviar Mensaje"}
+            {pending ? t.form.buttonSending : t.form.button}
         </button>
     )
 }
@@ -19,7 +21,7 @@ async function handleFormSubmit(formData){
 }
 
 function Form(){
-
+    const { t } = useLanguage()
     const today = new Date().toISOString().split("T")[0];
 
     return(
@@ -36,21 +38,21 @@ function Form(){
                     id="contact-title"
                     className="title text-2xl sm:text-3xl md:text-4xl font-bold pb-4 sm:pb-6"
                 >
-                    Contáctanos
+                    {t.form.heading}
                 </h2>
                 <p 
                     className="description text-sm sm:text-base md:text-lg pb-6 sm:pb-8 md:pb-10"
                     aria-describedby="contact-title"
                 >
-                    Ya sea que busques un agente de IA personalizado o una renovación completa de automatización empresarial, nuestro equipo está listo para ayudarte a escalar.
+                    {t.form.description}
                 </p>
                 <ul 
                     className="flex flex-col gap-4 sm:gap-5 md:gap-6"
                     aria-label="Información de contacto"
                 >
-                    <Info icon="📧" title="Escríbenos" value="hello@japartners.ai" />
-                    <Info icon="📍" title="Nuestra Sede" value="San Francisco, CA" />
-                    <Info icon="📞" title="Llámanos" value="+1 (555) 123-4567" />
+                    {t.form.contactInfo.map((info, index) => (
+                        <Info key={index} icon={info.icon} title={info.title} value={info.value} />
+                    ))}
                 </ul>
             </aside>
 
@@ -69,14 +71,14 @@ function Form(){
 
                 <fieldset className="flex flex-col gap-2">
                     <label htmlFor="fullName" className="text-gray-300 text-sm font-medium">
-                        Nombre Completo
+                        {t.form.labels.fullName}
                         <span aria-label="requerido" className="text-red-500">*</span>
                     </label>
                     <input 
                         id="fullName"
                         name="fullName" 
                         type="text" 
-                        placeholder="Juan Pérez" 
+                        placeholder={t.form.placeholders.fullName} 
                         className="text-gray-300 bg-gray-800 p-3 sm:p-4 rounded-lg placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#3AA1B8]"
                         required
                         aria-required="true"
@@ -87,14 +89,14 @@ function Form(){
 
                 <fieldset className="flex flex-col gap-2">
                     <label htmlFor="email" className="text-gray-300 text-sm font-medium">
-                        Correo Corporativo
+                        {t.form.labels.email}
                         <span aria-label="requerido" className="text-red-500">*</span>
                     </label>
                     <input 
                         id="email"
                         name="email" 
                         type="email" 
-                        placeholder="juan@empresa.com" 
+                        placeholder={t.form.placeholders.email} 
                         className="text-gray-300 bg-gray-800 p-3 sm:p-4 rounded-lg placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#3AA1B8]"
                         required
                         aria-required="true"
@@ -105,14 +107,14 @@ function Form(){
 
                 <fieldset className="flex flex-col gap-2">
                     <label htmlFor="company" className="text-gray-300 text-sm font-medium">
-                        Empresa
+                        {t.form.labels.company}
                         <span aria-label="requerido" className="text-red-500">*</span>
                     </label>
                     <input 
                         id="company"
                         name="company" 
                         type="text" 
-                        placeholder="Nombre de la Empresa" 
+                        placeholder={t.form.placeholders.company} 
                         className="text-gray-300 bg-gray-800 p-3 sm:p-4 rounded-lg placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#3AA1B8]"
                         required
                         aria-required="true"
@@ -123,14 +125,13 @@ function Form(){
 
                 <fieldset className="flex flex-col gap-2">
                     <label htmlFor="date" className="text-gray-300 text-sm font-medium">
-                        Fecha de Reunión
+                        {t.form.labels.date}
                         <span aria-label="requerido" className="text-red-500">*</span>
                     </label>
                     <input 
                         id="date"
                         name="date" 
                         type="date" 
-                        placeholder="dd/mm/yyyy" 
                         className="text-gray-300 bg-gray-800 p-3 sm:p-4 rounded-lg placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-[#3AA1B8]"
                         required
                         min={today}
@@ -142,13 +143,13 @@ function Form(){
 
                 <fieldset className="flex flex-col gap-2 sm:col-span-2">
                     <label htmlFor="message" className="text-gray-300 text-sm font-medium">
-                        Mensaje
+                        {t.form.labels.message}
                         <span aria-label="requerido" className="text-red-500">*</span>
                     </label>
                     <textarea 
                         id="message"
                         name="message" 
-                        placeholder="Cuéntanos sobre los objetivos de tu proyecto..." 
+                        placeholder={t.form.placeholders.message} 
                         className="bg-gray-800 resize-none p-3 sm:p-4 rounded-lg text-gray-300 placeholder-gray-400 text-sm h-24 sm:h-32 focus:outline-none focus:ring-2 focus:ring-[#3AA1B8]"
                         required
                         aria-required="true"

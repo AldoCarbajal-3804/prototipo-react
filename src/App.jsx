@@ -9,11 +9,12 @@ import Stats from './sections/Stats.jsx'
 import Cta from './sections/Cta.jsx'
 import Form from './sections/Form.jsx'
 import Footer from './footer/Footer.jsx'
+import { LanguageProvider } from './hooks/LanguageContext.jsx'
 
 function App() {
 
   return (
-    <>
+    <LanguageProvider>
       <Navbar/>
       <Hero/>
       <WhySection />
@@ -23,7 +24,7 @@ function App() {
       <Cta/>
       <Form />
       <Footer />
-    </>
+    </LanguageProvider>
   )
 }
 

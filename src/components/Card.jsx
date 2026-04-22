@@ -1,4 +1,4 @@
-export const Card = ({ icon, name, description, index }) => {
+export const Card = ({ icon, name, description }) => {
     return(
         <blockquote 
             className="card rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg bg-linear-to-br from-blue-300 via-blue-200 to-cyan-200"
