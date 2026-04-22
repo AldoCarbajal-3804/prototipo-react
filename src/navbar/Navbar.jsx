@@ -1,119 +1,90 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from "../components/Link"
 import logo from '../assets/images/logo.png';
+import translateIcon from '../assets/svg/translate.svg'
+import menuIcon from '../assets/svg/menu.svg'
+import closeIcon from '../assets/svg/close.svg'
 
-const navLinks = [
-    { name: 'Inicio', href: '#' },
-    { name: 'Por qué', href: '#why-section' },
-    { name: 'Quiénes', href: '#who-section' },
-    { name: 'Servicios', href: '#services-section' },
-    { name: 'Contacto', href: '#form-section' },
-];
 
 function Navbar(){
-    const [isOpen, setIsOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef(null);
 
     useEffect(() => {
-        const handleClickOutside = (e) => {
-            if (menuRef.current && !menuRef.current.contains(e.target)) {
-                setIsOpen(false);
+        const handleClickOutside = (event) => {
+            if (menuRef.current && !menuRef.current.contains(event.target)) {
+                setIsMenuOpen(false);
             }
         };
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, []);
+        if (isMenuOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isMenuOpen]);
 
-    useEffect(() => {
-        document.body.style.overflow = isOpen ? 'hidden' : '';
-        return () => { document.body.style.overflow = ''; };
-    }, [isOpen]);
+    const navLinks = [
+        { name: "Inicio", link: "#inicio" },
+        { name: "Quiénes somos", link: "#quienes-somos" },
+        { name: "Servicios", link: "#servicios" },
+        { name: "Contacto", link: "#contacto" },
+    ];
 
     return( 
         <nav 
-            className="nav-bar border-b-2 border-gray-600 sticky top-0 z-50 bg-blue-100" 
+            className="nav-bar border-b-2 border-gray-600 sticky top-0 z-50 bg-blue-100 flex items-center justify-between px-4 sm:px-6 md:px-8 py-4" 
             role="navigation"
             aria-label="Navegación principal"
-        >
-            <div className="flex justify-between items-center px-4">
-                
-                <section 
-                    className="logo flex items-center gap-2 shrink-0"
-                    aria-label="Logo de J&A Partners"
-                >
-                    
-                    <img src={logo} alt="Logo de la empresa" className='w-20'/>
-                    
-                    <strong className="lema text-sm sm:text-base md:text-lg lg:text-xl">
-                        J&A Partners
-                    </strong>
-                </section>
-                
-                <ul 
-                    className="hidden sm:ml-auto sm:flex items-center list-none gap-3 sm:gap-6 md:gap-8 lg:gap-12"
-                    role="menubar"
-                    aria-label="Menú de navegación"
-                >
-                    {navLinks.map(({ name, href }) => (
-                        <Link key={name} name={name} link={href} />
+        >   
+            <section  className="flex items-center" aria-label="Logo de J&A Partners">
+                <img src={logo} alt="Logo de la empresa" className='w-16 sm:w-20'/>
+                <strong className="lema text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl ml-2 sm:ml-0">
+                    J&A Partners
+                </strong>
+            </section>
+
+            <div className="flex items-center gap-4">
+                <ul className='hidden md:flex gap-2 sm:gap-3 md:gap-4 lg:gap-5 items-center'> 
+                    {navLinks.map((item) => (
+                        <Link key={item.link} name={item.name} link={item.link} />
                     ))}
+                    <li>
+                        <button aria-label="Cambiar idioma" className="cursor-pointer hover:bg-gray-300 rounded-full p-3 transition-colors duration-300">
+                            <img src={translateIcon} alt="Cambiar idioma" />
+                        </button>
+                    </li>
                 </ul>
 
-                <button
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="sm:hidden ml-auto v-stack gap-1.5 p-2 focus:outline-none focus:ring-2 focus:ring-[#3AA1B8] rounded"
-                    aria-label="Abrir menú de navegación"
-                    aria-expanded={isOpen}
-                    aria-controls="mobile-menu"
+                <button 
+                    className="md:hidden p-2" 
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+                    aria-expanded={isMenuOpen}
                 >
-                    <span 
-                        className={`block w-6 h-0.5 bg-black transition-all duration-300 ${
-                            isOpen ? 'rotate-45 translate-y-2' : ''
-                        }`}
-                        aria-hidden="true"
-                    ></span>
-
-                    <span 
-                        className={`block w-6 h-0.5 bg-black transition-all duration-300 ${
-                            isOpen ? 'opacity-0' : ''
-                        }`}
-                        aria-hidden="true"
-                    ></span>
-
-                    <span 
-                        className={`block w-6 h-0.5 bg-black transition-all duration-300 ${
-                            isOpen ? '-rotate-45 -translate-y-2' : ''
-                        }`}
-                        aria-hidden="true"
-                    ></span>
+                    <img src={isMenuOpen ? closeIcon : menuIcon} alt="" className="w-6 h-6" />
                 </button>
             </div>
 
-            <div 
-                id="mobile-menu"
-                ref={menuRef}
-                className={`sm:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-                    isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                }`}
-                role="menu"
-                aria-label="Menú móvil"
-                aria-hidden={!isOpen}
-            >
-                <ul className="v-stack list-none gap-4 px-4 py-4 border-t border-gray-700">
-                    {navLinks.map(({ name, href }) => (
-                        <li key={name} role="none">
-                            <a 
-                                href={href} 
-                                className="block py-2 text-black hover:text-[#3AA1B8] transition"
-                                role="menuitem"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                {name}
-                            </a>
+            {isMenuOpen && (
+                <div 
+                    ref={menuRef}
+                    className="absolute top-full left-0 right-0 bg-blue-100 border-b-2 border-gray-600 md:hidden"
+                >
+                    <ul className="flex flex-col p-4 gap-4">
+                        {navLinks.map((item) => (
+                            <li key={item.link} onClick={() => setIsMenuOpen(false)}>
+                                <Link name={item.name} link={item.link} />
+                            </li>
+                        ))}
+                        <li>
+                            <button aria-label="Cambiar idioma" className="flex items-center gap-2 text-xs sm:text-sm md:text-base">
+                                <img src={translateIcon} alt="Cambiar idioma" />
+                            </button>
                         </li>
-                    ))}
-                </ul>
-            </div>
+                    </ul>
+                </div>
+            )}
         </nav>
     )
 }

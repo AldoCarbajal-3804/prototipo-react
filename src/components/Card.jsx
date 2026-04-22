@@ -1,7 +1,7 @@
 export const Card = ({ icon, name, description, index }) => {
     return(
         <blockquote 
-            className="card rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg bg-gradient-to-br from-blue-300 via-blue-200 to-cyan-200"
+            className="card rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg bg-linear-to-br from-blue-300 via-blue-200 to-cyan-200"
             style={{ 
                 backgroundSize: '200% 200%',
                 animation: `cardShimmer 2s ease-in-out infinite`

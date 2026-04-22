@@ -3,7 +3,7 @@ export const Link = ({name, link}) => {
         <li>
             <a 
                 href={link} 
-                className="text-black hover:underline hover:decoration-[#3AA1B8] hover:underline-offset-4 font-semibold transition-all duration-500" 
+                className="text-xs sm:text-sm md:text-base text-black hover:underline transition-colors duration-300" 
                 aria-label={name}
             >
                 {name}

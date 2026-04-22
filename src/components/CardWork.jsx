@@ -21,14 +21,14 @@ export const CardWork = ({ title, desc, img }) => {
                 alt={title} 
                 className="w-full h-40 object-cover group-hover:scale-110 transition duration-500"
             />
-            <div className="p-6">
+            <footer className="p-6">
                 <h4 className="text-gray-700 font-semibold text-xl">
                     {title}
                 </h4>
                 <p className="text-gray-700 text-sm mt-3 opacity-80 leading-relaxed">
                     {desc}
                 </p>
-            </div>
+            </footer>
         </div>
     )
 

@@ -16,7 +16,7 @@ export const AccordionItem = ({ title, desc, category, isOpen, onToggle }) => {
 
     return (
         <div className="border-t border-gray-400/30 last:border-b last:border-gray-400/30">
-            <div className="group" onClick={onToggle}>
+            <header className="group" onClick={onToggle}>
                 <summary className="flex justify-between items-center py-6 cursor-pointer list-none">
                 <span className="text-xl sm:text-2xl font-medium text-gray-800 group-hover:text-blue-900 transition-colors">
                     {title}
@@ -25,8 +25,8 @@ export const AccordionItem = ({ title, desc, category, isOpen, onToggle }) => {
                     {category}
                 </span>
                 </summary>
-            </div>
-            <div 
+            </header>
+            <footer 
                 className="overflow-hidden transition-all duration-300"
                 style={{ maxHeight: height }}
             >
@@ -35,7 +35,7 @@ export const AccordionItem = ({ title, desc, category, isOpen, onToggle }) => {
                         {desc}
                     </p>
                 </div>
-            </div>
+            </footer>
         </div>
     );
 }
