@@ -39,7 +39,7 @@ function WhySection() {
 
   return (
     <section id="why-section" className="bg-blue-100 py-20 lg:py-32 px-6 sm:px-12 lg:px-24 border-b border-gray-200 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-200 via-cyan-100 to-blue-300 animate-gradient-slow" />
+      <div className="absolute inset-0 bg-linear-to-br from-blue-200 via-cyan-100 to-blue-300 animate-gradient-slow" />
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
         <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
