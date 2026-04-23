@@ -1,84 +1,200 @@
 # AGENTS.md
 
-## Project Overview
-
-React 19 single-page application scaffolded with Vite. Uses Tailwind CSS v4 for styling and ESLint 9 for linting. No TypeScript, no test framework installed.
-
-## Commands
+## Build, Lint, and Development Commands
 
 ```bash
-npm run dev        # Start dev server (Vite HMR)
-npm run build      # Production build → dist/
-npm run lint       # Run ESLint on all files
-npm run preview    # Preview production build locally
+# Install dependencies
+npm install
+
+# Start development server with hot reload
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build locally
+npm run preview
+
+# Run ESLint (static code analysis)
+npm run lint
 ```
 
-**No test runner is configured.** If tests are added (e.g. Vitest), update this file with single-test commands like `npx vitest run src/path/to/test.test.jsx`.
+**Note:** This project does NOT include a test framework. Do not add tests unless explicitly requested.
 
-## Project Structure
+---
+
+## Code Style Guidelines
+
+### Project Overview
+
+- **Framework**: React 19 + Vite + Tailwind CSS v4
+- **Language**: JavaScript JSX (no TypeScript)
+- **Styling**: Tailwind CSS v4 with CSS custom properties
+- **Build Tool**: Vite
+
+### File Structure
 
 ```
 src/
-├── main.jsx           # Entry point
-├── App.jsx            # Root layout, composes all sections
-├── App.css            # Global styles, CSS custom properties, Tailwind imports
-├── navbar/Navbar.jsx  # Sticky nav with mobile hamburger
-├── hero/              # Hero section + animated icon
-├── services/          # Services grid, CTA, contact form
-├── footer/Footer.jsx  # Site footer
-├── components/        # Reusable: Card, Link, Info
-└── assets/            # Static SVGs
+  assets/          # Static resources (SVG icons, images)
+  components/      # Reusable base components (Card, Link, Info)
+  navbar/          # Navigation component
+  hero/            # Hero section with icons
+  sections/        # Page sections (Services, Form, Cta, etc.)
+  hooks/           # Custom React hooks
+  data/            # Static data (translations)
+  App.jsx          # Main composition component
+  main.jsx         # Entry point
+  App.css          # Global styles
 ```
 
-## Code Style
+### Component Conventions
 
-### Components
-- **Page-level components** (Navbar, Hero, Services, Footer, Form, Cta): use `function` declarations with `export default` at bottom.
-- **Small reusable components** (Card, Link, Info): use `const` arrow functions with `export const` at declaration.
-- All files are `.jsx`. No TypeScript.
+**Page Components** (rendered directly in App):
+```jsx
+function Navbar() {
+  return (...)
+}
+export default Navbar
+```
 
-### Naming
-- Component files: `PascalCase.jsx`
-- Component folders: `camelCase/` (e.g., `navbar/`, `hero/`)
-- Variables/functions: `camelCase`
-- CSS custom properties: `--color-1`, `--color-2`, etc.
+**Reusable Components** (imported from components/):
+```jsx
+export const Card = ({ icon, name, description }) => {
+  return (...)
+}
+```
 
 ### Imports
-- React imports: destructured (`import { useState } from 'react'`)
-- Component imports: use explicit `.jsx` extension (`import App from './App.jsx'`)
-- Asset imports: relative paths (`import auto from '../assets/svg/auto.svg'`)
-- Keep imports at top of file, one blank line after last import
 
-### JSX & Styling
-- Use Tailwind utility classes directly in `className`
-- Responsive design: mobile-first with `sm:`, `md:`, `lg:` breakpoints (always specify all breakpoints)
-- Custom styles: CSS nesting in `App.css` using CSS custom properties from `:root`
-- Use `<>...</>` fragments, not `<div>` wrappers when possible
+- Use relative imports with `.jsx` extension
+- Group imports: React imports, then third-party, then local
+- CSS imports in main.jsx and App.jsx only
+- Example:
+```jsx
+import { createRoot } from 'react-dom/client'
+import App from './App.jsx'
+import './App.css'
+```
+
+### Tailwind CSS
+
+- Use responsive classes: `sm:`, `md:`, `lg:` breakpoints
+- Prefer `neutral-*` over `gray-*` for dark backgrounds
+- Use CSS custom properties for brand colors:
+  ```jsx
+  border-[var(--color-2)]      // instead of border-[#3AA1B8]
+  ```
+- Utility abbreviations: `center`, `v-stack`, `h-stack` (when configured)
+- Always include focus states for interactive elements:
+  ```jsx
+  className="focus:ring-2 focus:ring-[var(--color-2)]"
+  ```
 
 ### Accessibility
-- Include `aria-label`, `aria-labelledby`, `aria-describedby`, `role` attributes on semantic elements
-- Use `sr-only` class for screen-reader-only content
-- Form inputs: always have `<label htmlFor="...">`, `aria-required="true"`, and error `<span>` placeholders
 
-### State & Interactivity
-- `useState` for local UI state (e.g., mobile menu toggle)
-- `react-dom` form actions for form submission (`useFormStatus`, `action={handleFormSubmit}`)
+- Use semantic HTML: `<article>`, `<nav>`, `<main>`, `<section>`
+- Avoid `<blockquote>` for non-quote content
+- Include `aria-label`, `aria-expanded`, `aria-controls` for interactive elements
+- Match `aria-labelledby` IDs with actual element IDs:
+  ```jsx
+  <article aria-labelledby={`card-title-${name}`}>
+    <h3 id={`card-title-${name}`}>{name}</h3>
+  </article>
+  ```
+- Use `sr-only` for screen-reader-only content
+- Include keyboard navigation support
+- Respect `prefers-reduced-motion`:
+  ```css
+  @media (prefers-reduced-motion: reduce) {
+    .animated { animation: none; }
+  }
+  ```
 
-## CSS Architecture
+### State Management
 
-- Tailwind v4 via `@import "tailwindcss"` in `App.css`
-- Custom properties defined in `:root` block
-- Nested CSS selectors group styles by section (`.nav-bar`, `.hero-section`, etc.)
-- Color palette: `--color-1` (#171827) dark bg, `--color-2` (#3AA1B8) accent, `--color-3` (#D1D5DB) text
+- Use `useState` for local component state
+- Use `useCallback` for callbacks passed to child components:
+  ```jsx
+  const toggleMenu = useCallback(() => setIsOpen(prev => !prev), [])
+  ```
+- Lift state to the nearest common ancestor
 
-## Known Issues
+### CSS Custom Properties
 
-- `Footer.jsx` mixes `class` and `className` attributes — should use `className` throughout in React.
-- `main.jsx` imports `./index.css` but the file is named `App.css` — verify this resolves at build time.
+Define in `:root` with fallbacks:
+```css
+:root {
+  --color-1: #171827;
+  --color-2: #3AA1B8;
+}
+```
 
-## ESLint Rules
+Use in Tailwind:
+```jsx
+className="bg-[var(--color-1)]"
+```
 
-- Flat config format (ESLint 9)
-- `no-unused-vars`: error, but ignores variables starting with uppercase or underscore (`^[A-Z_]`)
-- `react-hooks` and `react-refresh` plugins enabled
-- Targets `**/*.{js,jsx}`, ignores `dist/`
+### Animations
+
+- Use CSS `transform` and `opacity` for compositor-friendly animations
+- Add `will-change` for animated elements:
+  ```css
+  .animated { will-change: transform, opacity; }
+  ```
+- Avoid animating `width`, `height`, `top`, `left`
+
+### Error Handling
+
+- Remove `console.log` statements before production
+- Use `import.meta.env.DEV` for development-only code:
+  ```jsx
+  if (import.meta.env.DEV) console.log(data)
+  ```
+- Validate form inputs with `required` and `aria-required`
+
+### Naming Conventions
+
+| Element | Convention | Example |
+|---------|------------|---------|
+| Components | PascalCase | `Navbar`, `CardWork` |
+| Files | PascalCase | `Navbar.jsx`, `Card.jsx` |
+| Props | camelCase | `icon`, `cardTitle` |
+| CSS classes | kebab-case | `card-container` |
+| Constants | SCREAMING_SNAKE | `API_KEY` |
+
+### ESLint Rules
+
+- Unused variables must start with underscore or uppercase: `_unusedVar`, `UNUSED_VAR`
+- React refresh: only export components can trigger hot reload warnings
+- No console statements in production code
+
+### HTML Semantics
+
+- `<header>` for page headers
+- `<nav>` for navigation with `role="navigation"`
+- `<main>` for primary content
+- `<footer>` for page footer
+- `<article>` for self-contained content
+- `<section>` for thematic groupings
+
+---
+
+## Conventions from Codebase Retrospectives
+
+- Page components use `function` + `default export`
+- Reusable components use `const` + `named export`
+- SVGs should be optimized before commit (`npx svgo`)
+- Avoid `break-all`; use `break-words` for content that should not be split
+- Form data should not be logged to console
+
+---
+
+## What NOT to Do
+
+1. **Do not add tests** unless explicitly requested
+2. **Do not add TypeScript** - project uses plain JSX
+3. **Do not use `gray-*`** - use `neutral-*` or CSS variables
+4. **Do not log form data** to console
+5. **Do not use `<blockquote>`** for non-quote content
+6. **Do not use `aria-live`** on static content

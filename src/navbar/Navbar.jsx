@@ -18,19 +18,13 @@ function Navbar(){
                 setIsMenuOpen(false);
             }
         };
-        if (isMenuOpen) {
-            document.addEventListener('mousedown', handleClickOutside);
-        }
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
     }, [isMenuOpen]);
 
     const navLinks = t.nav.links;
 
     return( 
         <nav 
-            className="nav-bar border-b-2 border-gray-600 sticky top-0 z-50 bg-blue-100 flex items-center justify-between px-4 sm:px-6 md:px-8 py-4" 
+            className="border-b-2 border-gray-600 sticky top-0 z-50 bg-blue-100 flex items-center justify-between px-4 sm:px-6 md:px-8" 
             role="navigation"
             aria-label="Navegación principal"
         >   

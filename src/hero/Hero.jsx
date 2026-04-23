@@ -5,9 +5,9 @@ function Hero() {
     const { t } = useLanguage()
 
     return(
-        <section className="hero-section v-stack lg:h-stack lg:justify-between justify-center px-4 sm:px-6 lg:px-16 py-8 sm:py-12 lg:py-13 border-b border-gray-500 bg-blue-200" aria-label="Page principal">
+        <section id="hero-section" className="v-stack lg:h-stack lg:justify-between justify-center px-4 sm:px-6 lg:px-16 sm:py-10 lg:border-b border-gray-500 bg-blue-200" aria-label="Page principal">
  
-            <div className="eslogan v-stack justify-center items-center lg:items-start lg:flex-1 text-center lg:text-left text-gray-700" role="region" aria-labelledby="hero-title">
+            <div className=" v-stack justify-center items-center lg:items-start lg:flex-1 text-center lg:text-left text-gray-700" role="region" aria-labelledby="hero-title">
                 <h1 className="text-3xl sm:text-4xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight" aria-label="title">
                     {t.hero.title}
                     <br />
@@ -18,11 +18,10 @@ function Hero() {
                         <br />
                         {t.hero.subtitleStrong3}
                         <br />
-                        {t.hero.subtitleStrong4}
                     </strong>
                 </h1>
                 
-                <p className="description text-sm sm:text-base lg:text-xl mb-8 sm:mb-12 lg:mb-14 leading-relaxed max-w-2xl text-gray-700" aria-label="description">
+                <p className="description text-sm sm:text-base lg:text-xl mb-4 sm:mb-6 lg:mb-8 leading-relaxed max-w-2xl text-gray-700" aria-label="description">
                     {t.hero.description}
                 </p>
                 

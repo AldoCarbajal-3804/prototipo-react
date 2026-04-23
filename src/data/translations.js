@@ -2,20 +2,19 @@ export const translations = {
   en: {
     nav: {
       links: [
-        { name: "Home", link: "#inicio" },
-        { name: "About Us", link: "#quienes-somos" },
-        { name: "Services", link: "#servicios" },
-        { name: "Contact", link: "#contacto" },
+        { name: "Home", link: "#hero-section" },
+        { name: "About Us", link: "#why-section" },
+        { name: "Services", link: "#services-section" },
+        { name: "Contact", link: "#form-section" },
       ],
       language: "Español",
     },
     hero: {
       title: "IA Solutions for",
       subtitleStrong: "Research and",
-      subtitleStrong2: "Business",
-      subtitleStrong3: "Automation",
-      subtitleStrong4: "Enterprise",
-      description: "Power your company with intelligent agent workflows and custom software designed for the next generation of operational excellence.",
+      subtitleStrong2: "Automation",
+      subtitleStrong3: "Enterprise",
+      description: "Power your company with intelligent agent workflows and custom software designed for the next generation of operational excellence and prestige.",
       buttonPrimary: "Get Started Now",
       buttonSecondary: "Explore Services ↓",
     },
@@ -182,10 +181,10 @@ export const translations = {
   es: {
     nav: {
       links: [
-        { name: "Inicio", link: "#inicio" },
-        { name: "Quiénes somos", link: "#quienes-somos" },
-        { name: "Servicios", link: "#servicios" },
-        { name: "Contacto", link: "#contacto" },
+        { name: "Inicio", link: "#hero-section" },
+        { name: "Quiénes somos", link: "#why-section" },
+        { name: "Servicios", link: "#services-section" },
+        { name: "Contacto", link: "#form-section" },
       ],
       language: "English",
     },
