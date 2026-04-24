@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from "../components/Link"
-import { useLanguage } from '../hooks/LanguageContext.jsx'
-import logo from '../assets/images/logo.png';
-import translateIcon from '../assets/svg/translate.svg'
-import menuIcon from '../assets/svg/menu.svg'
-import closeIcon from '../assets/svg/close.svg'
+import { Link } from '../../components/Link.jsx'
+import { useLanguage } from '../../hooks/LanguageContext.jsx'
+import logo from '../../assets/images/logo.png';
+import translateIcon from '../../assets/svg/translate.svg'
+import menuIcon from '../../assets/svg/menu.svg'
+import closeIcon from '../../assets/svg/close.svg'
 
 
 function Navbar(){
@@ -18,6 +18,10 @@ function Navbar(){
                 setIsMenuOpen(false);
             }
         };
+        if (isMenuOpen) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+        return () => document.removeEventListener('mousedown', handleClickOutside);
     }, [isMenuOpen]);
 
     const navLinks = t.nav.links;

@@ -1,5 +1,5 @@
 
-import { useLanguage } from '../hooks/LanguageContext.jsx'
+import { useLanguage } from '../../hooks/LanguageContext.jsx'
 
 function CtaSection(){
     const { t } = useLanguage()

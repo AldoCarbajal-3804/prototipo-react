@@ -1,11 +1,11 @@
-import { Card } from "../components/Card"
-import { useLanguage } from '../hooks/LanguageContext.jsx'
-import searchIcon from '../assets/svg/search.svg'
-import business from '../assets/svg/auto.svg'
-import web from '../assets/svg/code.svg'
-import chat from '../assets/svg/chat.svg'
-import erp from '../assets/svg/stats.svg'
-import crmIcon from '../assets/svg/search.svg'
+import { Card } from "../../components/Card"
+import { useLanguage } from '../../hooks/LanguageContext.jsx'
+import searchIcon from '../../assets/svg/search.svg'
+import business from '../../assets/svg/auto.svg'
+import web from '../../assets/svg/code.svg'
+import chat from '../../assets/svg/chat.svg'
+import erp from '../../assets/svg/stats.svg'
+import crmIcon from '../../assets/svg/search.svg'
 
 function Services() {
     const { t } = useLanguage()

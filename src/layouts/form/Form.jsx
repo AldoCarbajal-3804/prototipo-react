@@ -1,15 +1,13 @@
-import { Info } from "../components/Info"
-import { useFormStatus } from "react-dom"
-import { useLanguage } from '../hooks/LanguageContext.jsx'
+import { Info } from '../../components/Info'
+import { useLanguage } from '../../hooks/LanguageContext.jsx'
 
 
 function Submit(){
-    const {pending} = useFormStatus()
     const { t } = useLanguage()
     
     return(
-        <button disabled={pending} type="submit" className="bg-cyan-500 sm:col-span-2 p-3 sm:p-4 rounded-lg font-bold cursor-pointer mt-2 hover:opacity-90 transition text-sm sm:text-base">
-            {pending ? t.form.buttonSending : t.form.button}
+        <button type="submit" className="bg-cyan-500 sm:col-span-2 p-3 sm:p-4 rounded-lg font-bold cursor-pointer mt-2 hover:opacity-90 transition text-sm sm:text-base">
+            {t.form.button}
         </button>
     )
 }

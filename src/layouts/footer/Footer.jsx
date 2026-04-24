@@ -1,7 +1,7 @@
 
-import { Info } from "../components/Info"
-import { Link } from "../components/Link"
-import { useLanguage } from '../hooks/LanguageContext.jsx'
+import { Info } from "../../components/Info.jsx"
+import { Link } from "../../components/Link.jsx"
+import { useLanguage } from '../../hooks/LanguageContext.jsx'
 
 function Footer(){
     const { t } = useLanguage()

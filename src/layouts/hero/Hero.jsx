@@ -1,5 +1,5 @@
 import IconHero from "./IconHero"
-import { useLanguage } from '../hooks/LanguageContext.jsx'
+import { useLanguage } from '../../hooks/LanguageContext.jsx'
 
 function Hero() {
     const { t } = useLanguage()

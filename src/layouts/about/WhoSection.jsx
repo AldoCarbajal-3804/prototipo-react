@@ -1,11 +1,11 @@
-import ai from "../assets/images/ai.webp"
-import company from "../assets/images/company.webp"
-import innovation from "../assets/images/innovation.webp"
-import latam from "../assets/images/latam.webp"
-import leader from "../assets/images/leader.webp"
-import team from "../assets/images/team.webp"
-import { CardWork } from "../components/CardWork"
-import { useLanguage } from '../hooks/LanguageContext.jsx'
+import ai from "../../assets/images/ai.webp"
+import company from "../../assets/images/company.webp"
+import innovation from "../../assets/images/innovation.webp"
+import latam from "../../assets/images/latam.webp"
+import leader from "../../assets/images/leader.webp"
+import team from "../../assets/images/team.webp"
+import { CardWork } from "../../components/CardWork.jsx"
+import { useLanguage } from '../../hooks/LanguageContext.jsx'
 
 function WhoSection(){
     const { t } = useLanguage()
