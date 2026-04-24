@@ -253,7 +253,7 @@ export const translations = {
         },
         {
           title: "Equipo Directivo",
-          desc: "Nuestro equipo directivo nos guía hacia nuestra visión y objetivos."
+          desc: "Nuestro equipo directivo nos guía hacia nuestra visión y objetivos de acuerdo al cliente."
         },
         {
           title: "Equipo Diversificado",

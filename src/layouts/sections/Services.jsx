@@ -36,7 +36,6 @@ function Services() {
                 className="cards-section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 pt-8 sm:pt-12 md:pt-16 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto"
                 role="region"
                 aria-labelledby="services-title"
-                aria-live="polite"
             >
                 {t.services.cards.map((card, index) => (
                     <Card 

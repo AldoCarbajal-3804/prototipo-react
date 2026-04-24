@@ -28,7 +28,6 @@ function WhoSection(){
             </div>
         </div>
     )
-
 }
 
 export default WhoSection
