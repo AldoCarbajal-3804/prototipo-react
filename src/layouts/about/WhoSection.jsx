@@ -12,11 +12,11 @@ function WhoSection(){
     const images = [ai, company, innovation, latam, leader, team]
 
     return(
-        <div id="who-section" className="bg-blue-200 py-10 border-b-2 border-gray-600">
+        <div id="who-section" className="bg-blue-200 py-10 border-b-2 border-gray-500">
             <h3 className="text-gray-700 mb-14 text-center text-2xl sm:text-3xl lg:text-4xl font-bold px-4">
                 {t.whoSection.heading}
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-8 lg:px-20">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
                 {t.whoSection.cards.map((card, index) => (
                     <CardWork 
                         key={index}

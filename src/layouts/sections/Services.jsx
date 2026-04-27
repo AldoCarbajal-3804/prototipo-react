@@ -14,7 +14,7 @@ function Services() {
     return(
         <section 
             id="services-section" 
-            className="bg-blue-100"
+            className="bg-blue-100 border-b-2 border-gray-500"
             aria-label="Nuestros servicios"
         >
             <div className="px-4 sm:px-6 md:px-8">

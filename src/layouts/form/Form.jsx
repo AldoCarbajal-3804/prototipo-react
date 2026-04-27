@@ -25,7 +25,7 @@ function Form(){
     return(
         <section 
             id="form-section" 
-            className="bg-gray-800 flex flex-col lg:flex-row justify-between gap-8 sm:gap-10 md:gap-12 p-4 sm:p-8 md:p-12 lg:p-20 text-gray-300"
+            className="bg-gray-800 flex flex-col lg:flex-row justify-between gap-8 sm:gap-10 md:gap-12 p-4 sm:p-8 md:p-12 lg:p-20 text-gray-300 border-b-2 border-gray-500"
             aria-label="Sección de contacto"
         >
             <aside 

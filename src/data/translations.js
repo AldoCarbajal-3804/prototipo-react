@@ -18,6 +18,28 @@ export const translations = {
       buttonPrimary: "Get Started Now",
       buttonSecondary: "Explore Services ↓",
     },
+    aboutSection: {
+      title1: "About JA Partners",
+      subtitle1: "Building real solutions with Artificial Intelligence",
+      title2: "About the Company",
+      paragraph1: "JA Partners is a software development and Artificial Intelligence studio operating under the personal brand of Aaron Sosa, focused on designing and implementing customized technological solutions for public and private entities at the national and international level.",
+      paragraph2: "The company specializes in the development of web applications, enterprise software with Artificial Intelligence integration, and advanced systems applied to scientific and academic research.",
+      name: "Aaron Sosa",
+      role: "Founder & Software Engineer"
+    },
+    propositeSection: {
+      title1: "Our History",
+      desc1: "The creation of JA Partners emerged as a result of the professional evolution of its founder, who initially developed technological projects independently.",
+      desc2: "With the increase in the complexity of the required solutions and the incorporation of emerging technologies such as Artificial Intelligence, it became necessary to consolidate a multidisciplinary team capable of addressing projects of greater scope, with technical standards aligned to international practices.",
+      title2: "Our Contribution",
+      desc3: "Since its foundation, JA Partners has focused its efforts on the execution of real projects, prioritizing measurable results and functional solutions over theoretical approaches. This philosophy has allowed the development of technological proposals adapted to specific needs, generating value both in the business and academic fields.",
+      mission: "Mission",
+      vision: "Vision",
+      missionDesc: "Design and implement digital tools that solve concrete problems through the strategic use of software and Artificial Intelligence.",
+      visionDesc: "Become a reference in the development of innovative technological solutions with real impact.",
+      desc4: "Let's build something impactful together",
+      button: "Get Started"
+    },
     whySection: {
       heading: "At J&A Partners, we build systems designed to turn attention into growth.",
       items: [
@@ -196,6 +218,28 @@ export const translations = {
       description: "Potencia tu empresa con flujos de trabajo de agentes inteligentes y software personalizado diseñado para la próxima generación de excelencia operativa.",
       buttonPrimary: "Comenzar Ahora",
       buttonSecondary: "Explorar Servicios ↓",
+    },
+    aboutSection: {
+      title1: "Sobre JA Partners",
+      subtitle1: "Construyendo soluciones reales con Inteligencia Artificial",
+      title2: "Sobre la Empresa",
+      paragraph1: "JA Partners es un estudio de desarrollo de software e Inteligencia Artificial que opera bajo la marca personal de Aaron Sosa, orientado al diseño e implementación de soluciones tecnológicas personalizadas para entidades públicas y privadas a nivel nacional e internacional.",
+      paragraph2: "La empresa se especializa en el desarrollo de aplicaciones web, software empresarial con integración de Inteligencia Artificial y sistemas avanzados aplicados a la investigación científica y académica.",
+      name: "Aaron Sosa",
+      role: "Fundador & Ingeniero de Software"
+    },
+    propositeSection: {
+      title1: "Nuestra Historia",
+      desc1: "La creación de JA Partners surge como resultado de la evolución profesional de su fundador, quien inicialmente desarrollaba proyectos tecnológicos de manera independiente.",
+      desc2: "Con el incremento en la complejidad de las soluciones requeridas y la incorporación de tecnologías emergentes como la Inteligencia Artificial, se hizo necesaria la consolidación de un equipo multidisciplinario capaz de abordar proyectos de mayor alcance, con estándares técnicos alineados a prácticas internacionales.",
+      title2: "Nuestro Aporte",
+      desc3: "Desde su fundación, JA Partners ha enfocado sus esfuerzos en la ejecución de proyectos reales, priorizando resultados medibles y soluciones funcionales sobre enfoques teóricos. Esta filosofía ha permitido el desarrollo de propuestas tecnológicas adaptadas a necesidades específicas, generando valor tanto en el ámbito empresarial como en el académico.",
+      mission: "Misión",
+      vision: "Visión",
+      missionDesc: "Diseñar e implementar herramientas digitales que resuelvan problemas concretos mediante el uso estratégico del software y la Inteligencia Artificial.",
+      visionDesc: "Convertirse en un referente en el desarrollo de soluciones tecnológicas innovadoras con impacto real.",
+      desc4: "Construyamos algo impactante juntos",
+      button: "Comenzar"
     },
     whySection: {
       heading: "En J&A Partners, construimos sistemas diseñados para convertir la atención en crecimiento.",

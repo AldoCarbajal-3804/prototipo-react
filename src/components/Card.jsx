@@ -1,7 +1,7 @@
 export const Card = ({ icon, name, description }) => {
     return(
         <article 
-            className="card min-w-[300px] sm:min-w-[340px] md:min-w-[380px] lg:min-w-[400px] rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg bg-linear-to-br from-blue-300 via-blue-200 to-cyan-200"
+            className="card rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-lg bg-linear-to-br from-blue-300 via-blue-200 to-cyan-200"
             style={{ 
                 backgroundSize: '200% 200%',
                 animation: `cardShimmer 2s ease-in-out infinite`
