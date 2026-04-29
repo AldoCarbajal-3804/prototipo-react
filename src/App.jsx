@@ -4,6 +4,7 @@ import {lazy} from 'react'
 const  Navbar = lazy(() => import('./layouts/navbar/Navbar.jsx'))
 const  Hero = lazy(() => import('./layouts/hero/Hero.jsx'))
 const  AboutSection = lazy(() => import('./layouts/about/AboutSection.jsx'))
+const  HistorySection = lazy(() => import('./layouts/about/HistorySection.jsx'))
 const  PropositeSection = lazy(() => import('./layouts/about/PropositeSection.jsx'))
 const  Services = lazy(() => import('./layouts/sections/Services.jsx'))
 const  WhySection = lazy(() => import('./layouts/about/WhySection.jsx'))
@@ -21,6 +22,7 @@ function App() {
       <Navbar/>
       <Hero/>
       <AboutSection />
+      <HistorySection />
       <PropositeSection />
       <WhySection />
       <WhoSection />

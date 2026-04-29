@@ -27,12 +27,13 @@ export const translations = {
       name: "Aaron Sosa",
       role: "Founder & Software Engineer"
     },
-    propositeSection: {
+    historySection: {
       title1: "Our History",
-      desc1: "The creation of JA Partners emerged as a result of the professional evolution of its founder, who initially developed technological projects independently.",
-      desc2: "With the increase in the complexity of the required solutions and the incorporation of emerging technologies such as Artificial Intelligence, it became necessary to consolidate a multidisciplinary team capable of addressing projects of greater scope, with technical standards aligned to international practices.",
+      desc1: "The creation of JA Partners emerged as a result of the professional evolution of its founder, who initially developed technological projects independently With the increase in the complexity of the required solutions and the incorporation of emerging technologies such as Artificial Intelligence, it became necessary to consolidate a multidisciplinary team capable of addressing projects of greater scope, with technical standards aligned to international practices.",
       title2: "Our Contribution",
-      desc3: "Since its foundation, JA Partners has focused its efforts on the execution of real projects, prioritizing measurable results and functional solutions over theoretical approaches. This philosophy has allowed the development of technological proposals adapted to specific needs, generating value both in the business and academic fields.",
+      desc2: "Since its foundation, JA Partners has focused its efforts on the execution of real projects, prioritizing measurable results and functional solutions over theoretical approaches. This philosophy has allowed the development of technological proposals adapted to specific needs, generating value both in the business and academic fields.",
+    },
+    propositeSection: {
       mission: "Mission",
       vision: "Vision",
       missionDesc: "Design and implement digital tools that solve concrete problems through the strategic use of software and Artificial Intelligence.",
@@ -227,6 +228,12 @@ export const translations = {
       paragraph2: "La empresa se especializa en el desarrollo de aplicaciones web, software empresarial con integración de Inteligencia Artificial y sistemas avanzados aplicados a la investigación científica y académica.",
       name: "Aaron Sosa",
       role: "Fundador & Ingeniero de Software"
+    },
+    historySection: {
+      title1: "Nuestra Historia",
+      desc1: "La creación de JA Partners surge como resultado de la evolución profesional de su fundador, quien inicialmente desarrollaba proyectos tecnológicos de manera independiente. Con el incremento en la complejidad de las soluciones requeridas y la incorporación de tecnologías emergentes como la Inteligencia Artificial, se hizo necesaria la consolidación de un equipo multidisciplinario capaz de abordar proyectos de mayor alcance, con estándares técnicos alineados a prácticas internacionales.",
+      title2: "Nuestro Aporte",
+      desc2: "Desde su fundación, JA Partners ha enfocado sus esfuerzos en la ejecución de proyectos reales, priorizando resultados medibles y soluciones funcionales sobre enfoques teóricos. Esta filosofía ha permitido el desarrollo de propuestas tecnológicas adaptadas a necesidades específicas, generando valor tanto en el ámbito empresarial como en el académico.",
     },
     propositeSection: {
       title1: "Nuestra Historia",
