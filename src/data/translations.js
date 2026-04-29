@@ -155,6 +155,33 @@ export const translations = {
         }
       ]
     },
+    testimonials: {
+      title: "Backed by Industry Leaders",
+      description: "See what our partners and clients say about their experience working with us on cutting-edge AI solutions.",
+      cards: [
+        {
+          name: "Carlos Mendoza",
+          role: "CTO @ TechFlow",
+          content: "AI implementation provided by JA Partners transformed our data processing speed. We saw a 40% reduction in operational bottlenecks in the first month.",
+          avatar: "CM",
+          stars: 5
+        },
+        {
+          name: "Elena Rodríguez",
+          role: "Product Manager @ InnovaLatam",
+          content: "Excellent service and deep technical expertise. Your team not only built a solution; they understood our business needs and provided strategic advantage.",
+          avatar: "ER",
+          stars: 5
+        },
+        {
+          name: "James Wilson",
+          role: "Founder @ NexaSystems",
+          content: "The custom software developed for our research laboratory is world-class. LLMs integration for automated data synthesis has been a game-changer for us.",
+          avatar: "JW",
+          stars: 4
+        }
+      ]
+    },
     cta: {
       title: "Ready to Evolve?",
       description: "Transform your business with AI-powered automation today. Let's build something extraordinary together.",
@@ -359,6 +386,33 @@ export const translations = {
         {
           name: "Customer Relationship Management (CRM)",
           description: "Gestión de relaciones con clientes para mejorar ventas, seguimiento y satisfacción del cliente."
+        }
+      ]
+    },
+    testimonials: {
+      title: "Respaldado por Líderes de la Industria",
+      description: "Mira lo que nuestros socios y clientes dicen sobre su experiencia trabajando con nosotros en soluciones de IA de vanguardia.",
+      cards: [
+        {
+          name: "Carlos Mendoza",
+          role: "CTO @ TechFlow",
+          content: "La implementación de IA proporcionada por JA Partners transformó nuestra velocidad de procesamiento de datos. Hemos visto una reducción del 40% en los cuellos de botella operativos en el primer mes.",
+          avatar: "CM",
+          stars: 5
+        },
+        {
+          name: "Elena Rodríguez",
+          role: "Gerente de Producto @ InnovaLatam",
+          content: "Excelente servicio y profunda experiencia técnica. Su equipo no solo construyó una solución; entendieron nuestras necesidades comerciales y proporcionaron una ventaja estratégica.",
+          avatar: "ER",
+          stars: 5
+        },
+        {
+          name: "James Wilson",
+          role: "Fundador @ NexaSystems",
+          content: "El software personalizado desarrollado para nuestro laboratorio de investigación es de clase mundial. La integración de LLMs para la síntesis automatizada de datos ha sido un cambio radical para nosotros.",
+          avatar: "JW",
+          stars: 4
         }
       ]
     },

@@ -10,6 +10,7 @@ const  Services = lazy(() => import('./layouts/sections/Services.jsx'))
 const  WhySection = lazy(() => import('./layouts/about/WhySection.jsx'))
 const  WhoSection = lazy(() => import('./layouts/about/WhoSection.jsx'))
 const  Stats = lazy(() => import('./layouts/stats/Stats.jsx'))
+const  TestimonialsSection = lazy(() => import('./layouts/testimonials/TestimonialsSection.jsx'))
 const  Cta = lazy(() => import('./layouts/form/Cta.jsx'))
 const  Form = lazy(() => import('./layouts/form/Form.jsx'))
 const  Footer = lazy(() => import('./layouts/footer/Footer.jsx'))
@@ -28,6 +29,7 @@ function App() {
       <WhoSection />
       <Stats />
       <Services />
+      <TestimonialsSection />
       <Cta/>
       <Form />
       <Footer />
