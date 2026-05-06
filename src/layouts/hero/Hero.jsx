@@ -5,10 +5,10 @@ function Hero() {
     const { t } = useLanguage()
 
     return(
-        <section id="hero-section" className="v-stack lg:h-stack lg:justify-between justify-center px-4 sm:px-6 lg:px-16 sm:py-10 border-b-2 border-gray-500 bg-blue-200" aria-label="Page principal">
+        <section id="hero-section" className="v-stack sm:h-stack sm:justify-between justify-center px-[4%] py-[2%] border-b-2 border-gray-500 bg-blue-200" aria-label="Page principal">
  
-            <div className=" v-stack justify-center items-center lg:items-start lg:flex-1 text-center lg:text-left text-gray-700" role="region" aria-labelledby="hero-title">
-                <h1 className="text-3xl sm:text-4xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight" aria-label="title">
+            <div className=" v-stack justify-center items-center sm:items-start sm:flex-1 text-center sm:text-left text-gray-700" role="region" aria-labelledby="hero-title">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight" aria-label="title">
                     {t.hero.title}
                     <br />
                     <strong className="text-blue-900">
@@ -39,7 +39,7 @@ function Hero() {
                 </div>
             </div>
             
-            <figure className="bg-sky-950 w-64 h-64 sm:w-72 sm:h-72 lg:w-96 lg:h-96 rounded-2xl sm:rounded-3xl relative center mx-auto lg:mx-0 mt-8 sm:mt-12 lg:mt-0 lg:ml-8 shrink-0" role="img" aria-label="Icono decorativo de animación de respiración">
+            <figure className="bg-sky-950 w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 my-[5%] rounded-2xl sm:rounded-3xl relative center mx-auto shrink-0" role="img" aria-label="Icono decorativo de animación de respiración">
                 <IconHero />
             </figure>
             
