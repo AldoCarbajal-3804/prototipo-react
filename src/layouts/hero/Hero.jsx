@@ -8,10 +8,10 @@ function Hero() {
         <section id="hero-section" className="v-stack sm:h-stack sm:justify-between justify-center px-[4%] py-[2%] border-b-2 border-gray-500 bg-blue-200" aria-label="Page principal">
  
             <div className=" v-stack justify-center items-center sm:items-start sm:flex-1 text-center sm:text-left text-gray-700" role="region" aria-labelledby="hero-title">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold mb-6 sm:mb-8 leading-tight" aria-label="title">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-6 sm:mb-8 leading-tight" aria-label="title">
                     {t.hero.title}
                     <br />
-                    <strong className="text-blue-900">
+                    <strong className="text-blue-900 font-extrabold">
                         {t.hero.subtitleStrong}
                         <br />
                         {t.hero.subtitleStrong2}
