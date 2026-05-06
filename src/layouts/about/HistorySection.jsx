@@ -33,7 +33,7 @@ function HistorySection() {
   }, []);
 
   return (
-    <section className="relative mx-auto py-[6%] bg-blue-200">
+    <section className="relative mx-auto py-[6%] px-[4%] bg-blue-200">
         <div className="max-w-7xl mx-auto space-y-16 lg:space-y-24">
     
             <article className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-12">

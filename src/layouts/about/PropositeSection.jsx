@@ -1,4 +1,4 @@
-import {useLanguage} from '../../hooks/LanguageContext'
+import {useLanguage} from '../../hooks/LanguageContext.jsx'
 
 function PropositeSection() {
     const {t} = useLanguage()
