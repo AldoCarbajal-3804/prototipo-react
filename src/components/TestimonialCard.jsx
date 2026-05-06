@@ -21,8 +21,8 @@ export const TestimonialCard = ({ name, role, content, avatar, stars }) => {
                 </p>
             </div>
             <footer className="mt-6 flex">
-                {[...Array(stars)].map((_, i) => (
-                    <img src={star} alt="Star" />
+                {[...Array(stars)].map((_UNUSED, _INDEX) => (
+                    <img src={star} alt="Star" key={_INDEX} />
                 ))}
             </footer>
         </div>
