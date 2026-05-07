@@ -1,36 +1,10 @@
 import { useLanguage } from "../../hooks/LanguageContext.jsx"
-import { useEffect, useRef, useState } from "react"
+import { useScrollAnimation } from "../../hooks/useScrollAnimation.jsx"
 
 function HistorySection() {
   const { t } = useLanguage();
-  const title1Ref = useRef(null);
-  const title2Ref = useRef(null);
-  const [isVisible1, setIsVisible1] = useState(false);
-  const [isVisible2, setIsVisible2] = useState(false);
-
-  useEffect(() => {
-    const observer1 = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible1(entry.isIntersecting);
-      },
-      { threshold: 0.3 }
-    );
-
-    const observer2 = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible2(entry.isIntersecting);
-      },
-      { threshold: 0.3 }
-    );
-
-    if (title1Ref.current) observer1.observe(title1Ref.current);
-    if (title2Ref.current) observer2.observe(title2Ref.current);
-
-    return () => {
-      observer1.disconnect();
-      observer2.disconnect();
-    };
-  }, []);
+  const [title1Ref, isVisible1] = useScrollAnimation({ threshold: 0.3 });
+  const [title2Ref, isVisible2] = useScrollAnimation({ threshold: 0.3 });
 
   return (
     <section className="relative mx-auto py-[6%] px-[4%] bg-blue-200">

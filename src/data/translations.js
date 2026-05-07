@@ -36,8 +36,8 @@ export const translations = {
     propositeSection: {
       mission: "Mission",
       vision: "Vision",
-      missionDesc: "Design and implement digital tools that solve concrete problems through the strategic use of software and Artificial Intelligence.",
-      visionDesc: "Become a reference in the development of innovative technological solutions with real impact.",
+      missionDesc: "Design and implement digital tools that solve concrete problems through the strategic use of software and Artificial Intelligence. We focus on understanding each client's unique challenges to deliver tailored solutions that drive efficiency, innovation, and measurable business outcomes.",
+      visionDesc: "Become a reference in the development of innovative technological solutions with real impact. We strive to lead the transformation of industries through cutting-edge AI integration.",
       desc4: "Let's build something impactful together",
       button: "Get Started"
     },
@@ -270,8 +270,8 @@ export const translations = {
       desc3: "Desde su fundación, JA Partners ha enfocado sus esfuerzos en la ejecución de proyectos reales, priorizando resultados medibles y soluciones funcionales sobre enfoques teóricos. Esta filosofía ha permitido el desarrollo de propuestas tecnológicas adaptadas a necesidades específicas, generando valor tanto en el ámbito empresarial como en el académico.",
       mission: "Misión",
       vision: "Visión",
-      missionDesc: "Diseñar e implementar herramientas digitales que resuelvan problemas concretos mediante el uso estratégico del software y la Inteligencia Artificial.",
-      visionDesc: "Convertirse en un referente en el desarrollo de soluciones tecnológicas innovadoras con impacto real.",
+      missionDesc: "Diseñar e implementar herramientas digitales que resuelvan problemas concretos mediante el uso estratégico del software y la Inteligencia Artificial. Nos enfocamos en comprender los desafíos únicos de cada cliente para ofrecer soluciones a medida que impulsen la eficiencia, la innovación y resultados comerciales medibles.",
+      visionDesc: "Convertirse en un referente en el desarrollo de soluciones tecnológicas innovadoras con impacto real. Buscamos liderar la transformación de industrias mediante la integración de IA de vanguardia.",
       desc4: "Construyamos algo impactante juntos",
       button: "Comenzar"
     },
