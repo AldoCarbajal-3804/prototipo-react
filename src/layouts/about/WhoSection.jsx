@@ -6,7 +6,7 @@ import leader from "../../assets/images/leader.webp"
 import team from "../../assets/images/team.webp"
 import { CardWork } from "../../components/CardWork.jsx"
 import { useLanguage } from '../../hooks/LanguageContext.jsx'
-import {useState,useEffect,useMemo, useCallback} from 'react'
+import {useState,useEffect, useCallback} from 'react'
 
 function WhoSection(){
     const { t } = useLanguage()
