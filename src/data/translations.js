@@ -343,7 +343,7 @@ export const translations = {
       heading: "Resultados en Números",
       subtitle: "Impacto real y ROI medible de nuestras soluciones de IA",
       metrics: [
-        { value: "+27%", text: "Aumento en productividad", extra: "La automatización redujo significativamente la carga de trabajo manual." },
+        { value: "+27%", text: "Aumento en productividad", extra: "La automatización redujo el trabajo manual." },
         { value: "6x", text: "Procesos más rápidos", extra: "Los flujos de trabajo de IA optimizaron el tiempo operativo." },
         { value: "#2", text: "Posicionamiento en el mercado", extra: "Ventaja competitiva mejorada en LATAM." },
         { value: "$7.2M", text: "ROI Generado", extra: "Medido en múltiples clientes empresariales." }
