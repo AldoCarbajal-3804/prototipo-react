@@ -9,7 +9,6 @@ function HistorySection() {
   return (
     <section className="relative mx-auto py-[6%] px-[4%] bg-blue-200">
         <div className="max-w-7xl mx-auto space-y-16 lg:space-y-24">
-    
             <article className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-12">
                 <header ref={title1Ref} className="w-full lg:w-1/3 flex items-center lg:justify-end">
                     <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight lg:text-right transition-all duration-500 ${
@@ -47,7 +46,6 @@ function HistorySection() {
                     <span className="w-0.5 bg-blue-950 self-stretch shrink-0"></span>
                 </footer>
             </article>
-
         </div>
     </section>
   );

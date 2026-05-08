@@ -8,9 +8,7 @@ function PropositeSection() {
 
     return(
         <section className="relative mx-auto py-0 border-b-2 border-gray-500 bg-blue-100">
-
             <main className="relative max-w-7xl mx-auto py-[4%] grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 px-[2%] sm:px-6">
-                
                 <div
                     ref={missionRef}
                     className={`md:col-start-1 md:row-start-1 bg-white border border-gray-200 rounded-xl p-6 sm:p-8 hover:shadow-xl transition ${
@@ -38,9 +36,7 @@ function PropositeSection() {
                         {t.propositeSection.visionDesc}
                     </p>
                 </div>
- 
             </main>
-            
         </section>
     )
 
