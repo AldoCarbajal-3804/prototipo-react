@@ -5,7 +5,7 @@ const  Navbar = lazy(() => import('./layouts/navbar/Navbar.jsx'))
 const  Hero = lazy(() => import('./layouts/hero/Hero.jsx'))
 const  AboutSection = lazy(() => import('./layouts/about/AboutSection.jsx'))
 const  HistorySection = lazy(() => import('./layouts/about/HistorySection.jsx'))
-const  PropositeSection = lazy(() => import('./layouts/about/PropositeSection.jsx'))
+//const  PropositeSection = lazy(() => import('./layouts/about/PropositeSection.jsx'))
 const  Services = lazy(() => import('./layouts/sections/Services.jsx'))
 const  WhySection = lazy(() => import('./layouts/about/WhySection.jsx'))
 const  WhoSection = lazy(() => import('./layouts/about/WhoSection.jsx'))
@@ -24,7 +24,7 @@ function App() {
       <Hero/>
       <AboutSection />
       <HistorySection />
-      <PropositeSection />
+      {/* <PropositeSection /> */}
       <WhySection />
       <WhoSection />
       <Stats />
