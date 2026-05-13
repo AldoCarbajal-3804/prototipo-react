@@ -45,7 +45,7 @@ export const translations = {
       heading: "At J&A Partners, we build systems designed to turn attention into growth.",
       items: [
         {
-          title: "Attract the right opportunities",
+          title: "Always, attract the correct opportunities",
           desc: "We identify and reach high-value prospects through targeted digital channels, ensuring your business connects with the right audience at the right time.",
           category: "Lead Generation"
         },
@@ -279,7 +279,7 @@ export const translations = {
       heading: "En J&A Partners, construimos sistemas diseñados para convertir la atención en crecimiento.",
       items: [
         {
-          title: "Atrae las oportunidades correctas",
+          title: "Atrae siempre las oportunidades correctas",
           desc: "Identificamos y llegamos a prospectos de alto valor a través de canales digitales dirigidos, asegurando que tu negocio se conecte con la audiencia correcta en el momento correcto.",
           category: "Generación de Leads"
         },

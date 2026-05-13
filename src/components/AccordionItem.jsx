@@ -17,11 +17,11 @@ export const AccordionItem = ({ title, desc, category, isOpen, onToggle }) => {
     return (
         <div className="border-t border-gray-400/30 last:border-b last:border-gray-400/30">
             <header className="group" onClick={onToggle}>
-                <summary className="flex justify-between items-center py-6 cursor-pointer list-none">
-                <span className="text-xl sm:text-2xl font-medium text-gray-800 group-hover:text-blue-900 transition-colors">
+                <summary className="flex justify-between items-center py-6 cursor-pointer list-none text-left">
+                <span className="text-xl font-medium text-gray-800 group-hover:text-blue-900 transition-colors">
                     {title}
                 </span>
-                <span className="text-sm text-gray-500 font-medium uppercase tracking-wider">
+                <span className="text-base text-gray-500 font-medium uppercase tracking-wider text-right">
                     {category}
                 </span>
                 </summary>
