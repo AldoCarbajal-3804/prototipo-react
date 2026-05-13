@@ -17,7 +17,7 @@ function AboutSection(){
     return(
         <section
             id="about-section"
-            className="relative p-[4%] border-b-2 border-gray-500 bg-blue-100 overflow-hidden"
+            className="relative px-[4%] py-[6%] border-b-2 border-gray-500 bg-blue-100 overflow-hidden"
         >
             <aside className="absolute inset-0 pointer-events-none">
                 {rainLines.map((style, i) => (
@@ -29,16 +29,16 @@ function AboutSection(){
                 ))}
             </aside>
             <div className="relative max-w-7xl mx-auto px-6 text-center">
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-700">
-                     {t.aboutSection.title1}
-                 </h1>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-700">
+                    {t.aboutSection.title1}
+                </h2>
                 <p className="text-gray-600 mt-4 text-sm sm:text-base lg:text-xl max-w-2xl mx-auto leading-relaxed">
                     {t.aboutSection.subtitle1}
                 </p>
             </div>
              <main className="relative max-w-7xl mx-auto mt-10 sm:mt-16 lg:mt-20 px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
                 <article className="lg:col-span-7">
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-700 mb-4 sm:mb-6">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-700 mb-4 sm:mb-6">
                         {t.aboutSection.title2}
                     </h2>
 
