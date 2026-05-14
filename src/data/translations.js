@@ -3,9 +3,16 @@ export const translations = {
     nav: {
       links: [
         { name: "Home", link: "#hero-section" },
-        { name: "About Us", link: "#why-section" },
+        { name: "About Us", link: "#about-section", submenu: true },
         { name: "Services", link: "#services-section" },
         { name: "Contact", link: "#form-section" },
+      ],
+      dropdown: [
+        { name: "About Us", link: "#about-section" },
+        { name: "Our History", link: "#history-section" },
+        { name: "Why Us", link: "#why-section" },
+        { name: "Who We Are", link: "#who-section" },
+        { name: "Results", link: "#stats-section" },
       ],
       language: "Español",
     },
@@ -232,9 +239,16 @@ export const translations = {
     nav: {
       links: [
         { name: "Inicio", link: "#hero-section" },
-        { name: "Quiénes somos", link: "#why-section" },
+        { name: "Sobre Nosotros", link: "#about-section", submenu: true },
         { name: "Servicios", link: "#services-section" },
         { name: "Contacto", link: "#form-section" },
+      ],
+      dropdown: [
+        { name: "Sobre Nosotros", link: "#about-section" },
+        { name: "Nuestra Historia", link: "#history-section" },
+        { name: "Por Qué Elegirnos", link: "#why-section" },
+        { name: "Quiénes Somos", link: "#who-section" },
+        { name: "Resultados", link: "#stats-section" },
       ],
       language: "English",
     },

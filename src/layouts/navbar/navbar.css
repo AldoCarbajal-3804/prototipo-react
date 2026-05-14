@@ -1,0 +1,66 @@
+@layer utilities {
+  .mobile-menu {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0.35s ease;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .mobile-menu.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  @starting-style {
+    .mobile-menu.open {
+      opacity: 0;
+      transform: translateY(-10px) scale(0.98);
+    }
+  }
+
+  .dropdown-menu {
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0.25s ease;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .dropdown-menu.open {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  @starting-style {
+    .dropdown-menu.open {
+      opacity: 0;
+      transform: translateY(-6px);
+    }
+  }
+
+  .dropdown-overlay {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    visibility: hidden;
+  }
+
+  .dropdown-overlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @starting-style {
+    .dropdown-overlay.open {
+      opacity: 0;
+    }
+  }
+}

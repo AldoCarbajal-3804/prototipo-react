@@ -25,29 +25,25 @@ export const Link = ({name, link}) => {
 
     if (isHashLink) {
         return (
-            <li>
-                <button 
-                    onClick={handleClick}
-                    className="text-xs sm:text-sm md:text-base text-black hover:underline transition-colors duration-300 cursor-pointer" 
-                    aria-label={name}
-                    aria-current={isActive ? "page" : undefined}
-                >
-                    {name}
-                </button>
-            </li>
-        );
-    }
-
-    return (
-        <li>
-            <a 
-                href={link} 
-                className="text-xs sm:text-sm md:text-base text-black hover:underline transition-colors duration-300" 
+            <button 
+                onClick={handleClick}
+                className="text-sm sm:text-base text-black hover:underline transition-colors duration-300 cursor-pointer" 
                 aria-label={name}
                 aria-current={isActive ? "page" : undefined}
             >
                 {name}
-            </a>
-        </li>
+            </button>
+        );
+    }
+
+    return (
+        <a 
+            href={link} 
+            className="text-sm sm:text-base text-black hover:underline transition-colors duration-300" 
+            aria-label={name}
+            aria-current={isActive ? "page" : undefined}
+        >
+            {name}
+        </a>
     );
 };

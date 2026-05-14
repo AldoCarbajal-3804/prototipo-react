@@ -38,14 +38,12 @@ npm run lint
 src/
   assets/          # Static resources (SVG icons, images)
   components/      # Reusable base components (Card, Link, Info)
-  navbar/          # Navigation component
-  hero/            # Hero section with icons
-  sections/        # Page sections (Services, Form, Cta, etc.)
-  hooks/           # Custom React hooks
-  data/            # Static data (translations)
+  layouts/         # Page sections organized by feature (navbar, hero, about, form, etc.)
+  hooks/           # Custom React hooks (useScroll, useScrollAnimation)
+  data/            # Static data (translations.js)
   App.jsx          # Main composition component
-  main.jsx         # Entry point
   App.css          # Global styles
+  main.jsx         # Entry point
 ```
 
 ### Component Conventions
@@ -69,7 +67,10 @@ export const Card = ({ icon, name, description }) => {
 
 - Use relative imports with `.jsx` extension
 - Group imports: React imports, then third-party, then local
-- CSS imports in main.jsx and App.jsx only
+- CSS imports can be in `App.jsx`/`main.jsx` or directly in component files when scoped:
+  ```jsx
+  import './navbar.css'  // scoped component CSS in layouts/
+  ```
 - Example:
 ```jsx
 import { createRoot } from 'react-dom/client'
@@ -143,6 +144,16 @@ className="bg-[var(--color-1)]"
   .animated { will-change: transform, opacity; }
   ```
 - Avoid animating `width`, `height`, `top`, `left`
+- Use `@starting-style` for entry animations from `display: none`:
+  ```css
+  .menu {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .menu.open { opacity: 1; }
+  @starting-style { .menu.open { opacity: 0; } }
+  ```
+- Use `useScroll` hook for scroll-triggered animations (IntersectionObserver)
 
 ### Error Handling
 
@@ -177,6 +188,23 @@ className="bg-[var(--color-1)]"
 - `<footer>` for page footer
 - `<article>` for self-contained content
 - `<section>` for thematic groupings
+
+### Responsive Text Sizing
+
+Convention used across all layout components:
+
+| Element | Pattern |
+|---------|---------|
+| Main headings (h1/h2) | `text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl` |
+| Paragraphs (p) | `text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl` |
+| Subtitles (h3) | `text-2xl sm:text-3xl md:text-4xl` |
+| Small/aux text | `text-xs sm:text-sm md:text-base` |
+
+### Navbar Dropdown Structure
+
+The navbar supports a dropdown submenu for "About Us". The nav data structure in `translations.js` uses:
+- `links`: main nav items, `submenu: true` flags items with dropdown
+- `dropdown`: array of submenu items rendered on hover/click
 
 ---
 

@@ -7,7 +7,7 @@ function HistorySection() {
   const [title2Ref, isVisible2] = useScrollAnimation({ threshold: 0.3 });
 
   return (
-    <section className="relative mx-auto py-[6%] px-[4%] bg-blue-200 border-b-2 border-gray-500">
+    <section id="history-section" className="relative mx-auto py-[6%] px-[4%] bg-blue-200 border-b-2 border-gray-500">
         <div className="max-w-7xl mx-auto space-y-16 lg:space-y-24">
             <article className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-12">
                 <header ref={title1Ref} className="w-full lg:w-1/3 flex items-center lg:justify-end">

@@ -5,10 +5,17 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Se aplica a móviles por defecto */
 [id] {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 330px;
 }
 
+/* Se anula o cambia en escritorio (1024px o más) */
+@media (min-width: 1024px) {
+    [id] {
+        scroll-margin-top: 0px; /* O el valor que prefieras para PC */
+    }
+}
 body {
     font-family: 'Inter', sans-serif;
 }
