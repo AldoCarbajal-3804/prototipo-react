@@ -3,19 +3,15 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100%; 
 }
 
-/* Se aplica a móviles por defecto */
-[id] {
-    scroll-margin-top: 330px;
-}
-
-/* Se anula o cambia en escritorio (1024px o más) */
 @media (min-width: 1024px) {
-    [id] {
-        scroll-margin-top: 0px; /* O el valor que prefieras para PC */
+    html {
+        scroll-padding-top: 10%;
     }
 }
+
 body {
     font-family: 'Inter', sans-serif;
 }
