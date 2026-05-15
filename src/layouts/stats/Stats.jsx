@@ -1,4 +1,5 @@
 import { useLanguage } from '../../hooks/LanguageContext.jsx';
+import './stats.css';
 
 function Stats() {
     const { t } = useLanguage()
