@@ -6,7 +6,7 @@ function Stats() {
     return (
         <section
             id="stats-section"
-            className="relative bg-gray-50 py-[4%] px-[2%] overflow-hidden border-b-2 border-gray-500"
+            className="relative bg-gray-50 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden border-b-2 border-gray-500"
         >
             <div className="absolute inset-0 pointer-events-none overflow-hidden">
                 <span className="particle-bounce bg-blue-400" style={{ animationDuration: "12s, 8s" }}></span>

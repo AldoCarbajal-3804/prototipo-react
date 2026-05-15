@@ -18,10 +18,10 @@ export const AccordionItem = ({ title, desc, category, isOpen, onToggle }) => {
         <div className="border-t border-gray-400/30 last:border-b last:border-gray-400/30">
             <header className="group" onClick={onToggle}>
                 <summary className="flex justify-between items-center py-6 cursor-pointer list-none text-left">
-                <span className="text-xl font-medium text-gray-800 group-hover:text-blue-900 transition-colors">
+                <span className="text-base sm:text-lg md:text-xl font-medium text-gray-800 group-hover:text-blue-900 transition-colors">
                     {title}
                 </span>
-                <span className="text-base text-gray-500 font-medium uppercase tracking-wider text-right">
+                <span className="text-xs sm:text-sm text-gray-500 font-medium uppercase tracking-wider text-right">
                     {category}
                 </span>
                 </summary>
@@ -31,7 +31,7 @@ export const AccordionItem = ({ title, desc, category, isOpen, onToggle }) => {
                 style={{ maxHeight: height }}
             >
                 <div id={`content-${title.replace(/\s+/g, '-')}`} className="pb-8 pr-12">
-                    <p className="text-gray-600 leading-relaxed text-lg">
+                    <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg">
                         {desc}
                     </p>
                 </div>

@@ -17,7 +17,7 @@ function AboutSection(){
     return(
         <section
             id="about-section"
-            className="relative px-[4%] py-[6%] border-b-2 border-gray-500 bg-blue-100 overflow-hidden"
+            className="relative px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 border-b-2 border-gray-500 bg-blue-100 overflow-hidden"
         >
             <aside className="absolute inset-0 pointer-events-none">
                 {rainLines.map((style, i) => (
