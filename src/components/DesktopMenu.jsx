@@ -35,7 +35,7 @@ export const DesktopMenu = ({ t, toggleLanguage }) => {
             <li key={item.link} className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center gap-1.5 px-4 py-2 text-gray-700 font-medium hover:text-blue-700 hover:bg-blue-50 rounded-full transition-all duration-200 cursor-pointer"
+                className="flex items-center gap-1.5 px-4 py-2 text-neutral-700 font-medium hover:text-blue-700 hover:bg-blue-50 rounded-full transition-all duration-200 cursor-pointer"
                 aria-expanded={isDropdownOpen}
               >
                 {item.name}
@@ -50,14 +50,14 @@ export const DesktopMenu = ({ t, toggleLanguage }) => {
               </button>
 
               <div
-                className={`absolute top-full right-0 mt-2 w-56 bg-white border border-gray-100 rounded-2xl shadow-xl py-2 transition-all duration-300 origin-top-right z-50 
+                className={`absolute top-full right-0 mt-2 w-56 bg-white border border-neutral-100 rounded-2xl shadow-xl py-2 transition-all duration-300 origin-top-right z-50 
                 ${isDropdownOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}
               >
                 {t.nav.dropdown.map((subItem) => (
                   <button
                     key={subItem.link}
                     onClick={() => handleScrollTo(subItem.link)}
-                    className="block w-full text-left px-5 py-3 text-sm text-gray-600 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-150 font-medium"
+                    className="block w-full text-left px-5 py-3 text-sm text-neutral-600 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-150 font-medium"
                   >
                     {subItem.name}
                   </button>
@@ -77,10 +77,10 @@ export const DesktopMenu = ({ t, toggleLanguage }) => {
         );
       })}
 
-      <li className="ml-2 border-l border-gray-300 pl-4">
+      <li className="ml-2 border-l border-neutral-300 pl-4">
         <button 
           onClick={toggleLanguage} 
-          className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-200 transition-all duration-300 cursor-pointer group"
+          className="center w-10 h-10 rounded-full hover:bg-neutral-200 transition-all duration-300 cursor-pointer group"
           title="Change Language"
         >
           <img 

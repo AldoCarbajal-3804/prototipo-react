@@ -5,9 +5,9 @@ function Hero() {
     const { t } = useLanguage()
 
     return(
-        <section id="hero-section" className="v-stack sm:h-stack sm:justify-between justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 border-b-2 border-gray-500 bg-blue-200" aria-label="Page principal">
+        <section id="hero-section" className="v-stack sm:h-stack sm:justify-between justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 border-b-2 border-neutral-500 bg-blue-200" aria-label="Page principal">
  
-            <div className=" v-stack justify-center items-center sm:items-start sm:flex-1 text-center sm:text-left text-gray-700" role="region" aria-labelledby="hero-title">
+            <div className=" v-stack justify-center items-center sm:items-start sm:flex-1 text-center sm:text-left text-neutral-700" role="region" aria-labelledby="hero-title">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-4" aria-label="title">
                     {t.hero.title}
                     <br />
@@ -21,17 +21,17 @@ function Hero() {
                     </strong>
                 </h1>
                 
-                <p className="description text-sm sm:text-base lg:text-xl mb-4 leading-relaxed max-w-2xl text-gray-700" aria-label="description">
+                <p className="description text-sm sm:text-base lg:text-xl mb-4 leading-relaxed max-w-2xl text-neutral-700" aria-label="description">
                     {t.hero.description}
                 </p>
                 
                 <div className="cont-btn v-stack sm:h-stack justify-center lg:justify-start gap-3 sm:gap-4 lg:gap-6 w-full sm:w-auto" role="group" aria-label="Botones de acción principal">
-                    <button className="btn-form px-4 sm:px-5 lg:px-6 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl text-sm sm:text-base lg:text-lg font-bold cursor-pointer hover:opacity-90 transition whitespace-nowrap bg-sky-950  text-gray-100">
+                    <button className="btn-form px-4 sm:px-5 lg:px-6 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl text-sm sm:text-base lg:text-lg font-bold cursor-pointer hover:opacity-90 transition whitespace-nowrap bg-sky-950  text-neutral-100">
                         <a href="#form-section">
                             {t.hero.buttonPrimary}
                         </a>
                     </button>
-                    <button className="bg-transparent text-sm sm:text-base lg:text-lg cursor-pointer border border-gray-300 px-4 sm:px-5 lg:px-6 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl">
+                    <button className="bg-transparent text-sm sm:text-base lg:text-lg cursor-pointer border border-neutral-300 px-4 sm:px-5 lg:px-6 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl">
                         <a href="#services-section" className="no-underline">
                             {t.hero.buttonSecondary}
                         </a>

@@ -23,7 +23,7 @@ function Navbar() {
     }, [isMenuOpen, closeMenu]);
 
     return (
-        <nav className="sticky top-0 z-50 w-full bg-blue-200 backdrop-blur-md border-b-2 border-gray-800">
+        <nav className="sticky top-0 z-50 w-full bg-blue-200 backdrop-blur-md border-b-2 border-neutral-800">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16 md:h-20">
                     
@@ -38,7 +38,7 @@ function Navbar() {
                     <div className="md:hidden flex items-center">
                         <button 
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="p-2 rounded-md text-gray-600 hover:bg-gray-100 transition-colors"
+                            className="p-2 rounded-md text-neutral-600 hover:bg-neutral-100 transition-colors"
                         >
                             <img src={isMenuOpen ? closeIcon : menuIcon} alt="menu" className="w-7 h-7" />
                         </button>

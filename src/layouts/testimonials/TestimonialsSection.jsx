@@ -7,14 +7,14 @@ function TestimonialsSection() {
   return (
     <section
       id="testimonials-section"
-      className="py-24 bg-white border-b-2 border-gray-600 relative overflow-hidden"
+      className="py-24 bg-white border-b-2 border-neutral-600 relative overflow-hidden"
     >
         <div className="max-w-7xl mx-auto px-6 relative z-10">
             <aside className="text-center mb-16">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-800 mb-4">
                     {t.testimonials.title}
                 </h2>
-                <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                <p className="text-neutral-600 text-lg max-w-2xl mx-auto">
                     {t.testimonials.description}
                 </p>
             </aside>

@@ -42,10 +42,10 @@ function WhoSection(){
     }, [nextSlide]);
 
     return(
-        <section id="who-section" className="bg-blue-200 py-16 sm:py-24 border-b-2 border-gray-400 overflow-hidden">
+        <section id="who-section" className="bg-blue-200 py-16 sm:py-24 border-b-2 border-neutral-400 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
                 
-                <h3 className="text-gray-800 mb-12 text-center text-3xl sm:text-4xl font-bold">
+                <h3 className="text-neutral-800 mb-12 text-center text-3xl sm:text-4xl font-bold">
                     {t.whoSection.heading}
                 </h3>
 
