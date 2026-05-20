@@ -5,7 +5,7 @@ function Hero() {
     const { t } = useLanguage()
 
     return(
-        <section id="hero-section" className="v-stack sm:h-stack sm:justify-between justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 border-b-2 border-neutral-500 bg-blue-200" aria-label="Page principal">
+        <section id="hero-section" className="v-stack sm:h-stack sm:justify-between justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 border-b-2 border-neutral-500 bg-blue-200" aria-label="Page principal">
  
             <div className=" v-stack justify-center items-center sm:items-start sm:flex-1 text-center sm:text-left text-neutral-700" role="region" aria-labelledby="hero-title">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-4" aria-label="title">

@@ -57,7 +57,7 @@ export const DesktopMenu = ({ t, toggleLanguage }) => {
                   <button
                     key={subItem.link}
                     onClick={() => handleScrollTo(subItem.link)}
-                    className="block w-full text-left px-5 py-3 text-sm text-neutral-600 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-150 font-medium"
+                    className="block w-full text-left px-5 py-3 text-sm sm:text-base text-neutral-600 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-150 font-medium"
                   >
                     {subItem.name}
                   </button>

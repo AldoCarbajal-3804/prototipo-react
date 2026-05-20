@@ -11,7 +11,7 @@ export const TestimonialCard = ({ name, role, content, avatar, stars }) => {
                 </div>
                 <div className="ml-4">
                 <h4 className="text-neutral-900 font-bold leading-tight">{name}</h4>
-                <p className="text-neutral-500 text-sm">{role}</p>
+                <p className="text-neutral-500 text-xs sm:text-sm">{role}</p>
                 </div>
             </header>
             <div className="relative">

@@ -1,19 +1,4 @@
-import {useState, useEffect} from 'react';
-    
 export const AccordionItem = ({ title, desc, category, isOpen, onToggle }) => {
-
-    const [height, setHeight] = useState(0);
-
-    useEffect(() => {
-        const content = document.getElementById(`content-${title.replace(/\s+/g, '-')}`);
-        if (content) {
-            const timer = setTimeout(() => {
-                setHeight(isOpen ? content.scrollHeight : 0);
-            }, 50);
-            return () => clearTimeout(timer);
-        }
-    }, [isOpen, title]);
-
     return (
         <div className="border-t border-neutral-400/30 last:border-b last:border-neutral-400/30">
             <header className="group" onClick={onToggle}>
@@ -26,16 +11,18 @@ export const AccordionItem = ({ title, desc, category, isOpen, onToggle }) => {
                 </span>
                 </summary>
             </header>
-            <footer 
-                className="overflow-hidden transition-all duration-300"
-                style={{ maxHeight: height }}
+            <div
+                className="grid transition-all duration-300"
+                style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
             >
-                <div id={`content-${title.replace(/\s+/g, '-')}`} className="pb-8 pr-12">
-                    <p className="text-neutral-600 leading-relaxed text-sm sm:text-base md:text-lg">
-                        {desc}
-                    </p>
+                <div className="overflow-hidden min-h-0">
+                    <div className="pb-8 pr-12">
+                        <p className="text-neutral-600 leading-relaxed text-sm sm:text-base md:text-lg">
+                            {desc}
+                        </p>
+                    </div>
                 </div>
-            </footer>
+            </div>
         </div>
     );
 }

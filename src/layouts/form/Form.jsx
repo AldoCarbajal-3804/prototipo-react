@@ -67,7 +67,7 @@ function Form(){
                 </h2>
 
                 <fieldset className="v-stack gap-2">
-                    <label htmlFor="fullName" className="text-neutral-300 text-sm font-medium">
+                    <label htmlFor="fullName" className="text-neutral-300 text-sm sm:text-base font-medium">
                         {t.form.labels.fullName}
                         <span aria-label="requerido" className="text-red-500">*</span>
                     </label>
@@ -76,7 +76,7 @@ function Form(){
                         name="fullName" 
                         type="text" 
                         placeholder={t.form.placeholders.fullName} 
-                        className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
+                        className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
                         required
                         aria-required="true"
                         aria-describedby="fullName-error"
@@ -85,7 +85,7 @@ function Form(){
                 </fieldset>
 
                 <fieldset className="v-stack gap-2">
-                    <label htmlFor="email" className="text-neutral-300 text-sm font-medium">
+                    <label htmlFor="email" className="text-neutral-300 text-sm sm:text-base font-medium">
                         {t.form.labels.email}
                         <span aria-label="requerido" className="text-red-500">*</span>
                     </label>
@@ -94,7 +94,7 @@ function Form(){
                         name="email" 
                         type="email" 
                         placeholder={t.form.placeholders.email} 
-                        className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
+                        className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
                         required
                         aria-required="true"
                         aria-describedby="email-error"
@@ -103,7 +103,7 @@ function Form(){
                 </fieldset>
 
                 <fieldset className="v-stack gap-2">
-                    <label htmlFor="company" className="text-neutral-300 text-sm font-medium">
+                    <label htmlFor="company" className="text-neutral-300 text-sm sm:text-base font-medium">
                         {t.form.labels.company}
                         <span aria-label="requerido" className="text-red-500">*</span>
                     </label>
@@ -112,7 +112,7 @@ function Form(){
                         name="company" 
                         type="text" 
                         placeholder={t.form.placeholders.company} 
-                        className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
+                        className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
                         required
                         aria-required="true"
                         aria-describedby="company-error"
@@ -121,7 +121,7 @@ function Form(){
                 </fieldset>
 
                 <fieldset className="v-stack gap-2">
-                    <label htmlFor="date" className="text-neutral-300 text-sm font-medium">
+                    <label htmlFor="date" className="text-neutral-300 text-sm sm:text-base font-medium">
                         {t.form.labels.date}
                         <span aria-label="requerido" className="text-red-500">*</span>
                     </label>
@@ -129,7 +129,7 @@ function Form(){
                         id="date"
                         name="date" 
                         type="date" 
-                        className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
+                        className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
                         required
                         min={today}
                         aria-required="true"
@@ -139,7 +139,7 @@ function Form(){
                 </fieldset>
 
                 <fieldset className="v-stack gap-2 sm:col-span-2">
-                    <label htmlFor="message" className="text-neutral-300 text-sm font-medium">
+                    <label htmlFor="message" className="text-neutral-300 text-sm sm:text-base font-medium">
                         {t.form.labels.message}
                         <span aria-label="requerido" className="text-red-500">*</span>
                     </label>
@@ -147,7 +147,7 @@ function Form(){
                         id="message"
                         name="message" 
                         placeholder={t.form.placeholders.message} 
-                        className="bg-neutral-800 resize-none p-3 sm:p-4 rounded-lg text-neutral-300 placeholder-neutral-400 text-sm h-24 sm:h-32 focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
+                        className="bg-neutral-800 resize-none p-3 sm:p-4 rounded-lg text-neutral-300 placeholder-neutral-400 text-sm sm:text-base h-24 sm:h-32 focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
                         required
                         aria-required="true"
                         aria-describedby="message-error"

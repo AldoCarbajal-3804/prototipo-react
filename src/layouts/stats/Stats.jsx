@@ -34,7 +34,7 @@ function Stats() {
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-blue-800">
                             {item.value}
                         </h2>
-                        <p className="text-neutral-700 mt-2 text-sm font-medium">
+                        <p className="text-neutral-700 mt-2 text-sm sm:text-base font-medium">
                             {item.text}
                         </p>
                         <p className="text-xs sm:text-sm md:text-base text-neutral-500 mt-2 line-clamp-2">
@@ -71,7 +71,7 @@ function Stats() {
                                 {card.title}
                             </h3>
 
-                            <p className="text-2xl font-semibold mt-2 text-neutral-900">
+                            <p className="text-2xl sm:text-3xl font-semibold mt-2 text-neutral-900">
                                 {card.value}
                             </p>
 
@@ -83,7 +83,7 @@ function Stats() {
                 </div>
             </article>
             <footer className="relative max-w-3xl mx-auto mt-16 text-center px-6">
-                <p className="text-neutral-700 text-base">
+                <p className="text-neutral-700 text-sm sm:text-base">
                     {t.stats.cta}
                 </p>
                 <button className="mt-4 px-6 py-3 bg-blue-900 text-white rounded-lg 

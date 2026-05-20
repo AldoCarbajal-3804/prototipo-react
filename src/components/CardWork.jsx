@@ -12,10 +12,10 @@ export const CardWork = ({ title, desc, img }) => {
                 className="w-full h-full object-cover"
             />
             <footer className="p-6">
-                <h4 className="text-neutral-700 font-semibold text-xl">
+                <h4 className="text-neutral-700 font-semibold text-lg sm:text-xl">
                     {title}
                 </h4>
-                <p className="text-neutral-700 text-sm leading-relaxed">
+                <p className="text-neutral-700 text-sm sm:text-base leading-relaxed">
                     {desc}
                 </p>
             </footer>

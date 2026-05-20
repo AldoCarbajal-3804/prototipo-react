@@ -14,7 +14,7 @@ function TestimonialsSection() {
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-800 mb-4">
                     {t.testimonials.title}
                 </h2>
-                <p className="text-neutral-600 text-lg max-w-2xl mx-auto">
+                <p className="text-neutral-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
                     {t.testimonials.description}
                 </p>
             </aside>
