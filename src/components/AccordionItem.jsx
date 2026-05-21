@@ -1,8 +1,15 @@
 export const AccordionItem = ({ title, desc, category, isOpen, onToggle }) => {
+    const titleId = `accordion-title-${title.replace(/\s+/g, '-')}`;
+    const contentId = `accordion-content-${title.replace(/\s+/g, '-')}`;
+
     return (
         <div className="border-t border-neutral-400/30 last:border-b last:border-neutral-400/30">
             <header className="group" onClick={onToggle}>
-                <summary className="flex justify-between items-center py-6 cursor-pointer list-none text-left">
+                <summary className="flex justify-between items-center py-6 cursor-pointer list-none text-left"
+                    id={titleId}
+                    aria-expanded={isOpen}
+                    aria-controls={contentId}
+                >
                 <span className="text-base sm:text-lg md:text-xl font-medium text-neutral-800 group-hover:text-blue-900 transition-colors">
                     {title}
                 </span>
@@ -12,6 +19,9 @@ export const AccordionItem = ({ title, desc, category, isOpen, onToggle }) => {
                 </summary>
             </header>
             <div
+                id={contentId}
+                role="region"
+                aria-labelledby={titleId}
                 className="grid transition-all duration-300"
                 style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
             >

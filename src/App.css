@@ -17,20 +17,13 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Syne', sans-serif;
-}
 
-code, pre, kbd {
-    font-family: 'Space Mono', monospace;
-}
-
-section[id] {
+[id$="-section"] {
     scroll-margin-top: 64px;
 }
 
 @media (min-width: 768px) {
-    section[id] {
+    [id$="-section"] {
         scroll-margin-top: 80px;
     }
 }

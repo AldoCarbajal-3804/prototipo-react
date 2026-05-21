@@ -26,16 +26,12 @@ function Hero() {
                 </p>
                 
                 <div className="cont-btn v-stack sm:h-stack justify-center lg:justify-start gap-3 sm:gap-4 lg:gap-6 w-full sm:w-auto" role="group" aria-label="Botones de acción principal">
-                    <button className="btn-form px-4 sm:px-5 lg:px-6 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl text-sm sm:text-base lg:text-lg font-bold cursor-pointer hover:opacity-90 transition whitespace-nowrap bg-sky-950  text-neutral-100">
-                        <a href="#form-section">
-                            {t.hero.buttonPrimary}
-                        </a>
-                    </button>
-                    <button className="bg-transparent text-sm sm:text-base lg:text-lg cursor-pointer border border-neutral-300 px-4 sm:px-5 lg:px-6 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl">
-                        <a href="#services-section" className="no-underline">
-                            {t.hero.buttonSecondary}
-                        </a>
-                    </button>
+                    <a href="#form-section" className="btn-form inline-block px-4 sm:px-5 lg:px-6 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl text-sm sm:text-base lg:text-lg font-bold hover:opacity-90 transition whitespace-nowrap bg-sky-950 text-neutral-100 no-underline">
+                        {t.hero.buttonPrimary}
+                    </a>
+                    <a href="#services-section" className="inline-block text-sm sm:text-base lg:text-lg border border-neutral-300 px-4 sm:px-5 lg:px-6 py-3 sm:py-4 lg:py-5 rounded-lg sm:rounded-xl no-underline text-neutral-700 hover:opacity-90 transition">
+                        {t.hero.buttonSecondary}
+                    </a>
                 </div>
             </div>
             

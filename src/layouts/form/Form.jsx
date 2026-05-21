@@ -79,9 +79,7 @@ function Form(){
                         className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
                         required
                         aria-required="true"
-                        aria-describedby="fullName-error"
                     />
-                    <span id="fullName-error" className="sr-only"></span>
                 </fieldset>
 
                 <fieldset className="v-stack gap-2">
@@ -97,9 +95,7 @@ function Form(){
                         className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
                         required
                         aria-required="true"
-                        aria-describedby="email-error"
                     />
-                    <span id="email-error" className="sr-only"></span>
                 </fieldset>
 
                 <fieldset className="v-stack gap-2">
@@ -115,9 +111,7 @@ function Form(){
                         className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
                         required
                         aria-required="true"
-                        aria-describedby="company-error"
                     />
-                    <span id="company-error" className="sr-only"></span>
                 </fieldset>
 
                 <fieldset className="v-stack gap-2">
@@ -133,9 +127,7 @@ function Form(){
                         required
                         min={today}
                         aria-required="true"
-                        aria-describedby="date-error"
                     />
-                    <span id="date-error" className="sr-only"></span>
                 </fieldset>
 
                 <fieldset className="v-stack gap-2 sm:col-span-2">
@@ -150,9 +142,7 @@ function Form(){
                         className="bg-neutral-800 resize-none p-3 sm:p-4 rounded-lg text-neutral-300 placeholder-neutral-400 text-sm sm:text-base h-24 sm:h-32 focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
                         required
                         aria-required="true"
-                        aria-describedby="message-error"
                     ></textarea>
-                    <span id="message-error" className="sr-only"></span>
                 </fieldset>
 
                 <Submit />

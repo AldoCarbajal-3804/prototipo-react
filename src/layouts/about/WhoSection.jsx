@@ -49,9 +49,9 @@ function WhoSection(){
                     {t.whoSection.heading}
                 </h3>
 
-                <div className="relative group">
-                
-                <article className="overflow-hidden">
+                <div className="relative group" role="region" aria-roledescription="carousel" aria-label={t.whoSection.heading}>
+
+                <article className="overflow-hidden" id="who-carousel">
                     <div 
                         className="flex transition-transform duration-500 ease-out"
                         style={{ transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` }}
@@ -61,6 +61,9 @@ function WhoSection(){
                                 key={index} 
                                 className="shrink-0 px-2"
                                 style={{ width: `${100 / itemsToShow}%` }}
+                                role="group"
+                                aria-roledescription="slide"
+                                aria-label={`${t.whoSection.heading} — ${index + 1} of ${t.whoSection.cards.length}`}
                             >
                                 <CardWork 
                                     title={card.title}
@@ -74,26 +77,31 @@ function WhoSection(){
 
                 <button 
                     onClick={prevSlide}
-                    className="absolute -left-5 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 group-hover:left-2 z-10"
+                    className="absolute -left-5 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition-all opacity-0 md:group-hover:opacity-100 md:group-hover:left-2 z-10"
                     aria-label="Anterior"
+                    aria-controls="who-carousel"
                 >
                     <svg className="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" /></svg>
                 </button>
 
                 <button 
                     onClick={nextSlide}
-                    className="absolute -right-5 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 group-hover:right-2 z-10"
+                    className="absolute -right-5 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition-all opacity-0 md:group-hover:opacity-100 md:group-hover:right-2 z-10"
                     aria-label="Siguiente"
+                    aria-controls="who-carousel"
                 >
                     <svg className="w-6 h-6 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /></svg>
                 </button>
 
-                <article className="flex justify-center gap-2 mt-10">
+                <article className="flex justify-center gap-2 mt-10" role="tablist" aria-label="Seleccionar slide">
                     {Array.from({ length: maxIndex + 1 }).map((_, i) => (
                         <button
                             key={i}
                             onClick={() => setCurrentIndex(i)}
                             className={`h-2 transition-all rounded-full ${currentIndex === i ? 'w-8 bg-blue-900' : 'w-2 bg-blue-400'}`}
+                            role="tab"
+                            aria-selected={currentIndex === i}
+                            aria-label={`Ir al slide ${i + 1}`}
                         />
                     ))}
                 </article>
