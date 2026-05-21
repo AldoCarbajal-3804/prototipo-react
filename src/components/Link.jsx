@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useScrollTo } from '../hooks/useScrollTo.jsx';
 
 export const Link = ({name, link}) => {
     const [isActive, setIsActive] = useState(false);
+    const scrollTo = useScrollTo();
 
     useEffect(() => {
         const checkActive = () => {
@@ -14,14 +16,7 @@ export const Link = ({name, link}) => {
 
     const handleClick = (e) => {
         e.preventDefault();
-        const id = link.replace('#', '');
-        const element = document.getElementById(id);
-        if (element) {
-            const nav = document.querySelector('nav');
-            const offset = nav ? nav.offsetHeight : 0;
-            const top = element.getBoundingClientRect().top + window.scrollY - offset;
-            window.scrollTo({ top, behavior: 'smooth' });
-        }
+        scrollTo(link);
     };
 
     const isHashLink = link.startsWith('#');

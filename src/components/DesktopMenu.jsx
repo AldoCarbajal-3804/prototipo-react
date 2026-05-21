@@ -1,20 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from '../components/Link.jsx';
+import { useScrollTo } from '../hooks/useScrollTo.jsx';
 import translateIcon from '../assets/svg/translate.svg';
 
 export const DesktopMenu = ({ t, toggleLanguage }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const scrollTo = useScrollTo();
 
   const handleScrollTo = (link) => {
-    const id = link.replace('#', '');
-    const element = document.getElementById(id);
-    if (element) {
-      const nav = document.querySelector('nav');
-      const offset = nav ? nav.offsetHeight : 0;
-      const top = element.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
+    scrollTo(link);
     setIsDropdownOpen(false);
   };
 
