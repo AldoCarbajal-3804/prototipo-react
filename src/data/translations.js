@@ -220,19 +220,21 @@ export const translations = {
       success: "Sent!"
     },
     footer: {
-      about: "Leading the way in AI-powered business intelligence and automated research. Engineering tools for tomorrow's industry leaders.",
-      quickLinks: "QUICK LINKS",
-      links: [
-        { name: "Home", link: "#home" },
-        { name: "Services", link: "#services-section" },
-        { name: "Contact", link: "#form-section" }
-      ],
-      connect: "CONNECT",
-      contactInfo: [
-        { icon: "📧", value: "hello@japartners.ai" },
-        { icon: "📍", value: "San Francisco, CA" },
-        { icon: "📞", value: "+1 (555) 123-4567" }
-      ]
+      header: {
+        about: "Leading the way in AI-powered business intelligence and automated research. Engineering tools for tomorrow's industry leaders.",
+        cta:"We works you",
+        description: "Do you have a software or AI project? \n Let's talk and build a technology solution for your company.",
+        asesors: "Solicite Guide",
+        quickLinks: "Social Webs",
+      },
+      
+      politics:{
+        copyright: "All rights reserved",
+        privacy:"Privacy Policy",
+        terms: "Conditions and Terms",
+        cookies: "Cookies Policy"
+      }
+      
     }
   },
   es: {
@@ -461,19 +463,21 @@ export const translations = {
       success: "¡Enviado!"
     },
     footer: {
-      about: "Liderando el camino en inteligencia empresarial impulsada por IA e investigación automatizada. Ingenierizando las herramientas para los líderes de la industria del mañana.",
-      quickLinks: "ENLACES RÁPIDOS",
-      links: [
-        { name: "Inicio", link: "#home" },
-        { name: "Servicios", link: "#services-section" },
-        { name: "Contacto", link: "#form-section" }
-      ],
-      connect: "CONECTAR",
-      contactInfo: [
-        { icon: "📧", value: "hello@japartners.ai" },
-        { icon: "📍", value: "San Francisco, CA" },
-        { icon: "📞", value: "+1 (555) 123-4567" }
-      ]
+      header:{
+        about: "Liderando el camino en inteligencia empresarial impulsada por IA e investigación automatizada. Ingenierizando las herramientas para los líderes de la industria del mañana.",
+        cta:"Trabajemos Juntos",
+        description:"¿Tienes un proyecto de software o IA? \n Conversemos y construyamos una solución tecnológica para tu empresa.",
+        asesors: "Solicitar Asesoría",
+        quickLinks: "Redes Sociales",
+
+      },
+      
+      politics:{
+        copyright: "Todos los derechos reservados",
+        privacy:"Política de Privacidad",
+        terms: "Términos y Condiciones",
+        cookies: "Política de Cookies"
+      }
     }
   }
 };

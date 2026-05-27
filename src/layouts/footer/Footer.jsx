@@ -1,36 +1,107 @@
 
-import { Info } from "../../components/Info.jsx"
-import { Link } from "../../components/Link.jsx"
 import { useLanguage } from '../../hooks/LanguageContext.jsx'
+import { SocialLink } from '../../components/ui/SocialLink.jsx'
+import twitter from '../../assets/svg/twitter.svg'
+import youtube from '../../assets/svg/youtube.svg'
+import linkedin from '../../assets/svg/linkedin.svg'
 
-function Footer(){
-    const { t } = useLanguage()
-    
-    return(
-        <footer className="bg-neutral-900 v-stack sm:h-stack justify-between gap-8 sm:gap-10 md:gap-12 p-6 sm:p-8 md:p-12 lg:p-20 text-neutral-300 border-t-2 border-neutral-600" role="contentinfo">
-            <aside className="summary w-full sm:w-1/2 md:w-1/3" aria-label="Acerca de J&A Partners">
-                <div className="flex items-center gap-2 mb-4 sm:mb-5 font-bold text-sm sm:text-base">
-                    <div className="logo px-2 py-1 rounded text-xs" aria-label="Logo"></div>
-                    © 2026 - J&A Partners
+function Footer() {
+
+    const {t} = useLanguage()
+
+    return (
+        <footer
+            className="border-t border-gray-800 bg-black text-gray-300 px-6 sm:px-8 md:px-12 lg:px-20 py-16"
+            role="contentinfo"
+        >   
+            {/* Contenedor de Columnas */}
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:justify-between items-start gap-12 lg:gap-8">
+
+                {/* Columna 1: Acerca de la empresa */}
+                <aside className="w-full lg:max-w-xs" aria-label="Acerca de JA Partners">
+                    <div className="flex items-center gap-2 mb-5">
+                        {/* Placeholder para el logo si lo necesitas, o puedes meter tu etiqueta <img> */}
+                        <div className="logo bg-blue-600 w-3 h-3 rounded-full"></div>
+                        <h2 className="font-bold text-xl text-white tracking-tight">
+                            J&A Partners
+                        </h2>
+                    </div>
+                    <p className="text-sm leading-relaxed text-gray-400">
+                        {t.footer.header.about}
+                    </p>
+                </aside>
+
+                {/* Columna 2: Call to Action (CTA) */}
+                <section className="w-full lg:max-w-sm" aria-labelledby="cta-heading">
+                    <h3
+                        id="cta-heading"
+                        className="text-xs font-bold tracking-widest text-white mb-5 uppercase"
+                    >
+                        {t.footer.header.cta}
+                    </h3>
+                    <p className="text-sm text-gray-400 leading-relaxed mb-6">
+                        {t.footer.header.description}
+                    </p>
+                    <a
+                        href="#form-section"
+                        className="inline-flex items-center justify-center rounded-xl bg-white text-black px-5 py-3 text-sm font-semibold hover:bg-gray-200 active:scale-95 transition-all duration-200"
+                    >
+                        {t.footer.header.asesors}
+                    </a>
+                </section>
+
+                {/* Columna 3: Enlaces / Redes Sociales */}
+                <section className="w-full lg:w-auto min-w-40" aria-labelledby="contact-heading">
+                    <h3
+                        id="contact-heading"
+                        className="text-xs font-bold tracking-widest text-white mb-5 uppercase"
+                    >
+                        {t.footer.quickLinks}
+                    </h3>
+                    <nav aria-label={t.footer.quickLinks}>
+                        <ul className="space-y-3">
+                            <SocialLink
+                                icon={twitter}
+                                name="Twitter"
+                                link="https://www.twitter.com/"
+                            />
+                            <SocialLink
+                                icon={youtube}
+                                name="Youtube"
+                                link="https://www.youtube.com/"
+                            />
+                            <SocialLink
+                                icon={linkedin}
+                                name="LinkedIn"
+                                link="https://pe.linkedin.com/"
+                            />
+                        </ul>
+                    </nav>
+                </section>
+            </div>
+
+            {/* Barra Inferior (Separador y Copyright) */}
+            <div className="max-w-7xl mx-auto border-t border-gray-900 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-500">
+                {/* Copyright */}
+                <p className="text-center md:text-left">
+                    © {new Date().getFullYear()} J&A Partners. {t.footer.politics.copyright}.
+                </p>
+
+                {/* Políticas */}
+                <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+                    <a href="/privacy-policy" className="hover:text-gray-300 transition-colors">
+                        {t.footer.politics.privacy}
+                    </a>
+                    <a href="/terms" className="hover:text-gray-300 transition-colors">
+                        {t.footer.politics.terms}
+                    </a>
+                    <a href="/cookies" className="hover:text-gray-300 transition-colors">
+                        {t.footer.politics.cookies}
+                    </a>
                 </div>
-                <p className="leading-relaxed text-xs sm:text-sm" aria-label="Information">{t.footer.about}</p>
-            </aside>
-            <nav className="nav">
-                <h3 className="text-neutral-300 mb-4 sm:mb-5 text-xs sm:text-sm font-bold tracking-widest">{t.footer.quickLinks}</h3>
-                <ul className="text-neutral-300 list-none v-stack gap-2">
-                    {t.footer.links.map((link, index) => (
-                        <li key={index}><a className="text-neutral-300" href={link.link}>{link.name}</a></li>
-                    ))}
-                </ul>
-            </nav>
-            <ul className="more-info" aria-labelledby="contact-heading">
-                <h3 className="text-white mb-4 sm:mb-5 text-xs sm:text-sm font-bold tracking-widest" aria-label="Información de contacto">{t.footer.connect}</h3>
-                {t.footer.contactInfo.map((info, index) => (
-                    <Info key={index} icon={info.icon} value={info.value} />
-                ))}
-            </ul>
+            </div>
         </footer>
-    )
+    );
 }
 
 export default Footer
