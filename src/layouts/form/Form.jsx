@@ -1,5 +1,5 @@
-import { Info } from '../../components/Info'
-import { useLanguage } from '../../hooks/LanguageContext.jsx'
+import { Info } from '@/components/ui/Info'
+import { useLanguage } from '@/hooks/LanguageContext.jsx'
 
 
 function Submit(){
@@ -76,7 +76,7 @@ function Form(){
                         name="fullName" 
                         type="text" 
                         placeholder={t.form.placeholders.fullName} 
-                        className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
+                        className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-neutral-300"
                         required
                         aria-required="true"
                     />
@@ -92,7 +92,7 @@ function Form(){
                         name="email" 
                         type="email" 
                         placeholder={t.form.placeholders.email} 
-                        className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
+                        className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-neutral-300"
                         required
                         aria-required="true"
                     />
@@ -108,7 +108,7 @@ function Form(){
                         name="company" 
                         type="text" 
                         placeholder={t.form.placeholders.company} 
-                        className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
+                        className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-neutral-300"
                         required
                         aria-required="true"
                     />
@@ -123,7 +123,7 @@ function Form(){
                         id="date"
                         name="date" 
                         type="date" 
-                        className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
+                        className="text-neutral-300 bg-neutral-800 p-3 sm:p-4 rounded-lg placeholder-neutral-400 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-neutral-300"
                         required
                         min={today}
                         aria-required="true"
@@ -139,7 +139,7 @@ function Form(){
                         id="message"
                         name="message" 
                         placeholder={t.form.placeholders.message} 
-                        className="bg-neutral-800 resize-none p-3 sm:p-4 rounded-lg text-neutral-300 placeholder-neutral-400 text-sm sm:text-base h-24 sm:h-32 focus:outline-none focus:ring-2 focus:ring-[var(--color-2)]"
+                        className="bg-neutral-800 resize-none p-3 sm:p-4 rounded-lg text-neutral-300 placeholder-neutral-400 text-sm sm:text-base h-24 sm:h-32 focus:outline-none focus:ring-2 focus:ring-neutral-300"
                         required
                         aria-required="true"
                     ></textarea>

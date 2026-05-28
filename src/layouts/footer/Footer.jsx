@@ -1,9 +1,9 @@
 
-import { useLanguage } from '../../hooks/LanguageContext.jsx'
-import { SocialLink } from '../../components/ui/SocialLink.jsx'
-import twitter from '../../assets/svg/social/twitter.svg'
-import youtube from '../../assets/svg/social/youtube.svg'
-import linkedin from '../../assets/svg/social/linkedin.svg'
+import { useLanguage } from '@/hooks/LanguageContext.jsx'
+import { SocialLink } from '@/components/ui/SocialLink.jsx'
+import twitter from '@/assets/svg/social/twitter.svg'
+import youtube from '@/assets/svg/social/youtube.svg'
+import linkedin from '@/assets/svg/social/linkedin.svg'
 
 function Footer() {
 

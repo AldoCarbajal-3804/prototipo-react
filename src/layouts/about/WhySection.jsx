@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useLanguage } from '../../hooks/LanguageContext.jsx';
-import { AccordionItem } from '../../components/AccordionItem.jsx';
+import { useLanguage } from '@/hooks/LanguageContext.jsx';
+import { AccordionItem } from '@/components/AccordionItem.jsx';
 
 function WhySection() {
 

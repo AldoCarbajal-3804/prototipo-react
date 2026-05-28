@@ -1,5 +1,5 @@
-import { TestimonialCard } from '../../components/TestimonialCard.jsx';
-import { useLanguage } from '../../hooks/LanguageContext.jsx';
+import { TestimonialCard } from '@/components/TestimonialCard.jsx';
+import { useLanguage } from '@/hooks/LanguageContext.jsx';
 
 function TestimonialsSection() {
   const { t } = useLanguage();

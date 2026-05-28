@@ -1,4 +1,4 @@
-import star from '../assets/svg/stars.svg'
+import star from '@/assets/svg/stars.svg'
 
 export const TestimonialCard = ({ name, role, content, avatar, stars }) => {
   return (

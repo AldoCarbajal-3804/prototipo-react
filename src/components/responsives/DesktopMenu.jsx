@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from '../ui/Link.jsx';
-import { useScrollTo } from '../../hooks/useScrollTo.jsx';
-import translateIcon from '../../assets/svg/translate.svg';
+import { Link } from '@/components/ui/Link.jsx';
+import { useScrollTo } from '@/hooks/useScrollTo.jsx';
+import translateIcon from '@/assets/svg/translate.svg';
 
 export const DesktopMenu = ({ t, toggleLanguage }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

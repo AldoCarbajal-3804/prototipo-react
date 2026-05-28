@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { useLanguage } from '../../hooks/LanguageContext.jsx';
-import {NavLogo} from '../../components/responsives/NavLogo.jsx';
-import {DesktopMenu} from '../../components/responsives/DesktopMenu.jsx';
-import {MobileMenu} from '../../components/responsives/MobileMenu.jsx';
-import menuIcon from '../../assets/svg/menu.svg';
-import closeIcon from '../../assets/svg/close.svg';
+import { useLanguage } from '@/hooks/LanguageContext.jsx';
+import {NavLogo} from '@/components/responsives/NavLogo.jsx';
+import {DesktopMenu} from '@/components/responsives/DesktopMenu.jsx';
+import {MobileMenu} from '@/components/responsives/MobileMenu.jsx';
+import menuIcon from '@/assets/svg/menu.svg';
+import closeIcon from '@/assets/svg/close.svg';
 
 function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

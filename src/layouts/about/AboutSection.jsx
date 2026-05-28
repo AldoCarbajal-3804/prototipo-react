@@ -1,5 +1,5 @@
-import perfil from '../../assets/images/perfil.webp'
-import {useLanguage} from '../../hooks/LanguageContext'
+import perfil from '@/assets/images/perfil.webp'
+import {useLanguage} from '@/hooks/LanguageContext'
 import { useState } from 'react'
 
 function AboutSection(){

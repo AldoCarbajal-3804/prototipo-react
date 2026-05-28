@@ -1,5 +1,5 @@
-import { useLanguage } from "../../hooks/LanguageContext.jsx"
-import { useScrollAnimation } from "../../hooks/useScrollAnimation.jsx"
+import { useLanguage } from "@/hooks/LanguageContext.jsx"
+import { useScrollAnimation } from "@/hooks/useScrollAnimation.jsx"
 
 function HistorySection() {
   const { t } = useLanguage();
