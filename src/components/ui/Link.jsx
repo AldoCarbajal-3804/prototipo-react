@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useScrollTo } from '../hooks/useScrollTo.jsx';
+import { useScrollTo } from '../../hooks/useScrollTo';
 
 export const Link = ({name, link}) => {
     const [isActive, setIsActive] = useState(false);

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Link } from '../components/Link.jsx';
-import { useScrollTo } from '../hooks/useScrollTo.jsx';
-import translateIcon from '../assets/svg/translate.svg';
+import { Link } from '../ui/Link.jsx';
+import { useScrollTo } from '../../hooks/useScrollTo.jsx';
+import translateIcon from '../../assets/svg/translate.svg';
 
 export const MobileMenu = ({ isOpen, closeMenu, t, toggleLanguage, menuRef }) => {
     const [isSubOpen, setIsSubOpen] = useState(false);
