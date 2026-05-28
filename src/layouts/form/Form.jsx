@@ -1,7 +1,6 @@
 import { Info } from '@/components/ui/Info'
 import { useLanguage } from '@/hooks/LanguageContext.jsx'
 
-
 function Submit(){
     const { t } = useLanguage()
     
