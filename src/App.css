@@ -13,6 +13,34 @@ html {
     }
 }
 
+:root {
+    --color-1: #171827;
+    --color-2: #3AA1B8;
+    --color-3: #D1D5DB;
+    --color-4: #161B2E;
+    --color-5: #111429;
+    --color-6: #1b1f2e;
+}
+
+.schedule-section{
+    background-color: var(--color-5);
+    .schedule-option{
+        background-color: var(--color-6);
+        border: 2px solid #4b5563;
+    }
+    .schedule-cta-primary{
+        background-color: var(--color-2);
+        color: var(--color-1);
+    }
+    .schedule-cta-secondary{
+        border-color: var(--color-2);
+        color: var(--color-2);
+    }
+    .calendly-embed{
+        background-color: var(--color-6);
+    }
+}
+
 body {
     font-family: 'Inter', sans-serif;
 }

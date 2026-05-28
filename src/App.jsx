@@ -13,6 +13,7 @@ const  Stats = lazy(() => import('./layouts/stats/Stats.jsx'))
 const  TestimonialsSection = lazy(() => import('./layouts/testimonials/TestimonialsSection.jsx'))
 const  Cta = lazy(() => import('./layouts/form/Cta.jsx'))
 const  Form = lazy(() => import('./layouts/form/Form.jsx'))
+const  Schedule = lazy(() => import('./layouts/form/Schedule.jsx')) 
 const  Footer = lazy(() => import('./layouts/footer/Footer.jsx'))
 import { LanguageProvider } from './hooks/LanguageContext.jsx'
 
@@ -32,6 +33,7 @@ function App() {
       <TestimonialsSection />
       <Cta/>
       <Form />
+      <Schedule />
       <Footer />
     </LanguageProvider>
   )
