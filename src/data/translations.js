@@ -195,29 +195,84 @@ export const translations = {
       button: "Contact Us Today"
     },
     form: {
-      heading: "Contact Us",
-      description: "Whether you're looking for a custom AI agent or a complete business automation renewal, our team is ready to help you scale.",
+      heading: "Free Diagnosis",
+      description: "Tell us about your context and we'll propose an initial plan. You can also schedule a meeting directly on our calendar.",
       contactInfo: [
-        { icon: "📧", title: "Email Us", value: "hello@japartners.ai" },
-        { icon: "📍", title: "Our Headquarters", value: "San Francisco, CA" },
-        { icon: "📞", title: "Call Us", value: "+1 (555) 123-4567" }
+        { icon: "📧", title: "Email", value: "contacto@japartners.com" },
+        { icon: "📍", title: "Location", value: "Huancayo, Peru" },
+        { icon: "📞", title: "Phone", value: "+51 925 290 477" }
       ],
+      ctaButton: "Or schedule a meeting \u2192",
+      formLabel: "Diagnosis form",
       labels: {
         fullName: "Full Name",
         email: "Corporate Email",
         company: "Company",
-        date: "Meeting Date",
-        message: "Message"
+        phone: "Phone / WhatsApp",
+        service: "Service of Interest",
+        stage: "Project Stage",
+        budget: "Estimated Budget",
+        challenge: "What is your main challenge?"
       },
       placeholders: {
-        fullName: "John Doe",
-        email: "john@company.com",
+        fullName: "Maria Garcia",
+        email: "maria@company.com",
         company: "Company Name",
-        message: "Tell us about your project goals..."
+        phone: "+1 555 123 4567",
+        challenge: "Describe the problem you want to solve, current processes, deadlines or goals\u2026"
       },
-      button: "Send Message",
-      buttonSending: "Sending Message",
-      success: "Sent!"
+      optional: "Optional",
+      minLength: "Minimum 20 characters",
+      button: "Send Diagnosis",
+      buttonSending: "Sending diagnosis\u2026",
+      success: "Thank you! We received your diagnosis. We'll contact you within 24 to 48 business hours.",
+      options: {
+        service: [
+          { value: "", label: "Select a service" },
+          { value: "ia", label: "Artificial Intelligence" },
+          { value: "automatizacion", label: "Business Automation" },
+          { value: "software", label: "Custom Software" },
+          { value: "consultoria", label: "Tech Consulting" },
+          { value: "otro", label: "Other" }
+        ],
+        stage: [
+          { value: "", label: "Select a stage" },
+          { value: "idea", label: "Just an idea" },
+          { value: "mvp", label: "I have an MVP or prototype" },
+          { value: "operacion", label: "Running operation — want to scale" },
+          { value: "optimizar", label: "I want to optimize existing processes" }
+        ],
+        budget: [
+          { value: "", label: "Estimated range (optional)" },
+          { value: "menos-5k", label: "Under USD 5,000" },
+          { value: "5k-15k", label: "USD 5,000 – 15,000" },
+          { value: "15k-50k", label: "USD 15,000 – 50,000" },
+          { value: "mas-50k", label: "Over USD 50,000" },
+          { value: "por-definir", label: "To be defined" }
+        ]
+      },
+      validation: {
+        fullName: "Enter your full name.",
+        email: "Enter a valid email address.",
+        company: "Enter your company name.",
+        service: "Select the type of service you need.",
+        stage: "Select your project stage.",
+        challenge: "Describe your challenge with at least 20 characters to guide the diagnosis.",
+        submitError: "We couldn't send the form. Try again or schedule a meeting.",
+        connectionError: "Connection error. Check your network or write to contacto@japartners.com."
+      }
+    },
+    schedule: {
+      title: "Schedule a meeting",
+      descriptionCalendly: "Choose the time that works best for you for a no-commitment diagnosis session with our team.",
+      descriptionFallback: "Coordinate your diagnosis session through the channel you prefer. We'll get back to you shortly.",
+      fallbackLabel: "Options to schedule a meeting",
+      calendlyLabel: "Booking calendar",
+      options: [
+        { icon: "📋", title: "Diagnosis form", description: "Tell us about your project and we'll reply within 24–48 business hours.", cta: "Fill form", href: "#form-section", primary: true },
+        { icon: "💬", title: "WhatsApp", description: "Write to us and we'll coordinate a date and time with you.", cta: "Open WhatsApp", href: "https://wa.me/51925290477?text=Hello%2C%20I%20want%20to%20schedule%20a%20diagnosis%20meeting%20with%20J%26A%20Partners.", external: true },
+        { icon: "📧", title: "Email", description: "Tell us your availability and we'll propose times.", cta: "Send email", href: "mailto:contacto@japartners.com?subject=Diagnosis%20meeting%20request" }
+      ]
     },
     footer: {
       header: {
@@ -438,29 +493,84 @@ export const translations = {
       button: "Contáctanos Hoy"
     },
     form: {
-      heading: "Contáctanos",
-      description: "Ya sea que busques un agente de IA personalizado o una renovación completa de automatización empresarial, nuestro equipo está listo para ayudarte a escalar.",
+      heading: "Diagnóstico gratuito",
+      description: "Cuéntanos tu contexto y te proponemos un plan inicial. También puedes agendar una reunión directamente en nuestro calendario.",
       contactInfo: [
-        { icon: "📧", title: "Escríbenos", value: "hello@japartners.ai" },
-        { icon: "📍", title: "Nuestra Sede", value: "San Francisco, CA" },
-        { icon: "📞", title: "Llámanos", value: "+1 (555) 123-4567" }
+        { icon: "📧", title: "Correo", value: "contacto@japartners.com" },
+        { icon: "📍", title: "Ubicación", value: "Huancayo, Perú" },
+        { icon: "📞", title: "Teléfono", value: "+51 925 290 477" }
       ],
+      ctaButton: "O agenda una reunión \u2192",
+      formLabel: "Formulario de diagnóstico",
       labels: {
-        fullName: "Nombre Completo",
-        email: "Correo Corporativo",
+        fullName: "Nombre completo",
+        email: "Correo corporativo",
         company: "Empresa",
-        date: "Fecha de Reunión",
-        message: "Mensaje"
+        phone: "Teléfono / WhatsApp",
+        service: "Servicio de interés",
+        stage: "Etapa del proyecto",
+        budget: "Presupuesto estimado",
+        challenge: "¿Cuál es tu principal desafío?"
       },
       placeholders: {
-        fullName: "Juan Pérez",
-        email: "juan@empresa.com",
-        company: "Nombre de la Empresa",
-        message: "Cuéntanos sobre los objetivos de tu proyecto..."
+        fullName: "María García",
+        email: "maria@empresa.com",
+        company: "Nombre de la empresa",
+        phone: "+51 999 999 999",
+        challenge: "Describe el problema que quieres resolver, procesos actuales, plazos u objetivos\u2026"
       },
-      button: "Enviar Mensaje",
-      buttonSending: "Enviando Mensaje",
-      success: "¡Enviado!"
+      optional: "Opcional",
+      minLength: "Mínimo 20 caracteres",
+      button: "Enviar diagnóstico",
+      buttonSending: "Enviando diagnóstico\u2026",
+      success: "\u00a1Gracias! Recibimos tu diagnóstico. Te contactaremos en un plazo de 24 a 48 horas hábiles.",
+      options: {
+        service: [
+          { value: "", label: "Selecciona un servicio" },
+          { value: "ia", label: "Inteligencia Artificial" },
+          { value: "automatizacion", label: "Automatización empresarial" },
+          { value: "software", label: "Software a medida" },
+          { value: "consultoria", label: "Consultoría tecnológica" },
+          { value: "otro", label: "Otro" }
+        ],
+        stage: [
+          { value: "", label: "Selecciona una etapa" },
+          { value: "idea", label: "Solo tengo una idea" },
+          { value: "mvp", label: "Tengo un MVP o prototipo" },
+          { value: "operacion", label: "Operación en marcha — quiero escalar" },
+          { value: "optimizar", label: "Quiero optimizar procesos existentes" }
+        ],
+        budget: [
+          { value: "", label: "Rango estimado (opcional)" },
+          { value: "menos-5k", label: "Menos de USD 5,000" },
+          { value: "5k-15k", label: "USD 5,000 – 15,000" },
+          { value: "15k-50k", label: "USD 15,000 – 50,000" },
+          { value: "mas-50k", label: "Más de USD 50,000" },
+          { value: "por-definir", label: "Por definir" }
+        ]
+      },
+      validation: {
+        fullName: "Ingresa tu nombre completo.",
+        email: "Ingresa un correo electrónico válido.",
+        company: "Indica el nombre de tu empresa.",
+        service: "Selecciona el tipo de servicio que necesitas.",
+        stage: "Selecciona la etapa de tu proyecto.",
+        challenge: "Describe tu desafío con al menos 20 caracteres para orientar el diagnóstico.",
+        submitError: "No pudimos enviar el formulario. Intenta de nuevo o agenda una reunión.",
+        connectionError: "Error de conexión. Revisa tu red o escríbenos a contacto@japartners.com."
+      }
+    },
+    schedule: {
+      title: "Agenda una reunión",
+      descriptionCalendly: "Elige el horario que mejor te convenga para una sesión de diagnóstico sin compromiso con nuestro equipo.",
+      descriptionFallback: "Coordina tu sesión de diagnóstico por el canal que prefieras. Te respondemos a la brevedad.",
+      fallbackLabel: "Opciones para agendar una reunión",
+      calendlyLabel: "Calendario de reservas",
+      options: [
+        { icon: "📋", title: "Formulario de diagnóstico", description: "Cuéntanos tu proyecto y te respondemos en 24–48 h hábiles.", cta: "Completar formulario", href: "#form-section", primary: true },
+        { icon: "💬", title: "WhatsApp", description: "Escríbenos y coordinamos fecha y hora contigo.", cta: "Abrir WhatsApp", href: "https://wa.me/51925290477?text=Hola%2C%20quiero%20agendar%20una%20reuni%C3%B3n%20de%20diagn%C3%B3stico%20con%20J%26A%20Partners.", external: true },
+        { icon: "📧", title: "Correo", description: "Indica tu disponibilidad y te proponemos horarios.", cta: "Enviar correo", href: "mailto:contacto@japartners.com?subject=Solicitud%20de%20reuni%C3%B3n%20de%20diagn%C3%B3stico" }
+      ]
     },
     footer: {
       header:{

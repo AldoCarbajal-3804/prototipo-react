@@ -1,10 +1,10 @@
 
-export const CardSchedule = () => {
+export const CardSchedule = ({title,icon,description,href,cta,primary,external}) => {
 
     return(
         <article
             key={title}
-            className="flex flex-col gap-3 sm:gap-4 p-5 sm:p-6 md:p-8 rounded-xl md:rounded-2xl"
+            className="flex flex-col gap-3 sm:gap-4 p-5 sm:p-6 md:p-8 rounded-xl md:rounded-2xl bg-gray-800"
             role="listitem"
         >
             <span className="text-2xl sm:text-3xl" role="img" aria-hidden="true">
@@ -18,8 +18,8 @@ export const CardSchedule = () => {
                 href={href}
                 className={
                     primary
-                        ? "inline-flex items-center justify-center px-4 sm:px-5 py-3 rounded-lg font-semibold text-sm sm:text-base transition hover:opacity-90"
-                        : "inline-flex items-center justify-center px-4 sm:px-5 py-3 rounded-lg font-semibold text-sm sm:text-base border-2 transition hover:opacity-90"
+                        ? "bg-cyan-700 inline-flex items-center justify-center px-4 sm:px-5 py-3 rounded-lg font-semibold text-sm sm:text-base border-none"
+                        : "bg-cyan-700 inline-flex items-center justify-center px-4 sm:px-5 py-3 rounded-lg font-semibold text-sm sm:text-base border-none"
                 }
                 {...(external
                     ? { target: "_blank", rel: "noopener noreferrer" }
