@@ -1,6 +1,6 @@
 import Submit from "@/layouts/form/Submit"
 
-function FormFields({ formAction, state, formI18n, serviceOptions, stageOptions, budgetOptions }) {
+function FormFields({ formAction, state, formI18n, serviceOptions, stageOptions, budgetOptions, loadTime }) {
     const baseClass =
         "bg-gray-200 p-3 sm:p-4 rounded-lg text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-cyan-700 w-full"
 
@@ -178,6 +178,16 @@ function FormFields({ formAction, state, formI18n, serviceOptions, stageOptions,
                     </span>
                 )}
             </fieldset>
+
+            <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                className="absolute w-px h-px opacity-0"
+                aria-hidden="true"
+            />
+            <input type="hidden" name="_loadTime" value={loadTime} />
 
             <Submit
                 disabled={state.ok === true}

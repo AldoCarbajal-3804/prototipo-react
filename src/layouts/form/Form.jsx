@@ -1,4 +1,4 @@
-import { useActionState } from "react"
+import { useActionState, useState } from "react"
 import { useLanguage } from "@/hooks/LanguageContext.jsx"
 import FormContact from "@/layouts/form/FormContact"
 import FormFields from "@/layouts/form/FormFields"
@@ -6,6 +6,7 @@ import { validate } from "@/layouts/form/FormValidation"
 
 function Form() {
     const { t } = useLanguage()
+    const [loadTime] = useState(() => Date.now())
 
     const SERVICE_OPTIONS = t.form.options.service
     const STAGE_OPTIONS = t.form.options.stage
@@ -13,7 +14,10 @@ function Form() {
 
     async function handleFormSubmit(_prevState, formData) {
         const error = validate(formData, t.form.validation)
-        if (error) return error
+        if (error) {
+            if (error.ok && !error.message) return { ok: true, message: "" }
+            return error
+        }
 
         const payload = {
             fullName: formData.get("fullName")?.toString().trim(),
@@ -49,6 +53,8 @@ function Form() {
 
     const [state, formAction] = useActionState(handleFormSubmit, { ok: null, message: "" })
 
+    const showSuccess = state.ok === true && state.message !== ""
+
     return (
         <section
             id="form-section"
@@ -57,14 +63,26 @@ function Form() {
         >
             <FormContact />
 
-            <FormFields
-                formAction={formAction}
-                state={state}
-                formI18n={t.form}
-                serviceOptions={SERVICE_OPTIONS}
-                stageOptions={STAGE_OPTIONS}
-                budgetOptions={BUDGET_OPTIONS}
-            />
+            {showSuccess ? (
+                <div
+                    role="alert"
+                    className="bg-gray-900 w-full lg:w-1/2 p-6 sm:p-8 md:p-10 rounded-xl md:rounded-2xl center"
+                >
+                    <p className="text-emerald-300 text-lg text-center font-medium">
+                        {state.message}
+                    </p>
+                </div>
+            ) : (
+                <FormFields
+                    formAction={formAction}
+                    state={state}
+                    formI18n={t.form}
+                    serviceOptions={SERVICE_OPTIONS}
+                    stageOptions={STAGE_OPTIONS}
+                    budgetOptions={BUDGET_OPTIONS}
+                    loadTime={loadTime}
+                />
+            )}
         </section>
     )
 }
