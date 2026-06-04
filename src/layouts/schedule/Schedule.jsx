@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useLanguage } from "@/hooks/LanguageContext.jsx"
-import ScheduleFallback from "@/layouts/form/ScheduleFallback"
+import ScheduleFallback from "@/layouts/schedule/ScheduleFallback"
 
 const CALENDLY_URL = import.meta.env.VITE_CALENDLY_URL?.trim() || ""
 
