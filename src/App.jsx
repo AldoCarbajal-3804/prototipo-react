@@ -16,11 +16,12 @@ const  Form = lazy(() => import('./layouts/form/Form.jsx'))
 const  Schedule = lazy(() => import('./layouts/schedule/Schedule.jsx')) 
 const  Footer = lazy(() => import('./layouts/footer/Footer.jsx'))
 import { LanguageProvider } from './hooks/LanguageContext.jsx'
+import { SkipLink } from './components/responsives/SkipLink.jsx'
 
 function App() {
-
   return (
     <LanguageProvider>
+      <SkipLink />
       <Navbar/>
       <Hero/>
       <AboutSection />

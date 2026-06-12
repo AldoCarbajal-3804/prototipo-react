@@ -18,9 +18,9 @@ function Stats() {
                 <span className="particle-bounce bg-cyan-300" style={{ animationDuration: "11s, 7s" }}></span>
             </div>
             <header className="relative max-w-4xl mx-auto text-center px-6">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-800 tracking-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-800 tracking-tight">
                     {t.stats.heading}
-                </h1>
+                </h2>
                 <p className="text-neutral-600 mt-4 text-base md:text-lg">
                     {t.stats.subtitle}
                 </p>

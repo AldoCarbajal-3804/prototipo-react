@@ -15,8 +15,8 @@ function Form() {
     async function handleFormSubmit(_prevState, formData) {
         const error = validate(formData, t.form.validation)
         if (error) {
-            if (error.ok && !error.message) return { ok: true, message: "" }
-            return error
+            if (error.ok && !error.message) return { ok: true, message: "", fields: {} }
+            return { ok: false, message: error.message, fields: error.fields || {} }
         }
 
         const payload = {
@@ -51,7 +51,7 @@ function Form() {
         return { ok: true, message: t.form.success }
     }
 
-    const [state, formAction] = useActionState(handleFormSubmit, { ok: null, message: "" })
+    const [state, formAction] = useActionState(handleFormSubmit, { ok: null, message: "", fields: {} })
 
     const showSuccess = state.ok === true && state.message !== ""
 

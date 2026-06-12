@@ -13,7 +13,7 @@ export const AccordionItem = ({ title, desc, category, isOpen, onToggle }) => {
                 <span className="text-base sm:text-lg md:text-xl font-medium text-neutral-800 group-hover:text-blue-900 transition-colors">
                     {title}
                 </span>
-                <span className="text-xs sm:text-sm text-neutral-500 font-medium uppercase tracking-wider text-right">
+                <span className="text-xs sm:text-sm text-neutral-600 font-medium uppercase tracking-wider text-right">
                     {category}
                 </span>
                 </summary>

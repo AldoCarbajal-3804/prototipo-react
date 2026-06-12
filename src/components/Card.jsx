@@ -12,8 +12,8 @@ export const Card = ({ icon, name, description }) => {
             <div className="bg-sky-800 w-10 sm:w-12 h-10 sm:h-12 rounded-lg center cursor-pointer" role="img" aria-label={`Icono de ${name}`}>
                 <img src={icon} alt="icon" aria-hidden="true"/>
             </div>
-            <h3 className="text-neutral-700 text-lg sm:text-xl font-semibold" id={`card-title-${name}`}>{name}</h3>
-            <p className="text-neutral-700 text-sm sm:text-base leading-relaxed" id={`card-desc-${name}`}>{description}</p>
+            <h3 className="text-neutral-800 text-lg sm:text-xl font-semibold" id={`card-title-${name}`}>{name}</h3>
+            <p className="text-neutral-800 text-sm sm:text-base leading-relaxed" id={`card-desc-${name}`}>{description}</p>
         </article>
     )
 }

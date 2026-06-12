@@ -3,6 +3,50 @@ import Submit from "@/layouts/form/Submit"
 function FormFields({ formAction, state, formI18n, serviceOptions, stageOptions, budgetOptions, loadTime }) {
     const baseClass =
         "bg-gray-200 p-3 sm:p-4 rounded-lg text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-cyan-700 w-full"
+    const errorClass = "bg-red-200 p-3 sm:p-4 rounded-lg text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-red-500 w-full border border-red-600"
+    const errs = state.fields || {}
+
+    const field = (id, label, type, placeholder, opts) => {
+        const hasErr = !!errs[id]
+        const errId = `${id}-error`
+        const descIds = [hasErr && errId, opts?.hint && `${id}-hint`].filter(Boolean).join(" ") || undefined
+        const Tag = type === "select" ? "select" : type === "textarea" ? "textarea" : "input"
+        const inputProps = {
+            id,
+            name: id,
+            className: hasErr ? errorClass : `${baseClass} placeholder-gray-400`,
+            "aria-required": opts?.required ? "true" : undefined,
+            "aria-invalid": hasErr ? "true" : undefined,
+            "aria-describedby": descIds,
+            required: opts?.required || undefined,
+            ...(opts?.attrs || {}),
+        }
+        return (
+            <fieldset className={`flex flex-col gap-2 ${opts?.wide ? "sm:col-span-2" : ""}`}>
+                <label htmlFor={id} className="text-sm font-medium">
+                    {label}
+                    {opts?.required && <span aria-label="required" className="text-red-500">*</span>}
+                </label>
+                {Tag === "select" ? (
+                    <select {...inputProps} defaultValue="">
+                        {opts.options.map(({ value, label }) => (
+                            <option key={value || "empty"} value={value} disabled={!value}>{label}</option>
+                        ))}
+                    </select>
+                ) : Tag === "textarea" ? (
+                    <textarea {...inputProps} />
+                ) : (
+                    <input {...inputProps} />
+                )}
+                {opts?.hint && (
+                    <span id={`${id}-hint`} className="text-xs text-gray-500">{opts.hint}</span>
+                )}
+                {hasErr && (
+                    <span id={errId} className="text-xs text-red-400 font-medium" role="alert">{errs[id]}</span>
+                )}
+            </fieldset>
+        )
+    }
 
     return (
         <form
@@ -15,169 +59,54 @@ function FormFields({ formAction, state, formI18n, serviceOptions, stageOptions,
                 {formI18n.formLabel}
             </h2>
 
-            {state.message && (
-                <div
-                    role="alert"
-                    aria-live="polite"
-                    className={`sm:col-span-2 p-3 sm:p-4 rounded-lg text-sm sm:text-base ${
-                        state.ok
-                            ? "bg-emerald-900/40 text-emerald-200 border border-emerald-600"
-                            : "bg-red-900/30 text-red-200 border border-red-600"
-                    }`}
-                >
+            {state.ok === false && state.message && !Object.keys(errs).length && (
+                <div role="alert" aria-live="polite"
+                    className="sm:col-span-2 p-3 sm:p-4 rounded-lg text-sm sm:text-base bg-red-900/30 text-red-200 border border-red-600">
                     {state.message}
                 </div>
             )}
 
-            <fieldset className="flex flex-col gap-2">
-                <label htmlFor="fullName" className="text-sm font-medium">
-                    {formI18n.labels.fullName}
-                    <span aria-label="required" className="text-red-500">*</span>
-                </label>
-                <input
-                    id="fullName"
-                    name="fullName"
-                    type="text"
-                    placeholder={formI18n.placeholders.fullName}
-                    className={`${baseClass} placeholder-gray-400`}
-                    required
-                    aria-required="true"
-                />
-            </fieldset>
+            {field("fullName", formI18n.labels.fullName, "text", formI18n.placeholders.fullName, {
+                required: true,
+                attrs: { autoComplete: "name" },
+            })}
 
-            <fieldset className="flex flex-col gap-2">
-                <label htmlFor="email" className="text-sm font-medium">
-                    {formI18n.labels.email}
-                    <span aria-label="required" className="text-red-500">*</span>
-                </label>
-                <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder={formI18n.placeholders.email}
-                    className={`${baseClass} placeholder-gray-400`}
-                    required
-                    aria-required="true"
-                />
-            </fieldset>
+            {field("email", formI18n.labels.email, "email", formI18n.placeholders.email, {
+                required: true,
+                attrs: { autoComplete: "email" },
+            })}
 
-            <fieldset className="flex flex-col gap-2">
-                <label htmlFor="company" className="text-sm font-medium">
-                    {formI18n.labels.company}
-                    <span aria-label="required" className="text-red-500">*</span>
-                </label>
-                <input
-                    id="company"
-                    name="company"
-                    type="text"
-                    placeholder={formI18n.placeholders.company}
-                    className={`${baseClass} placeholder-gray-400`}
-                    required
-                    aria-required="true"
-                />
-            </fieldset>
+            {field("company", formI18n.labels.company, "text", formI18n.placeholders.company, {
+                required: true,
+                attrs: { autoComplete: "organization" },
+            })}
 
-            <fieldset className="flex flex-col gap-2">
-                <label htmlFor="phone" className="text-sm font-medium">
-                    {formI18n.labels.phone}
-                </label>
-                <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    placeholder={formI18n.placeholders.phone}
-                    className={`${baseClass} placeholder-gray-400`}
-                    aria-describedby="phone-hint"
-                />
-                {formI18n.optional && (
-                    <span id="phone-hint" className="text-xs text-gray-500">
-                        {formI18n.optional}
-                    </span>
-                )}
-            </fieldset>
+            {field("phone", formI18n.labels.phone, "tel", formI18n.placeholders.phone, {
+                attrs: { autoComplete: "tel" },
+                hint: formI18n.optional,
+            })}
 
-            <fieldset className="flex flex-col gap-2">
-                <label htmlFor="service" className="text-sm font-medium">
-                    {formI18n.labels.service}
-                    <span aria-label="required" className="text-red-500">*</span>
-                </label>
-                <select
-                    id="service"
-                    name="service"
-                    className={baseClass}
-                    required
-                    aria-required="true"
-                    defaultValue=""
-                >
-                    {serviceOptions.map(({ value, label }) => (
-                        <option key={value || "empty"} value={value} disabled={!value}>
-                            {label}
-                        </option>
-                    ))}
-                </select>
-            </fieldset>
+            {field("service", formI18n.labels.service, "select", "", {
+                required: true,
+                options: serviceOptions,
+            })}
 
-            <fieldset className="flex flex-col gap-2">
-                <label htmlFor="stage" className="text-sm font-medium">
-                    {formI18n.labels.stage}
-                    <span aria-label="required" className="text-red-500">*</span>
-                </label>
-                <select
-                    id="stage"
-                    name="stage"
-                    className={baseClass}
-                    required
-                    aria-required="true"
-                    defaultValue=""
-                >
-                    {stageOptions.map(({ value, label }) => (
-                        <option key={value || "empty"} value={value} disabled={!value}>
-                            {label}
-                        </option>
-                    ))}
-                </select>
-            </fieldset>
+            {field("stage", formI18n.labels.stage, "select", "", {
+                required: true,
+                options: stageOptions,
+            })}
 
-            <fieldset className="flex flex-col gap-2 sm:col-span-2">
-                <label htmlFor="budget" className="text-sm font-medium">
-                    {formI18n.labels.budget}
-                </label>
-                <select
-                    id="budget"
-                    name="budget"
-                    className={baseClass}
-                    defaultValue=""
-                >
-                    {budgetOptions.map(({ value, label }) => (
-                        <option key={value || "empty"} value={value} disabled={!value}>
-                            {label}
-                        </option>
-                    ))}
-                </select>
-            </fieldset>
+            {field("budget", formI18n.labels.budget, "select", "", {
+                options: budgetOptions,
+                wide: true,
+            })}
 
-            <fieldset className="flex flex-col gap-2 sm:col-span-2">
-                <label htmlFor="challenge" className="text-sm font-medium">
-                    {formI18n.labels.challenge}
-                    <span aria-label="required" className="text-red-500">*</span>
-                </label>
-                <textarea
-                    id="challenge"
-                    name="challenge"
-                    placeholder={formI18n.placeholders.challenge}
-                    className={`${baseClass} placeholder-gray-400 resize-none`}
-                    required
-                    aria-required="true"
-                    minLength={20}
-                    rows={4}
-                    aria-describedby="challenge-hint"
-                />
-                {formI18n.minLength && (
-                    <span id="challenge-hint" className="text-xs text-gray-500">
-                        {formI18n.minLength}
-                    </span>
-                )}
-            </fieldset>
+            {field("challenge", formI18n.labels.challenge, "textarea", formI18n.placeholders.challenge, {
+                required: true,
+                wide: true,
+                hint: formI18n.minLength,
+                attrs: { minLength: 20, rows: 4 },
+            })}
 
             <input
                 type="text"
