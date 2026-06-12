@@ -50,12 +50,9 @@ function Footer() {
                     </a>
                 </section>
 
-                {/* Columna 3: Enlaces / Redes Sociales */}
-                <section className="w-full lg:w-auto min-w-40" aria-labelledby="contact-heading">
-                    <h3
-                        id="contact-heading"
-                        className="text-xs font-bold tracking-widest text-white mb-5 uppercase"
-                    >
+                {/* Columna 3: Redes Sociales */}
+                <section className="w-full lg:w-auto min-w-40" aria-labelledby="social-heading">
+                    <h3 id="social-heading" className="text-xs font-bold tracking-widest text-white mb-5 uppercase">
                         {t.footer.quickLinks}
                     </h3>
                     <nav aria-label={t.footer.quickLinks}>
@@ -80,12 +77,18 @@ function Footer() {
                 </section>
             </div>
 
-            {/* Barra Inferior (Separador y Copyright) */}
-            <div className="max-w-7xl mx-auto border-t border-gray-900 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-gray-500">
-                {/* Copyright */}
-                <p className="text-center md:text-left">
-                    © {new Date().getFullYear()} J&A Partners. {t.footer.politics.copyright}.
-                </p>
+            {/* Barra Inferior */}
+            <div className="max-w-7xl mx-auto border-t border-gray-900 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+                {/* Contacto en línea */}
+                <div className="flex flex-wrap justify-center md:justify-start gap-x-4 gap-y-1">
+                    <span>{t.footer.contact.address}</span>
+                    <span className="hidden md:inline text-gray-700">|</span>
+                    <a href="tel:+51925290477" className="hover:text-gray-300 transition-colors">{t.footer.contact.phone}</a>
+                    <span className="hidden md:inline text-gray-700">|</span>
+                    <a href="mailto:contacto@japartners.com" className="hover:text-gray-300 transition-colors">{t.footer.contact.email}</a>
+                    <span className="hidden md:inline text-gray-700">|</span>
+                    <span>{t.footer.contact.hours}</span>
+                </div>
 
                 {/* Políticas */}
                 <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
@@ -100,6 +103,11 @@ function Footer() {
                     </a>
                 </div>
             </div>
+
+            {/* Copyright */}
+            <p className="max-w-7xl mx-auto mt-4 pt-4 border-t border-gray-900 text-center text-xs text-gray-600">
+                © {new Date().getFullYear()} J&A Partners. {t.footer.politics.copyright}.
+            </p>
         </footer>
     );
 }
