@@ -282,7 +282,13 @@ export const translations = {
         asesors: "Solicite Guide",
         quickLinks: "Social Webs",
       },
-      
+      contact: {
+        title: "Contact",
+        address: "Huancayo, Junín, Peru",
+        phone: "+51 925 290 477",
+        email: "contacto@japartners.com",
+        hours: "Mon–Fri 9:00 – 18:00",
+      },
       politics:{
         copyright: "All rights reserved",
         privacy:"Privacy Policy",
@@ -579,9 +585,14 @@ export const translations = {
         description:"¿Tienes un proyecto de software o IA? \n Conversemos y construyamos una solución tecnológica para tu empresa.",
         asesors: "Solicitar Asesoría",
         quickLinks: "Redes Sociales",
-
       },
-      
+      contact: {
+        title: "Contacto",
+        address: "Huancayo, Junín, Perú",
+        phone: "+51 925 290 477",
+        email: "contacto@japartners.com",
+        hours: "Lun–Vie 9:00 – 18:00",
+      },
       politics:{
         copyright: "Todos los derechos reservados",
         privacy:"Política de Privacidad",
