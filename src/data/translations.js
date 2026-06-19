@@ -274,7 +274,8 @@ export const translations = {
         { icon: "📋", title: "Diagnosis form", description: "Tell us about your project and we'll reply within 24–48 business hours.", cta: "Fill form", href: "#form-section", primary: true },
         { icon: "💬", title: "WhatsApp", description: "Write to us and we'll coordinate a date and time with you.", cta: "Open WhatsApp", href: "https://wa.me/51925290477?text=Hello%2C%20I%20want%20to%20schedule%20a%20diagnosis%20meeting%20with%20J%26A%20Partners.", external: true },
         { icon: "📧", title: "Email", description: "Tell us your availability and we'll propose times.", cta: "Send email", href: "mailto:contacto@japartners.com?subject=Diagnosis%20meeting%20request" }
-      ]
+      ],
+      bookingConfirmed: "Meeting confirmed! We sent the details to your email. We look forward to speaking with you."
     },
     footer: {
       header: {
@@ -580,7 +581,8 @@ export const translations = {
         { icon: "📋", title: "Formulario de diagnóstico", description: "Cuéntanos tu proyecto y te respondemos en 24–48 h hábiles.", cta: "Completar formulario", href: "#form-section", primary: true },
         { icon: "💬", title: "WhatsApp", description: "Escríbenos y coordinamos fecha y hora contigo.", cta: "Abrir WhatsApp", href: "https://wa.me/51925290477?text=Hola%2C%20quiero%20agendar%20una%20reuni%C3%B3n%20de%20diagn%C3%B3stico%20con%20J%26A%20Partners.", external: true },
         { icon: "📧", title: "Correo", description: "Indica tu disponibilidad y te proponemos horarios.", cta: "Enviar correo", href: "mailto:contacto@japartners.com?subject=Solicitud%20de%20reuni%C3%B3n%20de%20diagn%C3%B3stico" }
-      ]
+      ],
+      bookingConfirmed: "Reunión confirmada. Enviamos los detalles a tu correo. ¡Esperamos conversar contigo!"
     },
     footer: {
       header:{

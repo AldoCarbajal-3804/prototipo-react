@@ -54,6 +54,13 @@ function Form() {
             console.log("[Diagnóstico]", payload)
         }
 
+        sessionStorage.setItem("ja-calendly-prefill", JSON.stringify({
+            name: payload.fullName,
+            email: payload.email,
+            company: payload.company,
+            service: payload.service,
+        }))
+
         return { ok: true, message: t.form.success }
     }
 

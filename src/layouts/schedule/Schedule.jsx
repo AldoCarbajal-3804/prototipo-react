@@ -1,11 +1,54 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useLanguage } from "@/hooks/LanguageContext.jsx"
 import ScheduleFallback from "@/layouts/schedule/ScheduleFallback"
 
-const CALENDLY_URL = import.meta.env.VITE_CALENDLY_URL?.trim() || ""
+function resolveCalendlyUrl() {
+    const defaultUrl = import.meta.env.VITE_CALENDLY_URL?.trim()
+    if (!defaultUrl) return ""
+
+    try {
+        const raw = sessionStorage.getItem("ja-calendly-prefill")
+        if (!raw) return defaultUrl
+
+        const { service } = JSON.parse(raw)
+
+        if (service) {
+            const key = `VITE_CALENDLY_URL_${service.toUpperCase()}`
+            const serviceUrl = import.meta.env[key]?.trim()
+            if (serviceUrl) return serviceUrl
+        }
+    } catch {
+        /* ignore */
+    }
+
+    return defaultUrl
+}
+
+function buildPrefillParams() {
+    try {
+        const raw = sessionStorage.getItem("ja-calendly-prefill")
+        if (!raw) return ""
+
+        const { name, email } = JSON.parse(raw)
+        const params = new URLSearchParams()
+        if (name) params.set("name", name)
+        if (email) params.set("email", email)
+
+        return params.toString()
+    } catch {
+        return ""
+    }
+}
 
 function Schedule() {
     const { t } = useLanguage()
+    const [bookingDone, setBookingDone] = useState(false)
+
+    const CALENDLY_URL = resolveCalendlyUrl()
+    const prefillStr = buildPrefillParams()
+    const calendlyUrlWithPrefill = prefillStr
+        ? `${CALENDLY_URL}?${prefillStr}`
+        : CALENDLY_URL
 
     useEffect(() => {
         if (!CALENDLY_URL) {
@@ -25,10 +68,19 @@ function Schedule() {
         script.async = true
         document.body.appendChild(script)
 
+        const handler = () => setBookingDone(true)
+        window.addEventListener("calendly.event_scheduled", handler)
+
         return () => {
             script.remove()
+            window.removeEventListener("calendly.event_scheduled", handler)
         }
-    }, [])
+    }, [CALENDLY_URL])
+
+    function handleBack() {
+        setBookingDone(false)
+        sessionStorage.removeItem("ja-calendly-prefill")
+    }
 
     return (
         <section
@@ -44,16 +96,31 @@ function Schedule() {
                     {t.schedule.title}
                 </h2>
                 <p className="text-sm sm:text-base md:text-lg">
-                    {CALENDLY_URL
-                        ? t.schedule.descriptionCalendly
-                        : t.schedule.descriptionFallback}
+                    {bookingDone
+                        ? ""
+                        : CALENDLY_URL
+                            ? t.schedule.descriptionCalendly
+                            : t.schedule.descriptionFallback}
                 </p>
             </header>
 
-            {CALENDLY_URL ? (
+            {bookingDone ? (
+                <div className="bg-white/10 rounded-xl md:rounded-2xl p-8 sm:p-12 md:p-16 center flex-col gap-4 text-center">
+                    <span className="text-5xl" aria-hidden="true">🎉</span>
+                    <p className="text-emerald-300 text-xl sm:text-2xl font-semibold">
+                        {t.schedule.bookingConfirmed}
+                    </p>
+                    <button
+                        onClick={handleBack}
+                        className="mt-4 px-6 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition text-sm"
+                    >
+                        {t.schedule.title}
+                    </button>
+                </div>
+            ) : CALENDLY_URL ? (
                 <div
                     className="calendly-inline-widget calendly-embed w-full rounded-xl md:rounded-2xl overflow-hidden"
-                    data-url={CALENDLY_URL}
+                    data-url={calendlyUrlWithPrefill}
                     style={{ minWidth: "320px", height: "700px" }}
                     role="region"
                     aria-label={t.schedule.calendlyLabel}
