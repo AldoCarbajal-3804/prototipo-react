@@ -108,6 +108,27 @@ function FormFields({ formAction, state, formI18n, serviceOptions, stageOptions,
                 attrs: { minLength: 20, rows: 4 },
             })}
 
+            <div className="sm:col-span-2 flex flex-col gap-2">
+                <label className="flex items-start gap-3 cursor-pointer">
+                    <input
+                        type="checkbox"
+                        name="consent"
+                        className="mt-1 w-4 h-4 shrink-0 accent-cyan-600"
+                        aria-required="true"
+                        aria-invalid={errs.consent ? "true" : undefined}
+                        aria-describedby={errs.consent ? "consent-error" : undefined}
+                    />
+                    <span className="text-sm text-gray-300 leading-relaxed">
+                        {formI18n.labels.consent}
+                    </span>
+                </label>
+                {errs.consent && (
+                    <span id="consent-error" className="text-xs text-red-400 font-medium" role="alert">
+                        {errs.consent}
+                    </span>
+                )}
+            </div>
+
             <input
                 type="text"
                 name="website"
@@ -117,6 +138,10 @@ function FormFields({ formAction, state, formI18n, serviceOptions, stageOptions,
                 aria-hidden="true"
             />
             <input type="hidden" name="_loadTime" value={loadTime} />
+            <input type="hidden" name="_referrer" value={document.referrer} />
+            <input type="hidden" name="_utmSource" value={new URLSearchParams(location.search).get("utm_source") || ""} />
+            <input type="hidden" name="_utmMedium" value={new URLSearchParams(location.search).get("utm_medium") || ""} />
+            <input type="hidden" name="_utmCampaign" value={new URLSearchParams(location.search).get("utm_campaign") || ""} />
 
             <Submit
                 disabled={state.ok === true}

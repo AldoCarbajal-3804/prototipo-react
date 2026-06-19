@@ -2,7 +2,7 @@ import { useActionState, useState } from "react"
 import { useLanguage } from "@/hooks/LanguageContext.jsx"
 import FormContact from "@/layouts/form/FormContact"
 import FormFields from "@/layouts/form/FormFields"
-import { validate } from "@/layouts/form/FormValidation"
+import { validate, leadScore } from "@/layouts/form/FormValidation"
 
 function Form() {
     const { t } = useLanguage()
@@ -28,6 +28,12 @@ function Form() {
             stage: formData.get("stage")?.toString(),
             budget: formData.get("budget")?.toString() || "",
             challenge: formData.get("challenge")?.toString().trim(),
+            consent: true,
+            referrer: formData.get("_referrer")?.toString() || "",
+            utmSource: formData.get("_utmSource")?.toString() || "",
+            utmMedium: formData.get("_utmMedium")?.toString() || "",
+            utmCampaign: formData.get("_utmCampaign")?.toString() || "",
+            ...leadScore(formData),
             submittedAt: new Date().toISOString(),
         }
 

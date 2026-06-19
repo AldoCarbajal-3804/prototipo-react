@@ -212,7 +212,8 @@ export const translations = {
         service: "Service of Interest",
         stage: "Project Stage",
         budget: "Estimated Budget",
-        challenge: "What is your main challenge?"
+        challenge: "What is your main challenge?",
+        consent: "Privacy Policy consent"
       },
       placeholders: {
         fullName: "Maria Garcia",
@@ -258,6 +259,7 @@ export const translations = {
         service: "Select the type of service you need.",
         stage: "Select your project stage.",
         challenge: "Describe your challenge with at least 20 characters to guide the diagnosis.",
+        consent: "You must accept the Privacy Policy to continue.",
         submitError: "We couldn't send the form. Try again or schedule a meeting.",
         connectionError: "Connection error. Check your network or write to contacto@japartners.com."
       }
@@ -516,7 +518,8 @@ export const translations = {
         service: "Servicio de interés",
         stage: "Etapa del proyecto",
         budget: "Presupuesto estimado",
-        challenge: "¿Cuál es tu principal desafío?"
+        challenge: "¿Cuál es tu principal desafío?",
+        consent: "Aceptación de Políticas de Privacidad"
       },
       placeholders: {
         fullName: "María García",
@@ -562,6 +565,7 @@ export const translations = {
         service: "Selecciona el tipo de servicio que necesitas.",
         stage: "Selecciona la etapa de tu proyecto.",
         challenge: "Describe tu desafío con al menos 20 caracteres para orientar el diagnóstico.",
+        consent: "Debes aceptar las Políticas de Privacidad para continuar.",
         submitError: "No pudimos enviar el formulario. Intenta de nuevo o agenda una reunión.",
         connectionError: "Error de conexión. Revisa tu red o escríbenos a contacto@japartners.com."
       }
