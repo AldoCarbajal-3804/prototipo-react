@@ -17,20 +17,19 @@ function Stats() {
                 <span className="particle-bounce bg-purple-200" style={{ animationDuration: "15s, 10s" }}></span>
                 <span className="particle-bounce bg-cyan-300" style={{ animationDuration: "11s, 7s" }}></span>
             </div>
+            
             <header className="relative max-w-4xl mx-auto text-center px-6">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-800 tracking-tight">
-                    {t.stats.heading}
-                </h2>
-                <p className="text-neutral-600 mt-4 text-base md:text-lg">
-                    {t.stats.subtitle}
-                </p>
-            </header>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-neutral-800 tracking-tight">
+                        {t.stats.heading}
+                    </h2>
+                    <p className="text-neutral-600 mt-4 text-base md:text-lg">
+                        {t.stats.subtitle}
+                    </p>
+                </header>
+
             <article className="relative max-w-6xl mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 px-4 sm:px-6">
                 {t.stats.metrics.map((item, index) => (
-                    <div
-                        key={index}
-                        className="bg-white border border-neutral-200 rounded-xl p-4 sm:p-6 text-center transition duration-300 hover:shadow-md hover:-translate-y-1"
-                    >
+                    <div key={index} className="bg-white border border-neutral-200 rounded-xl p-4 sm:p-6 text-center transition duration-300 hover:shadow-md hover:-translate-y-1">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-blue-800">
                             {item.value}
                         </h2>
@@ -45,54 +44,55 @@ function Stats() {
             </article>
             
             <span className="relative max-w-4xl mx-auto mt-16 text-center px-6">
-                <p className="text-neutral-600 text-sm md:text-base leading-relaxed">
-                    {t.stats.metricsText}
-                </p>
-            </span>
+                    <p className="text-neutral-600 text-sm md:text-base leading-relaxed">
+                        {t.stats.metricsText}
+                    </p>
+                </span>
 
             <div className="relative max-w-6xl mx-auto mt-16 border-t border-neutral-200"></div>
             
             <article className="relative max-w-6xl mx-auto mt-12 px-6">
-                <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-semibold text-neutral-800 mb-12">
-                    {t.stats.performanceHeading}
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {t.stats.performanceCards.map((card, index) => (
-                        <div
-                            key={index}
-                            className="bg-white rounded-xl border border-neutral-200 p-6 text-center
-                            transition duration-300 hover:shadow-md hover:-translate-y-1"
-                        >
-                            <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-blue-100 center text-xl">
-                                {card.icon}
+                    <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-semibold text-neutral-800 mb-12">
+                        {t.stats.performanceHeading}
+                    </h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {t.stats.performanceCards.map((card, index) => (
+                            <div
+                                key={index}
+                                className="bg-white rounded-xl border border-neutral-200 p-6 text-center
+                                transition duration-300 hover:shadow-md hover:-translate-y-1"
+                            >
+                                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-blue-100 center text-xl">
+                                    {card.icon}
+                                </div>
+
+                                <h3 className="text-neutral-700 font-medium">
+                                    {card.title}
+                                </h3>
+
+                                <p className="text-2xl sm:text-3xl font-semibold mt-2 text-neutral-900">
+                                    {card.value}
+                                </p>
+
+                                <p className="text-xs sm:text-sm md:text-base text-neutral-500 mt-2">
+                                    {card.desc}
+                                </p>
                             </div>
+                        ))}
+                    </div>
+                </article>
 
-                            <h3 className="text-neutral-700 font-medium">
-                                {card.title}
-                            </h3>
-
-                            <p className="text-2xl sm:text-3xl font-semibold mt-2 text-neutral-900">
-                                {card.value}
-                            </p>
-
-                            <p className="text-xs sm:text-sm md:text-base text-neutral-500 mt-2">
-                                {card.desc}
-                            </p>
-                        </div>
-                    ))}
-                </div>
-            </article>
             <footer className="relative max-w-3xl mx-auto mt-16 text-center px-6">
-                <p className="text-neutral-700 text-sm sm:text-base">
-                    {t.stats.cta}
-                </p>
-                <button className="mt-4 px-6 py-3 bg-blue-900 text-white rounded-lg 
-                    hover:bg-blue-800 transition duration-300">
-                    <a href="#form-section">
-                        {t.stats.buttonCta}
-                    </a>
-                </button>
-            </footer>
+                    <p className="text-neutral-700 text-sm sm:text-base">
+                        {t.stats.cta}
+                    </p>
+                    <button className="mt-4 px-6 py-3 bg-blue-900 text-white rounded-lg 
+                        hover:bg-blue-800 transition duration-300">
+                        <a href="#form-section">
+                            {t.stats.buttonCta}
+                        </a>
+                    </button>
+                </footer>
         </section>
     )
 }

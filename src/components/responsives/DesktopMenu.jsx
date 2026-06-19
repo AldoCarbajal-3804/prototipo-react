@@ -3,7 +3,20 @@ import { Link } from '@/components/ui/Link.jsx';
 import { useScrollTo } from '@/hooks/useScrollTo.jsx';
 import translateIcon from '@/assets/svg/translate.svg';
 
-export const DesktopMenu = ({ t, toggleLanguage }) => {
+const PARENT_SECTIONS = {
+  'hero-section': '#hero-section',
+  'about-section': '#about-section',
+  'history-section': '#about-section',
+  'why-section': '#about-section',
+  'who-section': '#about-section',
+  'stats-section': '#about-section',
+  'services-section': '#services-section',
+  'testimonials-section': '#form-section',
+  'form-section': '#form-section',
+  'agenda-section': '#form-section',
+}
+
+export const DesktopMenu = ({ t, toggleLanguage, activeSection }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const scrollTo = useScrollTo();
@@ -29,11 +42,16 @@ export const DesktopMenu = ({ t, toggleLanguage }) => {
     <ul className="flex items-center gap-2 lg:gap-6">
       {t.nav.links.map((item) => {
         if (item.submenu) {
+          const isAboutActive = ['about-section', 'history-section', 'why-section', 'who-section', 'stats-section'].includes(activeSection)
           return (
             <li key={item.link} className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center gap-1.5 px-4 py-2 text-neutral-700 font-medium hover:text-blue-700 hover:bg-blue-50 rounded-full transition-all duration-200 cursor-pointer"
+                className={`flex items-center gap-1.5 px-4 py-2 font-medium rounded-full transition-all duration-200 cursor-pointer ${
+                  isAboutActive
+                    ? 'text-blue-700 bg-blue-50'
+                    : 'text-neutral-700 hover:text-blue-700 hover:bg-blue-50'
+                }`}
                 aria-expanded={isDropdownOpen}
               >
                 {item.name}
@@ -51,25 +69,35 @@ export const DesktopMenu = ({ t, toggleLanguage }) => {
                 className={`absolute top-full right-0 mt-2 w-56 bg-white border border-neutral-100 rounded-2xl shadow-xl py-2 transition-all duration-300 origin-top-right z-50 
                 ${isDropdownOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'}`}
               >
-                {t.nav.dropdown.map((subItem) => (
-                  <button
-                    key={subItem.link}
-                    onClick={() => handleScrollTo(subItem.link)}
-                    className="block w-full text-left px-5 py-3 text-sm sm:text-base text-neutral-600 hover:bg-blue-50 hover:text-blue-700 transition-colors duration-150 font-medium"
-                  >
-                    {subItem.name}
-                  </button>
-                ))}
+                {t.nav.dropdown.map((subItem) => {
+                  const subLink = subItem.link.replace('#', '')
+                  const isSubActive = activeSection === subLink
+                  return (
+                    <button
+                      key={subItem.link}
+                      onClick={() => handleScrollTo(subItem.link)}
+                      className={`block w-full text-left px-5 py-3 text-sm sm:text-base transition-colors duration-150 font-medium ${
+                        isSubActive
+                          ? 'text-blue-700 bg-blue-50'
+                          : 'text-neutral-600 hover:bg-blue-50 hover:text-blue-700'
+                      }`}
+                    >
+                      {subItem.name}
+                    </button>
+                  )
+                })}
               </div>
             </li>
           );
         }
 
+        const linkTarget = PARENT_SECTIONS[activeSection] || ''
         return (
           <li key={item.link}>
             <Link 
               name={item.name} 
-              link={item.link} 
+              link={item.link}
+              sectionActive={linkTarget === item.link}
             />
           </li>
         );
