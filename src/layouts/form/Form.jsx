@@ -3,6 +3,7 @@ import { useLanguage } from "@/hooks/LanguageContext.jsx"
 import FormContact from "@/layouts/form/FormContact"
 import FormFields from "@/layouts/form/FormFields"
 import { validate, leadScore } from "@/layouts/form/FormValidation"
+import { submitForm } from "@/services/hubspot"
 
 function Form() {
     const { t } = useLanguage()
@@ -35,6 +36,12 @@ function Form() {
             utmCampaign: formData.get("_utmCampaign")?.toString() || "",
             ...leadScore(formData),
             submittedAt: new Date().toISOString(),
+        }
+
+        try {
+            await submitForm(payload)
+        } catch {
+            return { ok: false, message: t.form.validation.submitError }
         }
 
         const endpoint = import.meta.env.VITE_FORM_ENDPOINT?.trim()
